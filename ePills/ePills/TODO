@@ -1,0 +1,8 @@
+* Prototye user interface
+* Create a collection view of the prescriptions
+* Create hardcoded prescriptinons
+* Modify a prescription
+* Add a new prescription
+* Remove a prescription
+* Store data in core (sqlite)
+* Capture a picture of the medicine

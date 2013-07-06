@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
+		5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AB17889BD300ED59D1 /* Foundation.framework */; };
+		5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AD17889BD300ED59D1 /* CoreGraphics.framework */; };
+		5ACC65B417889BD300ED59D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65B217889BD300ED59D1 /* InfoPlist.strings */; };
+		5ACC65B617889BD300ED59D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65B517889BD300ED59D1 /* main.m */; };
+		5ACC65BA17889BD300ED59D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65B917889BD300ED59D1 /* AppDelegate.m */; };
+		5ACC65BC17889BD300ED59D1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65BB17889BD300ED59D1 /* Default.png */; };
+		5ACC65BE17889BD300ED59D1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65BD17889BD300ED59D1 /* Default@2x.png */; };
+		5ACC65C017889BD300ED59D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */; };
+		5ACC65C317889BD300ED59D1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65C117889BD300ED59D1 /* MainStoryboard.storyboard */; };
+		5ACC65C617889BD300ED59D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65C517889BD300ED59D1 /* ViewController.m */; };
+		5ACC65CE17889BD300ED59D1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65CD17889BD300ED59D1 /* SenTestingKit.framework */; };
+		5ACC65CF17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
+		5ACC65D017889BD300ED59D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AB17889BD300ED59D1 /* Foundation.framework */; };
+		5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65D617889BD300ED59D1 /* InfoPlist.strings */; };
+		5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65DA17889BD300ED59D1 /* ePillsTests.m */; };
+		5ACC65E517889C0200ED59D1 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65E417889C0200ED59D1 /* TODO */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5ACC65D117889BD300ED59D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ACC659E17889BD300ED59D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ACC65A517889BD300ED59D1;
+			remoteInfo = ePills;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5ACC65A617889BD300ED59D1 /* ePills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ePills.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ACC65A917889BD300ED59D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5ACC65AB17889BD300ED59D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5ACC65AD17889BD300ED59D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5ACC65B117889BD300ED59D1 /* ePills-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ePills-Info.plist"; sourceTree = "<group>"; };
+		5ACC65B317889BD300ED59D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5ACC65B517889BD300ED59D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5ACC65B717889BD300ED59D1 /* ePills-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ePills-Prefix.pch"; sourceTree = "<group>"; };
+		5ACC65B817889BD300ED59D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5ACC65B917889BD300ED59D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5ACC65BB17889BD300ED59D1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5ACC65BD17889BD300ED59D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5ACC65C217889BD300ED59D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5ACC65C417889BD300ED59D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5ACC65C517889BD300ED59D1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5ACC65CC17889BD300ED59D1 /* ePillsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ePillsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ACC65CD17889BD300ED59D1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		5ACC65D517889BD300ED59D1 /* ePillsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ePillsTests-Info.plist"; sourceTree = "<group>"; };
+		5ACC65D717889BD300ED59D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5ACC65D917889BD300ED59D1 /* ePillsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ePillsTests.h; sourceTree = "<group>"; };
+		5ACC65DA17889BD300ED59D1 /* ePillsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ePillsTests.m; sourceTree = "<group>"; };
+		5ACC65E417889C0200ED59D1 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5ACC65A317889BD300ED59D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */,
+				5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */,
+				5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ACC65C817889BD300ED59D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65CE17889BD300ED59D1 /* SenTestingKit.framework in Frameworks */,
+				5ACC65CF17889BD300ED59D1 /* UIKit.framework in Frameworks */,
+				5ACC65D017889BD300ED59D1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5ACC659D17889BD300ED59D1 = {
+			isa = PBXGroup;
+			children = (
+				5ACC65AF17889BD300ED59D1 /* ePills */,
+				5ACC65D317889BD300ED59D1 /* ePillsTests */,
+				5ACC65A817889BD300ED59D1 /* Frameworks */,
+				5ACC65A717889BD300ED59D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5ACC65A717889BD300ED59D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65A617889BD300ED59D1 /* ePills.app */,
+				5ACC65CC17889BD300ED59D1 /* ePillsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5ACC65A817889BD300ED59D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65A917889BD300ED59D1 /* UIKit.framework */,
+				5ACC65AB17889BD300ED59D1 /* Foundation.framework */,
+				5ACC65AD17889BD300ED59D1 /* CoreGraphics.framework */,
+				5ACC65CD17889BD300ED59D1 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5ACC65AF17889BD300ED59D1 /* ePills */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65B817889BD300ED59D1 /* AppDelegate.h */,
+				5ACC65B917889BD300ED59D1 /* AppDelegate.m */,
+				5ACC65C117889BD300ED59D1 /* MainStoryboard.storyboard */,
+				5ACC65C417889BD300ED59D1 /* ViewController.h */,
+				5ACC65C517889BD300ED59D1 /* ViewController.m */,
+				5ACC65B017889BD300ED59D1 /* Supporting Files */,
+				5ACC65E417889C0200ED59D1 /* TODO */,
+			);
+			path = ePills;
+			sourceTree = "<group>";
+		};
+		5ACC65B017889BD300ED59D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65B117889BD300ED59D1 /* ePills-Info.plist */,
+				5ACC65B217889BD300ED59D1 /* InfoPlist.strings */,
+				5ACC65B517889BD300ED59D1 /* main.m */,
+				5ACC65B717889BD300ED59D1 /* ePills-Prefix.pch */,
+				5ACC65BB17889BD300ED59D1 /* Default.png */,
+				5ACC65BD17889BD300ED59D1 /* Default@2x.png */,
+				5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5ACC65D317889BD300ED59D1 /* ePillsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65D917889BD300ED59D1 /* ePillsTests.h */,
+				5ACC65DA17889BD300ED59D1 /* ePillsTests.m */,
+				5ACC65D417889BD300ED59D1 /* Supporting Files */,
+			);
+			path = ePillsTests;
+			sourceTree = "<group>";
+		};
+		5ACC65D417889BD300ED59D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65D517889BD300ED59D1 /* ePillsTests-Info.plist */,
+				5ACC65D617889BD300ED59D1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5ACC65A517889BD300ED59D1 /* ePills */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ACC65DE17889BD300ED59D1 /* Build configuration list for PBXNativeTarget "ePills" */;
+			buildPhases = (
+				5ACC65A217889BD300ED59D1 /* Sources */,
+				5ACC65A317889BD300ED59D1 /* Frameworks */,
+				5ACC65A417889BD300ED59D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ePills;
+			productName = ePills;
+			productReference = 5ACC65A617889BD300ED59D1 /* ePills.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5ACC65CB17889BD300ED59D1 /* ePillsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ACC65E117889BD300ED59D1 /* Build configuration list for PBXNativeTarget "ePillsTests" */;
+			buildPhases = (
+				5ACC65C717889BD300ED59D1 /* Sources */,
+				5ACC65C817889BD300ED59D1 /* Frameworks */,
+				5ACC65C917889BD300ED59D1 /* Resources */,
+				5ACC65CA17889BD300ED59D1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5ACC65D217889BD300ED59D1 /* PBXTargetDependency */,
+			);
+			name = ePillsTests;
+			productName = ePillsTests;
+			productReference = 5ACC65CC17889BD300ED59D1 /* ePillsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5ACC659E17889BD300ED59D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "JAVIER CALATRAVA LLAVERIA";
+			};
+			buildConfigurationList = 5ACC65A117889BD300ED59D1 /* Build configuration list for PBXProject "ePills" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5ACC659D17889BD300ED59D1;
+			productRefGroup = 5ACC65A717889BD300ED59D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5ACC65A517889BD300ED59D1 /* ePills */,
+				5ACC65CB17889BD300ED59D1 /* ePillsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5ACC65A417889BD300ED59D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65B417889BD300ED59D1 /* InfoPlist.strings in Resources */,
+				5ACC65BC17889BD300ED59D1 /* Default.png in Resources */,
+				5ACC65BE17889BD300ED59D1 /* Default@2x.png in Resources */,
+				5ACC65C017889BD300ED59D1 /* Default-568h@2x.png in Resources */,
+				5ACC65C317889BD300ED59D1 /* MainStoryboard.storyboard in Resources */,
+				5ACC65E517889C0200ED59D1 /* TODO in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ACC65C917889BD300ED59D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5ACC65CA17889BD300ED59D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ACC65A217889BD300ED59D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65B617889BD300ED59D1 /* main.m in Sources */,
+				5ACC65BA17889BD300ED59D1 /* AppDelegate.m in Sources */,
+				5ACC65C617889BD300ED59D1 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5ACC65C717889BD300ED59D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5ACC65D217889BD300ED59D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5ACC65A517889BD300ED59D1 /* ePills */;
+			targetProxy = 5ACC65D117889BD300ED59D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5ACC65B217889BD300ED59D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ACC65B317889BD300ED59D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5ACC65C117889BD300ED59D1 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ACC65C217889BD300ED59D1 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		5ACC65D617889BD300ED59D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5ACC65D717889BD300ED59D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5ACC65DC17889BD300ED59D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5ACC65DD17889BD300ED59D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5ACC65DF17889BD300ED59D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
+				INFOPLIST_FILE = "ePills/ePills-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5ACC65E017889BD300ED59D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
+				INFOPLIST_FILE = "ePills/ePills-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5ACC65E217889BD300ED59D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ePills.app/ePills";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
+				INFOPLIST_FILE = "ePillsTests/ePillsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		5ACC65E317889BD300ED59D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ePills.app/ePills";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
+				INFOPLIST_FILE = "ePillsTests/ePillsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5ACC65A117889BD300ED59D1 /* Build configuration list for PBXProject "ePills" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ACC65DC17889BD300ED59D1 /* Debug */,
+				5ACC65DD17889BD300ED59D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ACC65DE17889BD300ED59D1 /* Build configuration list for PBXNativeTarget "ePills" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ACC65DF17889BD300ED59D1 /* Debug */,
+				5ACC65E017889BD300ED59D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5ACC65E117889BD300ED59D1 /* Build configuration list for PBXNativeTarget "ePillsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ACC65E217889BD300ED59D1 /* Debug */,
+				5ACC65E317889BD300ED59D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5ACC659E17889BD300ED59D1 /* Project object */;
+}
