@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057A178931DC008BFF19 /* StaticTableViewController.m */; };
+		5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057D17895C25008BFF19 /* DosisTableViewController.m */; };
 		5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
 		5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AB17889BD300ED59D1 /* Foundation.framework */; };
 		5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AD17889BD300ED59D1 /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ABD0579178931DC008BFF19 /* StaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewController.h; sourceTree = "<group>"; };
+		5ABD057A178931DC008BFF19 /* StaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTableViewController.m; sourceTree = "<group>"; };
+		5ABD057C17895C25008BFF19 /* DosisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisTableViewController.h; sourceTree = "<group>"; };
+		5ABD057D17895C25008BFF19 /* DosisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DosisTableViewController.m; sourceTree = "<group>"; };
 		5ACC65A617889BD300ED59D1 /* ePills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ePills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACC65A917889BD300ED59D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ACC65AB17889BD300ED59D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AAC5C6117897D9500328E3D /* GraphicalResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GraphicalResources;
+			sourceTree = "<group>";
+		};
 		5ACC659D17889BD300ED59D1 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,7 @@
 		5ACC65AF17889BD300ED59D1 /* ePills */ = {
 			isa = PBXGroup;
 			children = (
+				5AAC5C6117897D9500328E3D /* GraphicalResources */,
 				5ACC65B817889BD300ED59D1 /* AppDelegate.h */,
 				5ACC65B917889BD300ED59D1 /* AppDelegate.m */,
 				5ACC65C117889BD300ED59D1 /* MainStoryboard.storyboard */,
@@ -126,6 +140,10 @@
 				5ACC65C517889BD300ED59D1 /* ViewController.m */,
 				5ACC65B017889BD300ED59D1 /* Supporting Files */,
 				5ACC65E417889C0200ED59D1 /* TODO */,
+				5ABD0579178931DC008BFF19 /* StaticTableViewController.h */,
+				5ABD057A178931DC008BFF19 /* StaticTableViewController.m */,
+				5ABD057C17895C25008BFF19 /* DosisTableViewController.h */,
+				5ABD057D17895C25008BFF19 /* DosisTableViewController.m */,
 			);
 			path = ePills;
 			sourceTree = "<group>";
@@ -277,6 +295,8 @@
 				5ACC65B617889BD300ED59D1 /* main.m in Sources */,
 				5ACC65BA17889BD300ED59D1 /* AppDelegate.m in Sources */,
 				5ACC65C617889BD300ED59D1 /* ViewController.m in Sources */,
+				5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */,
+				5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +477,7 @@
 				5ACC65E017889BD300ED59D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5ACC65E117889BD300ED59D1 /* Build configuration list for PBXNativeTarget "ePillsTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +486,7 @@
 				5ACC65E317889BD300ED59D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

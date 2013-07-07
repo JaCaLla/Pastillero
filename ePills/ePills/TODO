@@ -1,8 +1,12 @@
 * Prototye user interface
+    * Hide keyboard after writing some text
 * Create a collection view of the prescriptions
 * Create hardcoded prescriptinons
 * Modify a prescription
 * Add a new prescription
 * Remove a prescription
+* Program timer
 * Store data in core (sqlite)
 * Capture a picture of the medicine
+* Support for Spanish
+* Advise for app punctuation
