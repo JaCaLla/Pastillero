@@ -10,9 +10,17 @@
 
 @interface StaticTableViewController ()
 
+
+
 @end
 
+
+
 @implementation StaticTableViewController
+
+@synthesize txtName;
+@synthesize txtBoxUnits;
+@synthesize txtUnitsTaken;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,16 +31,66 @@
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //BEGIN:Number pad removal handling
+    // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
+    UIToolbar* numberToolbarBoxUnits = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbarBoxUnits.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbarBoxUnits.items = [NSArray arrayWithObjects:
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelBoxUnits)],
+                                   [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithBoxUnits)],
+                                   nil];
+    [numberToolbarBoxUnits sizeToFit];
+    txtBoxUnits.inputAccessoryView = numberToolbarBoxUnits;
+
+    // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
+    UIToolbar* numberToolbarUnitsTaken = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbarUnitsTaken.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbarUnitsTaken.items = [NSArray arrayWithObjects:
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
+                                   [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
+                                   nil];
+    [numberToolbarUnitsTaken sizeToFit];
+    txtUnitsTaken.inputAccessoryView = numberToolbarUnitsTaken;
+    //END:Number pad removal handling
 }
+
+//BEGIN:Number pad removal handling
+-(void)cancelBoxUnits{
+    [txtBoxUnits resignFirstResponder];
+    txtBoxUnits.text = @"";
+}
+
+-(void)doneWithBoxUnits{
+    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
+    [txtBoxUnits resignFirstResponder];
+}
+
+-(void)cancelUnitsTaken{
+    [txtUnitsTaken resignFirstResponder];
+    txtUnitsTaken.text = @"";
+}
+
+-(void)doneWithUnitsTaken{
+    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
+    [txtUnitsTaken resignFirstResponder];
+}
+//BEGIN:Number pad removal handling
+
+//BEGIN:Keyboard removal handling
+- (IBAction)textFieldReturn:(id)sender {
+    [sender resignFirstResponder];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
