@@ -13,6 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
-@property (weak, nonatomic) IBOutlet UITextField *txtUnitsTaken;
+@property (weak, nonatomic) IBOutlet UITextField *txtDosis;
 
 @end

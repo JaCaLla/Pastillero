@@ -7,15 +7,54 @@
 //
 
 #import "AppDelegate.h"
+#import "Prescription.h"
 
-@implementation AppDelegate
+// Defining this object as a singleton View controllers can call its methods
+static AppDelegate *sharedInstance;
+
+@implementation AppDelegate{
+    
+}
+
+@synthesize arrPrescriptions;
+
+
+
+-(id) init{
+    if(sharedInstance){
+        NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
+    }
+    
+    self=[super init];
+    sharedInstance=self;
+    
+    
+    arrPrescriptions = [[NSMutableArray alloc]init];
+    Prescription *p1 = [[Prescription alloc] initWithName:@"Frenadol" BoxUnits:20 Dosis:1];
+    [arrPrescriptions addObject:p1];
+    Prescription *p2 = [[Prescription alloc] initWithName:@"Culdina" BoxUnits:30 Dosis:2];
+    [arrPrescriptions addObject:p2];
+    Prescription *p3 = [[Prescription alloc] initWithName:@"Licipaina" BoxUnits:10 Dosis:3];
+    [arrPrescriptions addObject:p3];
+    
+    return self;
+}
+
+// Return an instance of this class, in that way the ViewController can access to this class
++(AppDelegate*) sharedAppDelegate{
+    return sharedInstance;
+}
+
+-(NSArray*) allPrescriptions{
+    
+    return arrPrescriptions;
+}
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    // Change the appearance of back button
-   // UIImage *backButtonImage = [[UIImage imageNamed:@"button_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
-   // [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     return YES;
 }

@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    //Array of timers
+    NSMutableArray *arrPrescriptions;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+//Array of timers
+@property NSMutableArray *arrPrescriptions;
+
+//Returns the instance of AppDelegate, in that way the ViewController has access to this class
++(AppDelegate *) sharedAppDelegate;
+
+// Returns the internal array of timers
+-(NSArray *) allPrescriptions;
 
 @end

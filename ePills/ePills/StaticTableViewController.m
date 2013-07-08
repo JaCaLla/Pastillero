@@ -20,7 +20,7 @@
 
 @synthesize txtName;
 @synthesize txtBoxUnits;
-@synthesize txtUnitsTaken;
+@synthesize txtDosis;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,15 +51,15 @@
     txtBoxUnits.inputAccessoryView = numberToolbarBoxUnits;
 
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
-    UIToolbar* numberToolbarUnitsTaken = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-    numberToolbarUnitsTaken.barStyle = UIBarStyleBlackTranslucent;
-    numberToolbarUnitsTaken.items = [NSArray arrayWithObjects:
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
+    UIToolbar* numberToolbarDosis = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbarDosis.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbarDosis.items = [NSArray arrayWithObjects:
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDosis)],
                                    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
+                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithDosis)],
                                    nil];
-    [numberToolbarUnitsTaken sizeToFit];
-    txtUnitsTaken.inputAccessoryView = numberToolbarUnitsTaken;
+    [numberToolbarDosis sizeToFit];
+    txtDosis.inputAccessoryView = numberToolbarDosis;
     //END:Number pad removal handling
 }
 
@@ -74,14 +74,14 @@
     [txtBoxUnits resignFirstResponder];
 }
 
--(void)cancelUnitsTaken{
-    [txtUnitsTaken resignFirstResponder];
-    txtUnitsTaken.text = @"";
+-(void)cancelDosis{
+    [txtDosis resignFirstResponder];
+    txtDosis.text = @"";
 }
 
--(void)doneWithUnitsTaken{
+-(void)doneWithDosis{
     //NSString *numberFromTheKeyboard = txtBoxUnits.text;
-    [txtUnitsTaken resignFirstResponder];
+    [txtDosis resignFirstResponder];
 }
 //BEGIN:Number pad removal handling
 

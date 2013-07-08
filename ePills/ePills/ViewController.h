@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>{
+    
+
+    NSMutableArray *arrPrescriptions;
+    
+}
+
+@property (weak, nonatomic) IBOutlet UICollectionView *clvPrescriptions;
+
+//Array of timers
+@property NSMutableArray *arrPrescriptions;
 
 @end

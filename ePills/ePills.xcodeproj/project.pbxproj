@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A455960178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
+		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
+		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
+		5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057A178931DC008BFF19 /* StaticTableViewController.m */; };
 		5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057D17895C25008BFF19 /* DosisTableViewController.m */; };
 		5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A45595E178B306700DADEF9 /* Prescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prescription.h; sourceTree = "<group>"; };
+		5A45595F178B306700DADEF9 /* Prescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
+		5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionControllerCellView.h; sourceTree = "<group>"; };
+		5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionControllerCellView.m; sourceTree = "<group>"; };
 		5ABD0579178931DC008BFF19 /* StaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewController.h; sourceTree = "<group>"; };
 		5ABD057A178931DC008BFF19 /* StaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTableViewController.m; sourceTree = "<group>"; };
 		5ABD057C17895C25008BFF19 /* DosisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisTableViewController.h; sourceTree = "<group>"; };
@@ -92,6 +100,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A45595C178B2CCF00DADEF9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5ACC65C417889BD300ED59D1 /* ViewController.h */,
+				5ACC65C517889BD300ED59D1 /* ViewController.m */,
+				5ABD0579178931DC008BFF19 /* StaticTableViewController.h */,
+				5ABD057A178931DC008BFF19 /* StaticTableViewController.m */,
+				5ABD057C17895C25008BFF19 /* DosisTableViewController.h */,
+				5ABD057D17895C25008BFF19 /* DosisTableViewController.m */,
+				5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */,
+				5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5A45595D178B302B00DADEF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A45595E178B306700DADEF9 /* Prescription.h */,
+				5A45595F178B306700DADEF9 /* Prescription.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5AAC5C6117897D9500328E3D /* GraphicalResources */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,18 +164,14 @@
 		5ACC65AF17889BD300ED59D1 /* ePills */ = {
 			isa = PBXGroup;
 			children = (
+				5A45595D178B302B00DADEF9 /* Model */,
+				5A45595C178B2CCF00DADEF9 /* ViewControllers */,
 				5AAC5C6117897D9500328E3D /* GraphicalResources */,
 				5ACC65B817889BD300ED59D1 /* AppDelegate.h */,
 				5ACC65B917889BD300ED59D1 /* AppDelegate.m */,
 				5ACC65C117889BD300ED59D1 /* MainStoryboard.storyboard */,
-				5ACC65C417889BD300ED59D1 /* ViewController.h */,
-				5ACC65C517889BD300ED59D1 /* ViewController.m */,
 				5ACC65B017889BD300ED59D1 /* Supporting Files */,
 				5ACC65E417889C0200ED59D1 /* TODO */,
-				5ABD0579178931DC008BFF19 /* StaticTableViewController.h */,
-				5ABD057A178931DC008BFF19 /* StaticTableViewController.m */,
-				5ABD057C17895C25008BFF19 /* DosisTableViewController.h */,
-				5ABD057D17895C25008BFF19 /* DosisTableViewController.m */,
 			);
 			path = ePills;
 			sourceTree = "<group>";
@@ -297,6 +325,8 @@
 				5ACC65C617889BD300ED59D1 /* ViewController.m in Sources */,
 				5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */,
 				5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */,
+				5A455960178B306700DADEF9 /* Prescription.m in Sources */,
+				5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */,
+				5A455961178B306700DADEF9 /* Prescription.m in Sources */,
+				5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
