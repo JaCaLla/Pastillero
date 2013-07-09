@@ -19,6 +19,7 @@ static ViewController *sharedInstance;
 @implementation ViewController
 
 @synthesize arrPrescriptions;
+@synthesize idxPrescriptions;
 
 -(id) init{
     if(sharedInstance){
@@ -58,6 +59,8 @@ static ViewController *sharedInstance;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)updatePrescription:(id)sender {
+}
 
 // BEGIN: Methods to implement for fulfill CollectionView Interface
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
@@ -82,6 +85,16 @@ static ViewController *sharedInstance;
     
     return cell;
 
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    //Set the current seleted index timer
+    idxPrescriptions=indexPath.item;
+    
+
+    
 }
 //end: Methods to implement for fulfill CollectionView Interface
 

@@ -1,22 +1,18 @@
 //
-//  StaticTableViewController.m
+//  UpdatePrescriptionViewController.m
 //  ePills
 //
-//  Created by JAVIER CALATRAVA LLAVERIA on 07/07/13.
+//  Created by JAVIER CALATRAVA LLAVERIA on 09/07/13.
 //  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
 //
 
-#import "StaticTableViewController.h"
+#import "UpdatePrescriptionViewController.h"
 
-@interface StaticTableViewController ()
-
-
+@interface UpdatePrescriptionViewController ()
 
 @end
 
-
-
-@implementation StaticTableViewController
+@implementation UpdatePrescriptionViewController
 
 @synthesize txtName;
 @synthesize txtBoxUnits;
@@ -31,13 +27,11 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
-
+    
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
     UIToolbar* numberToolbarBoxUnits = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
@@ -49,15 +43,15 @@
                                    nil];
     [numberToolbarBoxUnits sizeToFit];
     txtBoxUnits.inputAccessoryView = numberToolbarBoxUnits;
-
+    
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
     UIToolbar* numberToolbarDosis = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbarDosis.barStyle = UIBarStyleBlackTranslucent;
     numberToolbarDosis.items = [NSArray arrayWithObjects:
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDosis)],
-                                   [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithDosis)],
-                                   nil];
+                                [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDosis)],
+                                [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                                [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithDosis)],
+                                nil];
     [numberToolbarDosis sizeToFit];
     txtDosis.inputAccessoryView = numberToolbarDosis;
     //END:Number pad removal handling
@@ -91,7 +85,6 @@
 }
 //END:Keyboard removal handling
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -99,7 +92,7 @@
 }
 
 #pragma mark - Table view data source
-/*-
+/* Not necessary because is a static table
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
@@ -165,16 +158,16 @@
 */
 
 #pragma mark - Table view delegate
-/*-
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-
+    /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-     //[self.navigationController pushViewController:detailViewController animated:YES];
-
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
-*/
+
 @end

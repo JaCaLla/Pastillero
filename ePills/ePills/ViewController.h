@@ -12,6 +12,7 @@
     
 
     NSMutableArray *arrPrescriptions;
+    int idxPrescriptions;
     
 }
 
@@ -19,5 +20,6 @@
 
 //Array of timers
 @property NSMutableArray *arrPrescriptions;
+@property int idxPrescriptions;
 
 @end

@@ -11,6 +11,7 @@
 		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
+		5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */; };
 		5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057A178931DC008BFF19 /* StaticTableViewController.m */; };
 		5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057D17895C25008BFF19 /* DosisTableViewController.m */; };
 		5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 		5A45595F178B306700DADEF9 /* Prescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
 		5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionControllerCellView.h; sourceTree = "<group>"; };
 		5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionControllerCellView.m; sourceTree = "<group>"; };
+		5AB2B78E178C6B36000BA2FA /* UpdatePrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePrescriptionViewController.h; sourceTree = "<group>"; };
+		5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePrescriptionViewController.m; sourceTree = "<group>"; };
 		5ABD0579178931DC008BFF19 /* StaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewController.h; sourceTree = "<group>"; };
 		5ABD057A178931DC008BFF19 /* StaticTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticTableViewController.m; sourceTree = "<group>"; };
 		5ABD057C17895C25008BFF19 /* DosisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisTableViewController.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				5ABD057D17895C25008BFF19 /* DosisTableViewController.m */,
 				5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */,
 				5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */,
+				5AB2B78E178C6B36000BA2FA /* UpdatePrescriptionViewController.h */,
+				5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */,
 				5A455960178B306700DADEF9 /* Prescription.m in Sources */,
 				5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */,
+				5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
