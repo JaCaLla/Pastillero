@@ -50,6 +50,11 @@ static AppDelegate *sharedInstance;
     return arrPrescriptions;
 }
 
+// Returns the current selected prescription
+-(Prescription*) getCurrentPrescription{
+    
+    return nil;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

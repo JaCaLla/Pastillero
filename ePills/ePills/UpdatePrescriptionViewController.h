@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
 @property (weak, nonatomic) IBOutlet UITextField *txtDosis;
 
+@property (nonatomic, strong) NSString *recipeName;
+
 @end

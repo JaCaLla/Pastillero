@@ -18,6 +18,8 @@
 @synthesize txtBoxUnits;
 @synthesize txtDosis;
 
+@synthesize recipeName;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -31,6 +33,8 @@
 {
     
     [super viewDidLoad];
+    
+    txtName.text= recipeName;
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units

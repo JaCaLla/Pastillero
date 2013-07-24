@@ -7,19 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PrescriptionControllerCellView.h"
 
-@interface ViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>{
+@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
     
 
     NSMutableArray *arrPrescriptions;
     int idxPrescriptions;
+
     
 }
 
-@property (weak, nonatomic) IBOutlet UICollectionView *clvPrescriptions;
+@property (strong, nonatomic) IBOutlet UITableView *tbvPrescriptions;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSegueUpdate;
 
 //Array of timers
 @property NSMutableArray *arrPrescriptions;
 @property int idxPrescriptions;
+
+
+//Returns the instance of AppDelegate, in that way the ViewController has access to this class
++(ViewController *) sharedViewController;
 
 @end

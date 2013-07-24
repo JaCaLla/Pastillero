@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrescriptionControllerCellView : UICollectionViewCell
+@interface PrescriptionControllerCellView : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *txtName;
+
 @property (weak, nonatomic) IBOutlet UILabel *txtDosis;
+@property (weak, nonatomic) IBOutlet UILabel *txtName;
+
+
 
 @end

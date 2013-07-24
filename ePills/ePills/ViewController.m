@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "PrescriptionControllerCellView.h"
+#import "UpdatePrescriptionViewController.h"
 
 static ViewController *sharedInstance;
 
@@ -20,6 +21,7 @@ static ViewController *sharedInstance;
 
 @synthesize arrPrescriptions;
 @synthesize idxPrescriptions;
+
 
 -(id) init{
     if(sharedInstance){
@@ -36,14 +38,23 @@ static ViewController *sharedInstance;
     return self;
 }
 
+//Return a reference of this class
++(ViewController *) sharedViewController{
+    
+    return sharedInstance;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //Hide Segue update button
+    [self.btnSegueUpdate setHidden:YES];
+    
     //Link collection view to this class
-    [self.clvPrescriptions setDataSource:self];
-    [self.clvPrescriptions setDelegate:self];
+    [self.tbvPrescriptions setDataSource:self];
+    [self.tbvPrescriptions setDelegate:self];
     
     sharedInstance=self;
     
@@ -59,10 +70,10 @@ static ViewController *sharedInstance;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)updatePrescription:(id)sender {
-}
+
 
 // BEGIN: Methods to implement for fulfill CollectionView Interface
+/*
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
     // _data is a class member variable that contains one array per section.
     return 1;
@@ -79,13 +90,30 @@ static ViewController *sharedInstance;
     static NSString *CellIdentifier = @"CellPrescriptionId";
     
     
+    
     PrescriptionControllerCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.txtName.text = [NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item];
     
     return cell;
-
+    
 }
+
+
+-(IBAction)myClickEvent:(id)sender event:(id)event {
+    
+    
+    NSLog(@"myClickEvent");
+    
+}
+
+
+-(void)buttonAction:(UIButton*)button {
+
+     NSLog(@"buttonUpdatePrescription");   
+    
+}
+
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -96,6 +124,101 @@ static ViewController *sharedInstance;
 
     
 }
+ */
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [arrPrescriptions count];
+}
+
+-(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"CellPrescriptionId";
+//    PrescriptionControllerCellView *tmrCurrent;
+    
+    PrescriptionControllerCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[PrescriptionControllerCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+   
+    Prescription* tmrCurrent=[arrPrescriptions objectAtIndex:[indexPath row]];
+    
+    //[[cell textLabel]setText:[NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item]];
+    
+    [cell.txtName setText:tmrCurrent.strName];
+    cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
+    
+    
+    return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //Set the current seleted index timer
+    idxPrescriptions=indexPath.item;
+    
+    NSLog(@"Row Selected = %i",idxPrescriptions);
+    
+    [self performSegueWithIdentifier:@"updatePrescription" sender:self.view];
+
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"updatePrescription"]){
+        
+            NSLog(@"prepareForSegue");
+        
+        //Get se
+         UITableViewCell *cell = (UITableViewCell *) sender;
+        NSIndexPath *indexPath = [self.tbvPrescriptions indexPathForCell:cell];
+        Prescription *currPrescription =[arrPrescriptions objectAtIndex:idxPrescriptions];
+
+        
+        // Get destination view
+        UpdatePrescriptionViewController *vc = [segue destinationViewController];
+        
+     NSLog(@"Row Selected = %i",indexPath.row);
+        
+        vc.recipeName= currPrescription.strName;
+        //[vc.txtDosis setText: [NSString stringWithFormat:@"%d",currPrescription.iDosis]];
+        
+
+        // Get button tag number (or do whatever you need to do here, based on your object
+        //NSInteger tagIndex = [(UIButton *)sender tag];
+        
+        // Pass the information to your destination view
+        //[vc setSelectedButton:tagIndex];
+        
+        
+        /*
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        NSDictionary *storiesDict =[topStories objectAtIndex:[indexPath row]];
+        StoryModel *storyModel = [[StoryModel alloc] init];
+        storyModel = storiesDict;
+        StoryDetails *controller = (StoryDetails *)segue.destinationViewController;
+        controller.dataModel= storyModel;
+         */
+    }
+}
+
 //end: Methods to implement for fulfill CollectionView Interface
+- (IBAction)btnUpdatePrescription:(id)sender {
+  
+    //ViewController *viewController=[ViewController sharedViewController];
+    
+    //NSIndexPath *indPath=[viewController.clvPrescriptions indexPathForCell:self];
+    
+    //NSLog(@"Cell:%d",indPath.row);
+    NSLog(@"buttonUpdatePrescription");
+}
+
+
+
+
 
 @end

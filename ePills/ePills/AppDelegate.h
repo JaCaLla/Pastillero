@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Prescription.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     //Array of timers
     NSMutableArray *arrPrescriptions;
+    
 }
 
 @property (strong, nonatomic) UIWindow *window;
@@ -23,5 +25,8 @@
 
 // Returns the internal array of timers
 -(NSArray *) allPrescriptions;
+
+// Returns the current selected prescription
+-(Prescription*) getCurrentPrescription;
 
 @end
