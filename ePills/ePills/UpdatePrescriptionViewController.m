@@ -7,6 +7,8 @@
 //
 
 #import "UpdatePrescriptionViewController.h"
+#import "Prescription.h"
+#import "AppDelegate.h"
 
 @interface UpdatePrescriptionViewController ()
 
@@ -18,7 +20,9 @@
 @synthesize txtBoxUnits;
 @synthesize txtDosis;
 
-@synthesize recipeName;
+@synthesize sName;
+@synthesize sBoxUnits;
+@synthesize sDosis;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,7 +38,10 @@
     
     [super viewDidLoad];
     
-    txtName.text= recipeName;
+    //Initialize fields
+    txtName.text= sName;
+    txtBoxUnits.text=sBoxUnits;
+    txtDosis.text=sDosis;
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -93,6 +100,48 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"backFromUpdateSave"]){
+        
+        NSLog(@"prepareForSegue:backFromUpdateSave");
+        
+        //Create a new prescription object
+        Prescription *p1 = [[Prescription alloc] initWithName:@"Clamoxil" BoxUnits:50 Dosis:1];
+        
+        // Get destination view
+        //ViewController *vc = [segue destinationViewController];
+        
+        //Update view fields
+        //[vc updatePrescription:p1];
+        
+        //Notify the model
+        AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        [appDelegate updatePrescription:p1];
+        
+        //Create a view
+        
+        //Set the new prescription
+/*
+        //Get se
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        NSIndexPath *indexPath = [self.tbvPrescriptions indexPathForCell:cell];
+        Prescription *currPrescription =[arrPrescriptions objectAtIndex:idxPrescriptions];
+        
+        
+        // Get destination view
+        UpdatePrescriptionViewController *vc = [segue destinationViewController];
+        
+        //Update view fields
+        vc.sName= currPrescription.sName;
+        vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
+        vc.sDosis=[NSString stringWithFormat:@"%d", currPrescription.iDosis];
+*/       
+        
+        
+    }
 }
 
 #pragma mark - Table view data source

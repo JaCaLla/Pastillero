@@ -13,9 +13,14 @@
     //Array of timers
     NSMutableArray *arrPrescriptions;
     
+    // Current Prescription selected
+    int idxPrescriptions;
+    
 }
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property int idxPrescriptions;
 
 //Array of timers
 @property NSMutableArray *arrPrescriptions;
@@ -28,5 +33,8 @@
 
 // Returns the current selected prescription
 -(Prescription*) getCurrentPrescription;
+
+//Update one item of the prescription list
+-(void) updatePrescription:Prescription;
 
 @end

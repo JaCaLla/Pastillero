@@ -127,7 +127,14 @@
                             <items>
                                 <barButtonItem systemItem="cancel" id="BR4-zz-4jF">
                                     <connections>
-                                        <segue destination="2" kind="modal" modalTransitionStyle="coverVertical" id="csz-Vs-9c7"/>
+                                        <segue destination="2" kind="modal" identifier="backFromUpdateCancel" modalTransitionStyle="coverVertical" id="csz-Vs-9c7"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem width="189" style="plain" systemItem="fixedSpace" id="Y6E-EY-CEj"/>
+                                <barButtonItem systemItem="save" id="mVe-C1-11u">
+                                    <connections>
+                                        <action selector="btnSavePrescription:" destination="tu2-aC-IGn" id="yEO-oG-9Yb"/>
+                                        <segue destination="2" kind="modal" identifier="backFromUpdateSave" id="wtZ-KY-NUa"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -613,7 +620,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New prescription" id="JzH-7n-gul">
                         <barButtonItem key="backBarButtonItem" title="Back" id="0HL-ce-enI"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oyY-vB-0bs"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oyY-vB-0bs">
+                            <connections>
+                                <segue destination="2" kind="modal" identifier="backFromAddPrescription" id="fhH-Wu-IeE"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kFM-Ro-NHP"/>
                     </navigationItem>
                     <connections>
@@ -725,4 +736,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="wtZ-KY-NUa"/>
+    </inferredMetricsTieBreakers>
 </document>

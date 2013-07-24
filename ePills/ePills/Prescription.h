@@ -10,7 +10,7 @@
 
 @interface Prescription : NSObject
 
-@property NSString *strName;
+@property NSString *sName;
 @property int iBoxUnits;
 @property int iDosis;
 

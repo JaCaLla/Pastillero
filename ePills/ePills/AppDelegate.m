@@ -17,6 +17,7 @@ static AppDelegate *sharedInstance;
 }
 
 @synthesize arrPrescriptions;
+@synthesize idxPrescriptions;
 
 
 
@@ -54,6 +55,17 @@ static AppDelegate *sharedInstance;
 -(Prescription*) getCurrentPrescription{
     
     return nil;
+}
+
+//Update one item of the prescription list
+-(void) updatePrescription:Prescription{
+    NSLog(@"updatePrescription:%d",idxPrescriptions);
+    
+    //Remove old prescription
+    [arrPrescriptions removeObjectAtIndex:idxPrescriptions];
+    //Insert new prescription
+    [arrPrescriptions insertObject:Prescription atIndex:idxPrescriptions];
+    
 }
 
 

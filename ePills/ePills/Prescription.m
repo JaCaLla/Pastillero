@@ -10,7 +10,7 @@
 
 @implementation Prescription
 
-@synthesize strName;
+@synthesize sName;
 @synthesize iBoxUnits;
 @synthesize iDosis;
 
@@ -19,7 +19,7 @@
     if (self = [super init])
     {
         // Initialization code here
-        self.strName=p_strName;
+        self.sName=p_strName;
         self.iBoxUnits=p_iBoxUnits;
         self.iDosis=p_iDosis;
         

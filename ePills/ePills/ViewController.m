@@ -20,7 +20,7 @@ static ViewController *sharedInstance;
 @implementation ViewController
 
 @synthesize arrPrescriptions;
-@synthesize idxPrescriptions;
+
 
 
 -(id) init{
@@ -147,7 +147,7 @@ static ViewController *sharedInstance;
     
     //[[cell textLabel]setText:[NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item]];
     
-    [cell.txtName setText:tmrCurrent.strName];
+    [cell.txtName setText:tmrCurrent.sName];
     cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
     
     
@@ -158,9 +158,13 @@ static ViewController *sharedInstance;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //Set the current seleted index timer
-    idxPrescriptions=indexPath.item;
+    //idxPrescriptions=indexPath.item;
     
-    NSLog(@"Row Selected = %i",idxPrescriptions);
+    //Notify the model
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    appDelegate.idxPrescriptions=indexPath.item;
+    
+    NSLog(@"Row Selected = %i",appDelegate.idxPrescriptions);
     
     [self performSegueWithIdentifier:@"updatePrescription" sender:self.view];
 
@@ -172,37 +176,23 @@ static ViewController *sharedInstance;
         
             NSLog(@"prepareForSegue");
         
+        //Notify the model
+        AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        
         //Get se
-         UITableViewCell *cell = (UITableViewCell *) sender;
-        NSIndexPath *indexPath = [self.tbvPrescriptions indexPathForCell:cell];
-        Prescription *currPrescription =[arrPrescriptions objectAtIndex:idxPrescriptions];
+        Prescription *currPrescription =[arrPrescriptions objectAtIndex:appDelegate.idxPrescriptions];
 
         
         // Get destination view
         UpdatePrescriptionViewController *vc = [segue destinationViewController];
         
-     NSLog(@"Row Selected = %i",indexPath.row);
-        
-        vc.recipeName= currPrescription.strName;
-        //[vc.txtDosis setText: [NSString stringWithFormat:@"%d",currPrescription.iDosis]];
+        //Update view fields
+        vc.sName= currPrescription.sName;
+        vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
+        vc.sDosis=[NSString stringWithFormat:@"%d", currPrescription.iDosis];
         
 
-        // Get button tag number (or do whatever you need to do here, based on your object
-        //NSInteger tagIndex = [(UIButton *)sender tag];
-        
-        // Pass the information to your destination view
-        //[vc setSelectedButton:tagIndex];
-        
-        
-        /*
-        UITableViewCell *cell = (UITableViewCell *) sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-        NSDictionary *storiesDict =[topStories objectAtIndex:[indexPath row]];
-        StoryModel *storyModel = [[StoryModel alloc] init];
-        storyModel = storiesDict;
-        StoryDetails *controller = (StoryDetails *)segue.destinationViewController;
-        controller.dataModel= storyModel;
-         */
+
     }
 }
 

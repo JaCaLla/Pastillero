@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "PrescriptionControllerCellView.h"
+#import "Prescription.h"
+
 
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
     
 
     NSMutableArray *arrPrescriptions;
-    int idxPrescriptions;
+    
 
     
 }
@@ -24,10 +26,12 @@
 
 //Array of timers
 @property NSMutableArray *arrPrescriptions;
-@property int idxPrescriptions;
+
 
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(ViewController *) sharedViewController;
+
+
 
 @end
