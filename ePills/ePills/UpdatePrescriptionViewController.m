@@ -16,6 +16,7 @@
 
 @implementation UpdatePrescriptionViewController
 
+@synthesize btnSave;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtDosis;
@@ -37,6 +38,8 @@
 {
     
     [super viewDidLoad];
+    //Initialize navigation bar buttons
+    btnSave.enabled=FALSE;
     
     //Initialize fields
     txtName.text= sName;
@@ -91,7 +94,7 @@
 //BEGIN:Number pad removal handling
 
 //BEGIN:Keyboard removal handling
-- (IBAction)textFieldReturn:(id)sender {
+- (IBAction)txtNameDidEndOnExit:(id)sender {
     [sender resignFirstResponder];
 }
 //END:Keyboard removal handling
@@ -109,40 +112,50 @@
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:@"Clamoxil" BoxUnits:50 Dosis:1];
-        
-        // Get destination view
-        //ViewController *vc = [segue destinationViewController];
-        
-        //Update view fields
-        //[vc updatePrescription:p1];
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:50 Dosis:1];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         [appDelegate updatePrescription:p1];
         
-        //Create a view
-        
-        //Set the new prescription
-/*
-        //Get se
-        UITableViewCell *cell = (UITableViewCell *) sender;
-        NSIndexPath *indexPath = [self.tbvPrescriptions indexPathForCell:cell];
-        Prescription *currPrescription =[arrPrescriptions objectAtIndex:idxPrescriptions];
-        
-        
-        // Get destination view
-        UpdatePrescriptionViewController *vc = [segue destinationViewController];
-        
-        //Update view fields
-        vc.sName= currPrescription.sName;
-        vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
-        vc.sDosis=[NSString stringWithFormat:@"%d", currPrescription.iDosis];
-*/       
-        
-        
     }
 }
+
+
+// This method is
+-(Boolean) validateForm{
+    Boolean bValidForm=TRUE;
+    
+
+    
+    return bValidForm;
+}
+
+//BEGIN:Keyboard removal handling
+- (IBAction)btnNameEditingDidEd:(id)sender {
+    //Check if medicine name is not emty
+    if([txtName.text length]==0){
+        // Show messagebox
+        UIAlertView* mes=[[UIAlertView alloc] initWithTitle:@"Error"
+                                                    message:@"Medicine name is empty" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [mes show];
+        
+        //Recover old value
+        txtName.text= sName;
+        
+        //Disable Save button
+        btnSave.enabled=FALSE;
+    }
+    else{
+        //Enable Save button
+        btnSave.enabled=TRUE;
+    }
+    
+    // Hide keyboard
+    [sender resignFirstResponder];
+}
+//END:Keyboard removal handling
 
 #pragma mark - Table view data source
 /* Not necessary because is a static table

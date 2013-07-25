@@ -165,7 +165,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEndOnExit" id="Ov0-p3-zvd"/>
+                                                        <action selector="btnNameEditingDidEd:" destination="tu2-aC-IGn" eventType="editingDidEndOnExit" id="EzA-9a-m7A"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -372,6 +372,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="hRS-FL-PA8"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnSave" destination="mVe-C1-11u" id="6k0-9Z-YWm"/>
                         <outlet property="txtBoxUnits" destination="XDF-NF-6zc" id="bqc-ZZ-tAD"/>
                         <outlet property="txtDosis" destination="hAo-Dr-t0A" id="Op9-ss-MR9"/>
                         <outlet property="txtName" destination="URy-Jw-U4R" id="lmL-4c-QjI"/>
@@ -716,7 +717,9 @@
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
             <relationships>
-                <relationship kind="action" name="textFieldReturn:"/>
+                <relationship kind="action" name="btnNameEditingDidEd:"/>
+                <relationship kind="action" name="txtNameDidEndOnExit:"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtDosis" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>

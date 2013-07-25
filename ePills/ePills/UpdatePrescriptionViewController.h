@@ -18,4 +18,7 @@
 @property (nonatomic, strong)NSString *sBoxUnits;
 @property (nonatomic, strong)NSString *sDosis;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
+
+
 @end
