@@ -21,6 +21,8 @@ static ViewController *sharedInstance;
 
 @synthesize arrPrescriptions;
 
+@synthesize tDosis;
+
 
 
 -(id) init{
@@ -56,6 +58,7 @@ static ViewController *sharedInstance;
     [self.tbvPrescriptions setDataSource:self];
     [self.tbvPrescriptions setDelegate:self];
     
+    //???
     sharedInstance=self;
     
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -148,7 +151,7 @@ static ViewController *sharedInstance;
     //[[cell textLabel]setText:[NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item]];
     
     //[cell.txtName setText:tmrCurrent.sName];
-    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d]-%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iDosis]];
+    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d] UT:%d D:%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken,tmrCurrent.tDosis]];
     //cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
     
     
@@ -190,7 +193,7 @@ static ViewController *sharedInstance;
         //Update view fields
         vc.sName= currPrescription.sName;
         vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
-        vc.sDosis=[NSString stringWithFormat:@"%d", currPrescription.iDosis];
+        vc.sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
         
 
 
@@ -198,6 +201,7 @@ static ViewController *sharedInstance;
 }
 
 //end: Methods to implement for fulfill CollectionView Interface
+
 - (IBAction)btnUpdatePrescription:(id)sender {
   
     //ViewController *viewController=[ViewController sharedViewController];

@@ -7,6 +7,8 @@
 //
 
 #import "DosisTableViewController.h"
+#import "Prescription.h"
+#import "StaticTableViewController.h"
 
 @interface DosisTableViewController (){
     
@@ -40,7 +42,7 @@
     arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
     
     // Default initialization
-    idxSelecteDose=3;
+    idxSelecteDose=EightHours;
     
 
   /*
@@ -197,6 +199,10 @@
     [tableView reloadData];
     
     NSLog(@"Cell selected:%d",indexPath.row);
+    
+    StaticTableViewController *viewController = [StaticTableViewController sharedViewController];
+    viewController.tDosis=indexPath.row;
+
     
 }
 

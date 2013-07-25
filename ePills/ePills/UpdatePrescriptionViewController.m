@@ -19,11 +19,11 @@
 @synthesize btnSave;
 @synthesize txtName;
 @synthesize txtBoxUnits;
-@synthesize txtDosis;
+@synthesize txtUnitsTaken;
 
 @synthesize sName;
 @synthesize sBoxUnits;
-@synthesize sDosis;
+@synthesize sUnitsTaken;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,7 +44,7 @@
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
-    txtDosis.text=sDosis;
+    txtUnitsTaken.text=sUnitsTaken;
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -62,12 +62,12 @@
     UIToolbar* numberToolbarDosis = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbarDosis.barStyle = UIBarStyleBlackTranslucent;
     numberToolbarDosis.items = [NSArray arrayWithObjects:
-                                [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDosis)],
+                                [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
                                 [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithDosis)],
+                                [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
                                 nil];
     [numberToolbarDosis sizeToFit];
-    txtDosis.inputAccessoryView = numberToolbarDosis;
+    txtUnitsTaken.inputAccessoryView = numberToolbarDosis;
     //END:Number pad removal handling
 }
 
@@ -123,20 +123,20 @@
     
 }
 
--(void)cancelDosis{
+-(void)cancelUnitsTaken{
     //Restore old value
-    txtDosis.text = sBoxUnits;
+    txtUnitsTaken.text = sBoxUnits;
     
     // Hide keypad
-    [txtDosis resignFirstResponder];
+    [txtUnitsTaken resignFirstResponder];
 }
 
--(void)doneWithDosis{
+-(void)doneWithUnitsTaken{
     // Hide keyboard
-    [txtDosis resignFirstResponder];
+    [txtUnitsTaken resignFirstResponder];
     
     //Check if Box units is empty
-    if([txtDosis.text length]==0){
+    if([txtUnitsTaken.text length]==0){
         // Show messagebox
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
                                                          message:ERR_DOSIS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -144,13 +144,13 @@
         [msgAlert show];
         
         //Recover old value
-        txtDosis.text= sBoxUnits;
+        txtUnitsTaken.text= sBoxUnits;
         
         //Disable Save button
         btnSave.enabled=FALSE;
     }
     //Check if Box units value is 0
-    else if([txtDosis.text integerValue]==0){
+    else if([txtUnitsTaken.text integerValue]==0){
         
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
                                                          message:ERR_DOSIS_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -158,11 +158,11 @@
         [msgAlert show];
         
         //Recover old value
-        txtDosis.text= sDosis;
+        txtUnitsTaken.text= sUnitsTaken;
       
     }
     //Check if dosis is greater than box units
-    else if([txtDosis.text integerValue]>[txtBoxUnits.text integerValue]){
+    else if([txtUnitsTaken.text integerValue]>[txtBoxUnits.text integerValue]){
         
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
                                                          message:ERR_DOSIS_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
@@ -170,15 +170,15 @@
         [msgAlert show];
         
         //Recover old value
-        txtDosis.text= sDosis;
+        txtUnitsTaken.text= sUnitsTaken;
     }
     else{
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
-            btnSave.enabled=(txtDosis.text!= sDosis);
+            btnSave.enabled=(txtUnitsTaken.text!= sUnitsTaken);
         }
         // Store the value for future recover
-        sDosis=txtDosis.text;
+        sUnitsTaken=txtUnitsTaken.text;
         
     }
 }
@@ -226,7 +226,7 @@
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] Dosis:[txtDosis.text integerValue]];
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue]];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];

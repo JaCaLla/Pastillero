@@ -24,6 +24,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnSegueUpdate;
 
+@property enum DosisType tDosis;
+
+
 //Array of timers
 @property NSMutableArray *arrPrescriptions;
 

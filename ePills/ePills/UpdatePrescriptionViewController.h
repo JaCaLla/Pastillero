@@ -25,11 +25,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
-@property (weak, nonatomic) IBOutlet UITextField *txtDosis;
+@property (weak, nonatomic) IBOutlet UITextField *txtUnitsTaken;
 
 @property (nonatomic, strong)NSString *sName;
 @property (nonatomic, strong)NSString *sBoxUnits;
-@property (nonatomic, strong)NSString *sDosis;
+@property (nonatomic, strong)NSString *sUnitsTaken;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
 

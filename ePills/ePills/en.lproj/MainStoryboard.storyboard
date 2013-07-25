@@ -374,8 +374,8 @@
                     <connections>
                         <outlet property="btnSave" destination="mVe-C1-11u" id="6k0-9Z-YWm"/>
                         <outlet property="txtBoxUnits" destination="XDF-NF-6zc" id="bqc-ZZ-tAD"/>
-                        <outlet property="txtDosis" destination="hAo-Dr-t0A" id="Op9-ss-MR9"/>
                         <outlet property="txtName" destination="URy-Jw-U4R" id="lmL-4c-QjI"/>
+                        <outlet property="txtUnitsTaken" destination="hAo-Dr-t0A" id="vMT-85-d8T"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLr-j3-WrG" userLabel="First Responder" sceneMemberID="firstResponder"/>

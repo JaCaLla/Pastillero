@@ -8,9 +8,9 @@
 
 #import "StaticTableViewController.h"
 
+static StaticTableViewController *sharedInstance;
+
 @interface StaticTableViewController ()
-
-
 
 @end
 
@@ -22,15 +22,31 @@
 @synthesize txtBoxUnits;
 @synthesize txtDosis;
 
+@synthesize tDosis;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    if(sharedInstance){
+        NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
+    }
+    
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
+    
+    //Initialize singleton class
+    sharedInstance=self;
+    
     return self;
+
 }
 
+//Return a reference of this class
++(StaticTableViewController *) sharedViewController{
+    
+    return sharedInstance;
+}
 
 
 - (void)viewDidLoad

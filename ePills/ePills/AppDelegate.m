@@ -31,11 +31,11 @@ static AppDelegate *sharedInstance;
     
     
     arrPrescriptions = [[NSMutableArray alloc]init];
-    Prescription *p1 = [[Prescription alloc] initWithName:@"Frenadol" BoxUnits:20 Dosis:1];
+    Prescription *p1 = [[Prescription alloc] initWithName:@"Frenadol" BoxUnits:20 UnitsTaken:1];
     [arrPrescriptions addObject:p1];
-    Prescription *p2 = [[Prescription alloc] initWithName:@"Culdina" BoxUnits:30 Dosis:2];
+    Prescription *p2 = [[Prescription alloc] initWithName:@"Culdina" BoxUnits:30 UnitsTaken:2];
     [arrPrescriptions addObject:p2];
-    Prescription *p3 = [[Prescription alloc] initWithName:@"Licipaina" BoxUnits:10 Dosis:3];
+    Prescription *p3 = [[Prescription alloc] initWithName:@"Licipaina" BoxUnits:10 UnitsTaken:3 Dosis:1];
     [arrPrescriptions addObject:p3];
     
     return self;
