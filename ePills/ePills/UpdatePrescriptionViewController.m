@@ -73,28 +73,142 @@
 
 //BEGIN:Number pad removal handling
 -(void)cancelBoxUnits{
+    //Restore old value
+    txtBoxUnits.text = sBoxUnits;
+    
+    // Hide keypad
     [txtBoxUnits resignFirstResponder];
-    txtBoxUnits.text = @"";
 }
 
 -(void)doneWithBoxUnits{
-    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
+    // Hide keyboard
     [txtBoxUnits resignFirstResponder];
+    
+    //Check if Box units is empty
+    if([txtBoxUnits.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                    message:ERR_BOXUNITS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtBoxUnits.text= sBoxUnits;
+        
+        //Disable Save button
+        btnSave.enabled=FALSE;
+    }
+    //Check if Box units value is greater than 0
+    else if([txtBoxUnits.text integerValue]<MIN_BOXUNITS
+            || [txtBoxUnits.text integerValue]>MAX_BOXUNITX){
+        
+        NSString *sErrMessage = [NSString stringWithFormat:ERR_BOUXUNITS_OUTOFRANGE,MIN_BOXUNITS,MAX_BOXUNITX];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                    message:sErrMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtBoxUnits.text= sBoxUnits;
+        
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtBoxUnits.text!= sBoxUnits);
+        }
+        // Store the value for future recover
+        sBoxUnits=txtBoxUnits.text;
+    }
+    
 }
 
 -(void)cancelDosis{
+    //Restore old value
+    txtDosis.text = sBoxUnits;
+    
+    // Hide keypad
     [txtDosis resignFirstResponder];
-    txtDosis.text = @"";
 }
 
 -(void)doneWithDosis{
-    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
+    // Hide keyboard
     [txtDosis resignFirstResponder];
+    
+    //Check if Box units is empty
+    if([txtDosis.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_DOSIS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtDosis.text= sBoxUnits;
+        
+        //Disable Save button
+        btnSave.enabled=FALSE;
+    }
+    //Check if Box units value is 0
+    else if([txtDosis.text integerValue]==0){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_DOSIS_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtDosis.text= sDosis;
+      
+    }
+    //Check if dosis is greater than box units
+    else if([txtDosis.text integerValue]>[txtBoxUnits.text integerValue]){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_DOSIS_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtDosis.text= sDosis;
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtDosis.text!= sDosis);
+        }
+        // Store the value for future recover
+        sDosis=txtDosis.text;
+        
+    }
 }
 //BEGIN:Number pad removal handling
 
+
 //BEGIN:Keyboard removal handling
-- (IBAction)txtNameDidEndOnExit:(id)sender {
+- (IBAction)btnNameEditingDidEd:(id)sender {
+    //Check if medicine name is not emty
+    if([txtName.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                    message:ERR_NAME_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtName.text= sName;
+        
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtName.text!= sName);
+        }
+        // Store the value for future recover
+        sName=txtName.text;
+    }
+    
+    // Hide keyboard
     [sender resignFirstResponder];
 }
 //END:Keyboard removal handling
@@ -112,7 +226,7 @@
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:50 Dosis:1];
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] Dosis:[txtDosis.text integerValue]];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -126,36 +240,10 @@
 -(Boolean) validateForm{
     Boolean bValidForm=TRUE;
     
-
+    
     
     return bValidForm;
 }
-
-//BEGIN:Keyboard removal handling
-- (IBAction)btnNameEditingDidEd:(id)sender {
-    //Check if medicine name is not emty
-    if([txtName.text length]==0){
-        // Show messagebox
-        UIAlertView* mes=[[UIAlertView alloc] initWithTitle:@"Error"
-                                                    message:@"Medicine name is empty" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        
-        [mes show];
-        
-        //Recover old value
-        txtName.text= sName;
-        
-        //Disable Save button
-        btnSave.enabled=FALSE;
-    }
-    else{
-        //Enable Save button
-        btnSave.enabled=TRUE;
-    }
-    
-    // Hide keyboard
-    [sender resignFirstResponder];
-}
-//END:Keyboard removal handling
 
 #pragma mark - Table view data source
 /* Not necessary because is a static table

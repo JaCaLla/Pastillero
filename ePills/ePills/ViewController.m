@@ -147,8 +147,9 @@ static ViewController *sharedInstance;
     
     //[[cell textLabel]setText:[NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item]];
     
-    [cell.txtName setText:tmrCurrent.sName];
-    cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
+    //[cell.txtName setText:tmrCurrent.sName];
+    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d]-%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iDosis]];
+    //cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
     
     
     return cell;

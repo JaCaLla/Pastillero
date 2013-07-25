@@ -691,55 +691,12 @@
             <point key="canvasLocation" x="1213" y="199"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DosisTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="txtDosis" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StaticTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="textFieldReturn:"/>
-                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDosis" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnNameEditingDidEd:"/>
-                <relationship kind="action" name="txtNameDidEndOnExit:"/>
-                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDosis" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnUpdatePrescription:"/>
-                <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wtZ-KY-NUa"/>
+        <segue reference="fhH-Wu-IeE"/>
     </inferredMetricsTieBreakers>
 </document>
