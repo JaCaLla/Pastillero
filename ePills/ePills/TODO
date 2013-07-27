@@ -2,9 +2,11 @@
     v Hide keyboard after writing some text
 v Create a collection view of the prescriptions
 v Create hardcoded prescriptinons
-* Modify a prescription
+v Modify a prescription
+    v Update dosis value
 * Add a new prescription
 * Remove a prescription
+* Calculate last dosis
 * Program timer
 * Store data in core (sqlite)
 * Capture a picture of the medicine

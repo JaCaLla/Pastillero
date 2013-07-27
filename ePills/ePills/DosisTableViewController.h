@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Prescription.h"
 
 @interface DosisTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
     
@@ -14,7 +15,7 @@
 }
 
 @property NSArray *arrDosis;
-
+@property enum DosisType tDosis;
 
 
 @end

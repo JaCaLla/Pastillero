@@ -54,7 +54,7 @@ static AppDelegate *sharedInstance;
 // Returns the current selected prescription
 -(Prescription*) getCurrentPrescription{
     
-    return nil;
+    return [arrPrescriptions objectAtIndex:idxPrescriptions];
 }
 
 //Update one item of the prescription list

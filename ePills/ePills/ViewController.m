@@ -170,7 +170,9 @@ static ViewController *sharedInstance;
     
     NSLog(@"Row Selected = %i",appDelegate.idxPrescriptions);
     
-    [self performSegueWithIdentifier:@"updatePrescription" sender:self.view];
+    //[self performSegueWithIdentifier:@"updatePrescription" sender:self.view];
+
+    [self performSegueWithIdentifier:@"updatePrescription2" sender:self.view];
 
     
 }
@@ -178,8 +180,7 @@ static ViewController *sharedInstance;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"updatePrescription"]){
         
-            NSLog(@"prepareForSegue");
-        
+        //??
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         
@@ -194,8 +195,23 @@ static ViewController *sharedInstance;
         vc.sName= currPrescription.sName;
         vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
         vc.sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
+    }
+    else if([segue.identifier isEqualToString:@"updatePrescription2"]){
+ 
+        //Notify the model
+        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         
-
+        //Get se
+        //Prescription *currPrescription =[arrPrescriptions objectAtIndex:appDelegate.idxPrescriptions];
+        
+        
+        // Get destination view
+        //UpdatePrescriptionViewController *vc = [segue destinationViewController];
+        
+        //Update view fields
+        //vc.sName= currPrescription.sName;
+        //vc.sBoxUnits2=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
+        //vc.sUnitsTaken2=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
 
     }
 }

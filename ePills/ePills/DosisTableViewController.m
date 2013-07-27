@@ -21,15 +21,14 @@
 @implementation DosisTableViewController
 
 @synthesize arrDosis;
+@synthesize tDosis;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
-
-        
+        // Custom initialization        
     }
     return self;
 }
@@ -42,7 +41,7 @@
     arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
     
     // Default initialization
-    idxSelecteDose=EightHours;
+    //idxSelecteDose=EightHours;
     
 
   /*
@@ -129,7 +128,7 @@
     
     // Configure the cell...
     // Cell mark
-    if(indexPath.row == idxSelecteDose)
+    if(indexPath.row == tDosis)// idxSelecteDose)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -195,7 +194,9 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    idxSelecteDose = indexPath.row;
+    //idxSelecteDose = indexPath.row;
+    tDosis = indexPath.row;
+    
     [tableView reloadData];
     
     NSLog(@"Cell selected:%d",indexPath.row);

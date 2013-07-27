@@ -9,6 +9,9 @@
 #import "UpdatePrescriptionViewController.h"
 #import "Prescription.h"
 #import "AppDelegate.h"
+#import "DosisUpdateTableViewController.h"
+
+static UpdatePrescriptionViewController *sharedInstance;
 
 @interface UpdatePrescriptionViewController ()
 
@@ -20,18 +23,37 @@
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
+@synthesize txtDose;
+
 
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
+@synthesize sDosis;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        if(sharedInstance){
+            NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
+        }
+        
+        //Initialize singleton class
+        sharedInstance=self;
+        
+        
     }
     return self;
+}
+
+//Return a reference of this class
++(UpdatePrescriptionViewController *) sharedViewController{
+    
+    return sharedInstance;
 }
 
 - (void)viewDidLoad
@@ -40,11 +62,25 @@
     [super viewDidLoad];
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
+    txtDose.enabled=FALSE;
+    
+    //Get current prescription from delegate (Model)
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    Prescription *currPrescription = [appDelegate getCurrentPrescription];
+    
+    sName= currPrescription.sName;
+    sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
+    sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
+    sDosis=[NSString stringWithFormat:@"%d", currPrescription.tDosis];
+    
+    //tDosis=currPrescription.tDosis;
+    
     
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
+    txtDose.text=sDosis;
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -70,6 +106,39 @@
     txtUnitsTaken.inputAccessoryView = numberToolbarDosis;
     //END:Number pad removal handling
 }
+
+-(void) viewWillAppear:(BOOL)animated {
+
+
+    /*
+    //Check if there were changes with dosis
+    if(sDosis!=txtDosis.text){
+        txtDosis.text=sDosis;
+        btnSave.enabled=TRUE;
+    }
+    */
+    [super viewWillAppear:animated];
+ /*
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+    }
+  */
+}
+
+//BEGIN:ModelViewDelegat callbacks
+- (void)setDosis:(int)p_iDose {
+    //Check if there were changes with dosis
+    if([sDosis integerValue]!=p_iDose){//txtDosis.text){
+        txtDose.text=[NSString stringWithFormat:@"%d", p_iDose];
+        sDosis=txtDose.text;
+        
+        btnSave.enabled=TRUE;
+    }
+}
+//END:ModelViewDelegat callbacks
+
+
 
 //BEGIN:Number pad removal handling
 -(void)cancelBoxUnits{
@@ -226,24 +295,31 @@
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue]];
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[txtDose.text integerValue]];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         [appDelegate updatePrescription:p1];
         
     }
+    else if([segue.identifier isEqualToString:@"showUpdateDosisTable"]){
+        
+        NSLog(@"prepareForSegue:showUpdateDosisTable");
+        
+        // Get destination view
+        DosisUpdateTableViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        
+        //Update view fields        
+        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        //Prescription *currPrescription = [appDelegate getCurrentPrescription];
+        //vc.tDosis=currPrescription.tDosis;
+        vc.tDosis=[sDosis integerValue];
+    }
+    
+    
 }
 
-
-// This method is
--(Boolean) validateForm{
-    Boolean bValidForm=TRUE;
-    
-    
-    
-    return bValidForm;
-}
 
 #pragma mark - Table view data source
 /* Not necessary because is a static table
