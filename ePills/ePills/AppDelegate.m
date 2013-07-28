@@ -58,16 +58,23 @@ static AppDelegate *sharedInstance;
 }
 
 //Update one item of the prescription list
--(void) updatePrescription:Prescription{
+-(void) updatePrescription:p_Prescription{
     NSLog(@"updatePrescription:%d",idxPrescriptions);
     
     //Remove old prescription
     [arrPrescriptions removeObjectAtIndex:idxPrescriptions];
     //Insert new prescription
-    [arrPrescriptions insertObject:Prescription atIndex:idxPrescriptions];
+    [arrPrescriptions insertObject:p_Prescription atIndex:idxPrescriptions];
     
 }
 
+//Add one item of the prescription list
+-(void) addPrescription:p_Prescription{
+
+    //Insert new prescription
+    [arrPrescriptions addObject:p_Prescription];
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

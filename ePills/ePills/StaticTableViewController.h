@@ -7,17 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StaticTableViewController.h"
+//#import "StaticTableViewController.h"
 #import "Prescription.h"
 
-@interface StaticTableViewController : UITableViewController
+//Callback method declaration
+@protocol ModalViewDelegate
 
+- (void)setDosis:(int)p_iDose;
+
+@end
+
+//Implements ModalViewDelegate bacause another view calls one of its methods
+@interface StaticTableViewController : UITableViewController <ModalViewDelegate>{
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
-@property (weak, nonatomic) IBOutlet UITextField *txtDosis;
+@property (weak, nonatomic) IBOutlet UITextField *txtUnitsTaken;
 
-@property enum DosisType tDosis;
+
+@property (nonatomic, strong) NSString *sName;
+@property (nonatomic, strong) NSString *sBoxUnits;
+@property (nonatomic, strong) NSString *sUnitsTaken;
+@property (nonatomic, strong) NSString *sDosis;
+//@property enum DosisType tDosis;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(StaticTableViewController *) sharedViewController;

@@ -155,8 +155,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Set the current seleted index timer
-    //idxPrescriptions=indexPath.item;
     
     if(tDosis!=indexPath.row){
     

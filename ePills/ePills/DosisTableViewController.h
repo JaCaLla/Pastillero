@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Prescription.h"
 
+@protocol ModalViewDelegate;
+
 @interface DosisTableViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
     
-   NSArray *arrDosis;
+    id<ModalViewDelegate> delegate;
+    
+    NSArray *arrDosis;
 }
 
+@property id<ModalViewDelegate> delegate;
 @property NSArray *arrDosis;
-@property enum DosisType tDosis;
 
+@property enum DosisType tDosis;
 
 @end

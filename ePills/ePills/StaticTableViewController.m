@@ -7,6 +7,10 @@
 //
 
 #import "StaticTableViewController.h"
+#import "Prescription.h"
+#import "AppDelegate.h"
+#import "DosisUpdateTableViewController.h"
+#import "Constants.h"
 
 static StaticTableViewController *sharedInstance;
 
@@ -18,11 +22,17 @@ static StaticTableViewController *sharedInstance;
 
 @implementation StaticTableViewController
 
+@synthesize btnSave;
 @synthesize txtName;
 @synthesize txtBoxUnits;
-@synthesize txtDosis;
+@synthesize txtUnitsTaken;
+//@synthesize txtDose;
 
-@synthesize tDosis;
+
+@synthesize sName;
+@synthesize sBoxUnits;
+@synthesize sUnitsTaken;
+@synthesize sDosis;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,9 +61,27 @@ static StaticTableViewController *sharedInstance;
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-
+    //Initialize navigation bar buttons
+    btnSave.enabled=FALSE;
+    
+    //Get current prescription from delegate (Model)
+    //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    //Prescription *currPrescription = [appDelegate getCurrentPrescription];
+    
+    sName=@""; //currPrescription.sName;
+    sBoxUnits=@"";//[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
+    sUnitsTaken=@"";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
+    sDosis=[NSString stringWithFormat:@"%d", EightHours];
+    
+    //tDosis=currPrescription.tDosis;
+    
+    
+    //Initialize fields
+    txtName.text= sName;
+    txtBoxUnits.text=sBoxUnits;
+    txtUnitsTaken.text=sUnitsTaken;
+    
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
     UIToolbar* numberToolbarBoxUnits = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
@@ -65,47 +93,201 @@ static StaticTableViewController *sharedInstance;
                                    nil];
     [numberToolbarBoxUnits sizeToFit];
     txtBoxUnits.inputAccessoryView = numberToolbarBoxUnits;
-
+    
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
     UIToolbar* numberToolbarDosis = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbarDosis.barStyle = UIBarStyleBlackTranslucent;
     numberToolbarDosis.items = [NSArray arrayWithObjects:
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelDosis)],
-                                   [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithDosis)],
-                                   nil];
+                                [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
+                                [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                                [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
+                                nil];
     [numberToolbarDosis sizeToFit];
-    txtDosis.inputAccessoryView = numberToolbarDosis;
+    txtUnitsTaken.inputAccessoryView = numberToolbarDosis;
     //END:Number pad removal handling
 }
 
+//BEGIN:ModelViewDelegat callbacks
+- (void)setDosis:(int)p_iDose {
+    //Check if there were changes with dosis
+    if([sDosis integerValue]!=p_iDose){//txtDosis.text){
+        sDosis=[NSString stringWithFormat:@"%d", p_iDose];
+        
+        btnSave.enabled=TRUE;
+    }
+}
+//END:ModelViewDelegat callbacks
+
+
+
 //BEGIN:Number pad removal handling
 -(void)cancelBoxUnits{
+    //Restore old value
+    txtBoxUnits.text = sBoxUnits;
+    
+    // Hide keypad
     [txtBoxUnits resignFirstResponder];
-    txtBoxUnits.text = @"";
 }
 
 -(void)doneWithBoxUnits{
-    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
+    // Hide keyboard
     [txtBoxUnits resignFirstResponder];
+    
+    //Check if Box units is empty
+    if([txtBoxUnits.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_BOXUNITS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtBoxUnits.text= sBoxUnits;
+        
+        //Disable Save button
+        btnSave.enabled=FALSE;
+    }
+    //Check if Box units value is greater than 0
+    else if([txtBoxUnits.text integerValue]<MIN_BOXUNITS
+            || [txtBoxUnits.text integerValue]>MAX_BOXUNITX){
+        
+        NSString *sErrMessage = [NSString stringWithFormat:ERR_BOUXUNITS_OUTOFRANGE,MIN_BOXUNITS,MAX_BOXUNITX];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:sErrMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtBoxUnits.text= sBoxUnits;
+        
+    }
+    else if([txtName.text length]==0 ||
+            [txtUnitsTaken.text length]==0){
+        // Do not do anything there are still textboxes pending to fill
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtBoxUnits.text!= sBoxUnits);
+        }
+        // Store the value for future recover
+        sBoxUnits=txtBoxUnits.text;
+    }
+    
 }
 
--(void)cancelDosis{
-    [txtDosis resignFirstResponder];
-    txtDosis.text = @"";
+-(void)cancelUnitsTaken{
+    //Restore old value
+    txtUnitsTaken.text = sBoxUnits;
+    
+    // Hide keypad
+    [txtUnitsTaken resignFirstResponder];
 }
 
--(void)doneWithDosis{
-    //NSString *numberFromTheKeyboard = txtBoxUnits.text;
-    [txtDosis resignFirstResponder];
+-(void)doneWithUnitsTaken{
+    // Hide keyboard
+    [txtUnitsTaken resignFirstResponder];
+    
+    //Check if Box units is empty
+    if([txtUnitsTaken.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_UNITSTAKEN_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtUnitsTaken.text= sBoxUnits;
+        
+        //Disable Save button
+        btnSave.enabled=FALSE;
+    }
+    //Check if Box units value is 0
+    else if([txtUnitsTaken.text integerValue]==0){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_UNITSTAKEN_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtUnitsTaken.text= sUnitsTaken;
+        
+    }
+    //Check Box units text field is filled
+    else if([txtBoxUnits.text integerValue]==0){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_BOXUNITS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtUnitsTaken.text= sUnitsTaken;
+        
+    }
+    //Check if dosis is greater than box units
+    else if([txtUnitsTaken.text integerValue]>[txtBoxUnits.text integerValue]){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtUnitsTaken.text= sUnitsTaken;
+    }
+    else if([txtBoxUnits.text length]==0 ||
+            [txtName.text length]==0){
+        // Do not do anything there are still textboxes pending to fill
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtUnitsTaken.text!= sUnitsTaken);
+        }
+        // Store the value for future recover
+        sUnitsTaken=txtUnitsTaken.text;
+        
+    }
+    
+
 }
 //BEGIN:Number pad removal handling
 
+
 //BEGIN:Keyboard removal handling
-- (IBAction)textFieldReturn:(id)sender {
+- (IBAction)btnNameDidEndOnExit:(id)sender {
+    //Check if medicine name is not emty
+    if([txtName.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_NAME_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtName.text= sName;
+        
+    }
+    else if([txtBoxUnits.text length]==0 ||
+            [txtUnitsTaken.text length]==0){
+        // Do not do anything there are still textboxes pending to fill
+    }
+    else{
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtName.text!= sName);
+        }
+        // Store the value for future recover
+        sName=txtName.text;
+    }
+    
+    // Hide keyboard
     [sender resignFirstResponder];
 }
 //END:Keyboard removal handling
+
 
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +295,38 @@ static StaticTableViewController *sharedInstance;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"backFromAddSave"]){
+        
+        NSLog(@"prepareForSegue:backFromAddSave");
+        
+        //Create a new prescription object
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        
+        //Notify the model
+        AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        [appDelegate addPrescription:p1];
+        
+    }
+    else if([segue.identifier isEqualToString:@"showAddDosisTable"]){
+        
+        NSLog(@"prepareForSegue:showAddDosisTable");
+        
+        // Get destination view
+        DosisUpdateTableViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        
+        //Update view fields
+        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        //Prescription *currPrescription = [appDelegate getCurrentPrescription];
+        //vc.tDosis=currPrescription.tDosis;
+        vc.tDosis=[sDosis integerValue];
+    }
+    
+    
+}
+
 
 #pragma mark - Table view data source
 /*-

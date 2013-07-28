@@ -35,6 +35,9 @@
 -(Prescription*) getCurrentPrescription;
 
 //Update one item of the prescription list
--(void) updatePrescription:Prescription;
+-(void) updatePrescription:p_Prescription;
+
+//Update one item of the prescription list
+-(void) addPrescription:p_Prescription;
 
 @end

@@ -25,22 +25,3 @@
 
 @end
 
-/*
- 
- #import <UIKit/UIKit.h>
- 
- @protocol ModalViewDelegate;
- 
- @interface SampleViewController : UIViewController {
- id<ModalViewDelegate> delegate;
- 
- UIButton *dismissViewButton;
- }
- 
- @property (nonatomic, assign) id<ModalViewDelegate> delegate;
- @property (nonatomic, retain) IBOutlet UIButton *dismissViewButton;
- 
- - (IBAction)dismissView:(id)sender;
- 
- @end
- */

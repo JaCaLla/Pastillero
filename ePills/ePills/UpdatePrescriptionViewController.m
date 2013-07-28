@@ -10,6 +10,7 @@
 #import "Prescription.h"
 #import "AppDelegate.h"
 #import "DosisUpdateTableViewController.h"
+#import "Constants.h"
 
 static UpdatePrescriptionViewController *sharedInstance;
 
@@ -208,7 +209,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     if([txtUnitsTaken.text length]==0){
         // Show messagebox
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_DOSIS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                                                         message:ERR_UNITSTAKEN_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -222,7 +223,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     else if([txtUnitsTaken.text integerValue]==0){
         
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_DOSIS_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                                                         message:ERR_UNITSTAKEN_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -234,7 +235,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     else if([txtUnitsTaken.text integerValue]>[txtBoxUnits.text integerValue]){
         
         UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_DOSIS_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                                                         message:ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
         
         [msgAlert show];
         

@@ -12,7 +12,7 @@
 
 @interface DosisTableViewController (){
     
-    int idxSelecteDose;
+    //int idxSelecteDose;
 }
 
 @end
@@ -20,6 +20,7 @@
 
 @implementation DosisTableViewController
 
+@synthesize delegate;
 @synthesize arrDosis;
 @synthesize tDosis;
 
@@ -44,59 +45,26 @@
     //idxSelecteDose=EightHours;
     
 
-  /*
-    self.navigationItem.title = @"Recipe Book";
-
-    self.navigationItem.hidesBackButton = YES;
-    
-    UIImage* image = [UIImage imageNamed:@"button_back.png"];
-    CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    UIButton* backbtn = [[UIButton alloc] initWithFrame:frame];
-    [backbtn setBackgroundImage:image forState:UIControlStateNormal];
-    [backbtn setShowsTouchWhenHighlighted:YES];
-    [backbtn setFrame:frame];
-    backbtn.titleLabel.text = @"back";
-    [backbtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem* backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backbtn];
-    [self.navigationItem setLeftBarButtonItem:backButtonItem];
-    
-   */
-    
-    //UIBarButtonItem *btnDone = [[UIBarButtonItem alloc] initWithTitle:@"I am done" style:UIBarButtonItemStyleBordered target:self action:nil];
-    //UIImage *stretchable = [[UIImage imageNamed:@"StretchableImage.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:16];
-    //UIImage* image = [UIImage imageNamed:@"button_back.png"];
-    //CGRect frame = CGRectMake(0, 0, image.size.width, image.size.height);
-
-    //[btnDone setBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    //[self.navigationItem setRightBarButtonItem:btnDone];
-   
-    //WORKS BUT FAILS THE FORM BUTTON
-    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStyleBordered target:self action:@selector(Back)];
-    //self.navigationItem.leftBarButtonItem = backButton;
-/*
-    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage *backBtnImage = [UIImage imageNamed:@"button_back.png"]  ;
-    [backBtn setBackgroundImage:backBtnImage forState:UIControlStateNormal];
-    //[backBtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
-    backBtn.frame = CGRectMake(0, 0, backBtnImage.size.width, backBtnImage.size.height);
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithCustomView:backBtn] ;
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-*/
 }
 
-- (IBAction)Back
-{
-    [self dismissViewControllerAnimated:YES completion:nil]; // ios 6
+//Capture when Update navigation back key is pressed
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+    }
+    
+    //Provive dosis to delegated view (UpdatePrescriptionViewController)
+    [delegate setDosis:tDosis];
+    
+    [super viewWillDisappear:tDosis];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 #pragma mark - Table view data source
@@ -186,23 +154,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    // <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
-    //idxSelecteDose = indexPath.row;
-    tDosis = indexPath.row;
-    
-    [tableView reloadData];
-    
-    NSLog(@"Cell selected:%d",indexPath.row);
-    
-    StaticTableViewController *viewController = [StaticTableViewController sharedViewController];
-    viewController.tDosis=indexPath.row;
+    if(tDosis!=indexPath.row){
+        
+        // Mark the cell
+        //idxSelecteDose=indexPath.row;
+        tDosis=indexPath.row;
+        //Refresh whole table
+        [self.tableView reloadData];
+        
+        //Notify UpdatePrescriptionViewController
+        // UpdatePrescriptionViewController *vc = [UpdatePrescriptionViewController sharedViewController];
+        // vc.sDosis=[NSString stringWithFormat:@"%d", indexPath.item];
+        
+        NSLog(@"Row Selected = %i",indexPath.item);
+    }
 
     
 }

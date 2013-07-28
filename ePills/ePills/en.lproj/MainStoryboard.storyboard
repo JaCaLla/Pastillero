@@ -160,7 +160,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
-                                                        <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEndOnExit" id="g1e-aA-fJN"/>
+                                                        <action selector="btnNameDidEndOnExit:" destination="0j9-Ez-7Vn" eventType="editingDidEndOnExit" id="bRB-bt-nGJ"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -227,7 +227,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="TXc-lZ-7Mm" kind="push" id="ZKn-vZ-8yr"/>
+                                                        <segue destination="TXc-lZ-7Mm" kind="push" identifier="showAddDosisTable" id="ZKn-vZ-8yr"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
@@ -270,9 +270,6 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    <connections>
-                                                        <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="ayA-3w-rrz"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -368,15 +365,16 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="0HL-ce-enI"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oyY-vB-0bs">
                             <connections>
-                                <segue destination="2" kind="modal" identifier="backFromAddPrescription" id="fhH-Wu-IeE"/>
+                                <segue destination="2" kind="modal" identifier="backFromAddSave" id="fhH-Wu-IeE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kFM-Ro-NHP"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="Yz8-eu-ohL"/>
-                        <outlet property="txtDosis" destination="3G9-KO-zQ2" id="BZi-W1-khT"/>
-                        <outlet property="txtName" destination="3dc-qY-FxA" id="6Pp-ox-E1A"/>
+                        <outlet property="btnSave" destination="kFM-Ro-NHP" id="PCY-ew-hQp"/>
+                        <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="cV2-8W-PxC"/>
+                        <outlet property="txtName" destination="3dc-qY-FxA" id="DEd-pn-3Fh"/>
+                        <outlet property="txtUnitsTaken" destination="3G9-KO-zQ2" id="Kg9-Wm-XkA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46k-Ql-HJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -780,10 +778,11 @@
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="textFieldReturn:"/>
+                <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDosis" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
@@ -800,7 +799,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnUpdatePrescription:"/>
                 <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
             </relationships>
