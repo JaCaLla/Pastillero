@@ -34,6 +34,9 @@
 // Returns the current selected prescription
 -(Prescription*) getCurrentPrescription;
 
+//Remove the current prescirption
+-(void) deleteCurrentPrescription;
+
 //Update one item of the prescription list
 -(void) updatePrescription:p_Prescription;
 

@@ -35,6 +35,7 @@
 //@property enum DosisType tDosis;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(UpdatePrescriptionViewController *) sharedViewController;

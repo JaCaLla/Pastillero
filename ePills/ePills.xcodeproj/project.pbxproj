@@ -32,6 +32,8 @@
 		5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65D617889BD300ED59D1 /* InfoPlist.strings */; };
 		5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65DA17889BD300ED59D1 /* ePillsTests.m */; };
 		5ACC65E517889C0200ED59D1 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65E417889C0200ED59D1 /* TODO */; };
+		5AEB48C117A6FD1200A71EE8 /* buttonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */; };
+		5AEB48C317A6FD1800A71EE8 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEB48C217A6FD1800A71EE8 /* button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		5ACC65D917889BD300ED59D1 /* ePillsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ePillsTests.h; sourceTree = "<group>"; };
 		5ACC65DA17889BD300ED59D1 /* ePillsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ePillsTests.m; sourceTree = "<group>"; };
 		5ACC65E417889C0200ED59D1 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHighlighted.png; sourceTree = "<group>"; };
+		5AEB48C217A6FD1800A71EE8 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,8 @@
 				5ACC65B217889BD300ED59D1 /* InfoPlist.strings */,
 				5ACC65B517889BD300ED59D1 /* main.m */,
 				5ACC65B717889BD300ED59D1 /* ePills-Prefix.pch */,
+				5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */,
+				5AEB48C217A6FD1800A71EE8 /* button.png */,
 				5ACC65BB17889BD300ED59D1 /* Default.png */,
 				5ACC65BD17889BD300ED59D1 /* Default@2x.png */,
 				5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */,
@@ -314,6 +320,8 @@
 				5ACC65C017889BD300ED59D1 /* Default-568h@2x.png in Resources */,
 				5ACC65C317889BD300ED59D1 /* MainStoryboard.storyboard in Resources */,
 				5ACC65E517889C0200ED59D1 /* TODO in Resources */,
+				5AEB48C117A6FD1200A71EE8 /* buttonHighlighted.png in Resources */,
+				5AEB48C317A6FD1800A71EE8 /* button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

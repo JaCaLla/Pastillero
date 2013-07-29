@@ -4,10 +4,11 @@ v Create a collection view of the prescriptions
 v Create hardcoded prescriptinons
 v Modify a prescription
     v Update dosis value
-* Add a new prescription
-* Remove a prescription
+v Add a new prescription
+v Remove a prescription
 * Calculate last dosis
 * Program timer
+* Final GUI 
 * Store data in core (sqlite)
 * Capture a picture of the medicine
 * Support for Spanish

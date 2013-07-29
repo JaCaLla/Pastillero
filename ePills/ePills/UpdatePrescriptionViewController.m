@@ -21,6 +21,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @implementation UpdatePrescriptionViewController
 
 @synthesize btnSave;
+@synthesize btnDelete;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
@@ -64,6 +65,11 @@ static UpdatePrescriptionViewController *sharedInstance;
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
     txtDose.enabled=FALSE;
+    // Set the button Text Color
+    //[btnDelete setTitle:@"Click Me!" forState:UIControlStateNormal];
+    [btnDelete setBackgroundImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];
+    [btnDelete setBackgroundImage:[UIImage imageNamed:@"buttonHighlighted.png"] forState:UIControlStateHighlighted];
+
     
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -316,6 +322,11 @@ static UpdatePrescriptionViewController *sharedInstance;
         //Prescription *currPrescription = [appDelegate getCurrentPrescription];
         //vc.tDosis=currPrescription.tDosis;
         vc.tDosis=[sDosis integerValue];
+    } //Remove a prescription
+    else if ([segue.identifier isEqualToString:@"backFromUpdateDelete"]){
+        //Notify the model
+        AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        [appDelegate deleteCurrentPrescription];
     }
     
     

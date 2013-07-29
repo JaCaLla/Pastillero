@@ -57,6 +57,12 @@ static AppDelegate *sharedInstance;
     return [arrPrescriptions objectAtIndex:idxPrescriptions];
 }
 
+//Remove the current prescirption
+-(void) deleteCurrentPrescription{
+    //Remove old prescription
+    [arrPrescriptions removeObjectAtIndex:idxPrescriptions];    
+}
+
 //Update one item of the prescription list
 -(void) updatePrescription:p_Prescription{
     NSLog(@"updatePrescription:%d",idxPrescriptions);
