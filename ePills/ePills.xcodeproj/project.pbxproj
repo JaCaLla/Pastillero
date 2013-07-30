@@ -12,6 +12,7 @@
 		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5AA3F5BF17A2D052001717EB /* DosisUpdateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */; };
+		5AA9385117A80C04003212FC /* testPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9385017A80C04003212FC /* testPrescription.m */; };
 		5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */; };
 		5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057A178931DC008BFF19 /* StaticTableViewController.m */; };
 		5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057D17895C25008BFF19 /* DosisTableViewController.m */; };
@@ -54,6 +55,8 @@
 		5A87E33C17A45395000CADA4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5AA3F5BD17A2D052001717EB /* DosisUpdateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisUpdateTableViewController.h; sourceTree = "<group>"; };
 		5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DosisUpdateTableViewController.m; sourceTree = "<group>"; };
+		5AA9384F17A80C04003212FC /* testPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPrescription.h; sourceTree = "<group>"; };
+		5AA9385017A80C04003212FC /* testPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPrescription.m; sourceTree = "<group>"; };
 		5AB2B78E178C6B36000BA2FA /* UpdatePrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePrescriptionViewController.h; sourceTree = "<group>"; };
 		5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePrescriptionViewController.m; sourceTree = "<group>"; };
 		5ABD0579178931DC008BFF19 /* StaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewController.h; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				5ACC65D917889BD300ED59D1 /* ePillsTests.h */,
 				5ACC65DA17889BD300ED59D1 /* ePillsTests.m */,
+				5AA9384F17A80C04003212FC /* testPrescription.h */,
+				5AA9385017A80C04003212FC /* testPrescription.m */,
 				5ACC65D417889BD300ED59D1 /* Supporting Files */,
 			);
 			path = ePillsTests;
@@ -375,6 +380,7 @@
 				5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */,
 				5A455961178B306700DADEF9 /* Prescription.m in Sources */,
 				5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */,
+				5AA9385117A80C04003212FC /* testPrescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

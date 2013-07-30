@@ -33,4 +33,7 @@ typedef enum DosisType : NSUInteger {
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken;
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken Dosis:(int)p_iDosis;
 
+-(NSDate*) getLastDosisTaken:(NSDate*)p_dateFrom;
+-(NSString*) getStringLastDosisTaken:(NSDate*)p_dateFrom;
+
 @end

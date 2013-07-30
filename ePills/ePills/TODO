@@ -6,10 +6,10 @@ v Modify a prescription
     v Update dosis value
 v Add a new prescription
 v Remove a prescription
-* Calculate last dosis
-* Program timer
+v Calculate last dosis
+* Refill
+* Next dosis (Program timer)
 * Final GUI 
 * Store data in core (sqlite)
-* Capture a picture of the medicine
 * Support for Spanish
 * Advise for app punctuation

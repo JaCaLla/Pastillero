@@ -26,6 +26,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
 @synthesize txtDose;
+@synthesize lblLastDosis;
 
 
 @synthesize sName;
@@ -88,6 +89,8 @@ static UpdatePrescriptionViewController *sharedInstance;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
     txtDose.text=sDosis;
+    lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
+
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -116,21 +119,8 @@ static UpdatePrescriptionViewController *sharedInstance;
 
 -(void) viewWillAppear:(BOOL)animated {
 
-
-    /*
-    //Check if there were changes with dosis
-    if(sDosis!=txtDosis.text){
-        txtDosis.text=sDosis;
-        btnSave.enabled=TRUE;
-    }
-    */
     [super viewWillAppear:animated];
- /*
-    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
-        // back button was pressed.  We know this is true because self is no longer
-        // in the navigation stack.
-    }
-  */
+
 }
 
 //BEGIN:ModelViewDelegat callbacks

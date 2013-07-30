@@ -7,6 +7,7 @@
 //
 
 #import "ePillsTests.h"
+#import "testPrescription.h"
 
 @implementation ePillsTests
 
@@ -26,7 +27,10 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in ePillsTests");
+    testPrescription *test=[[testPrescription alloc]init];
+    [test runTest];
+    
+    //STFail(@"Unit tests are not implemented yet in ePillsTests");
 }
 
 @end

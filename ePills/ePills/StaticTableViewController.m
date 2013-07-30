@@ -26,6 +26,8 @@ static StaticTableViewController *sharedInstance;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
+@synthesize lblLastDosis;
+
 //@synthesize txtDose;
 
 
@@ -114,6 +116,10 @@ static StaticTableViewController *sharedInstance;
         sDosis=[NSString stringWithFormat:@"%d", p_iDose];
         
         btnSave.enabled=TRUE;
+        
+        //Update last dosis
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
     }
 }
 //END:ModelViewDelegat callbacks
@@ -169,6 +175,12 @@ static StaticTableViewController *sharedInstance;
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtBoxUnits.text!= sBoxUnits);
+            
+            //Update last dosis
+            if(btnSave.enabled){
+                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+            }
         }
         // Store the value for future recover
         sBoxUnits=txtBoxUnits.text;
@@ -245,6 +257,12 @@ static StaticTableViewController *sharedInstance;
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtUnitsTaken.text!= sUnitsTaken);
+            
+            //Update last dosis
+            if(btnSave.enabled){
+                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+            }
         }
         // Store the value for future recover
         sUnitsTaken=txtUnitsTaken.text;
@@ -278,6 +296,12 @@ static StaticTableViewController *sharedInstance;
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtName.text!= sName);
+            
+            //Update last dosis
+            if(btnSave.enabled){
+                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+            }
         }
         // Store the value for future recover
         sName=txtName.text;
@@ -302,11 +326,11 @@ static StaticTableViewController *sharedInstance;
         NSLog(@"prepareForSegue:backFromAddSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-        [appDelegate addPrescription:p1];
+        [appDelegate addPrescription:prescription];
         
     }
     else if([segue.identifier isEqualToString:@"showAddDosisTable"]){
