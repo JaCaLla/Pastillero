@@ -586,41 +586,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Picture" id="O2o-zY-Kha">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="36" id="Kij-G9-Py0">
-                                        <rect key="frame" x="0.0" y="362" width="320" height="38"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="35"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfa-31-Qv1">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="XXD-9Z-UCP"/>
-                                                        <constraint firstAttribute="width" constant="300" id="ynA-Nk-KxS"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <state key="normal" title="Remove">
-                                                        <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="2" kind="modal" identifier="backFromUpdateDelete" id="YIF-0J-FhL"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="Tfa-31-Qv1" firstAttribute="centerX" secondItem="Kij-G9-Py0" secondAttribute="centerX" type="default" id="0Dc-Mg-SKq"/>
-                                            <constraint firstItem="Tfa-31-Qv1" firstAttribute="top" secondItem="Kij-G9-Py0" secondAttribute="top" type="default" id="VfH-FG-Hnc"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                     </tableView>
                     <toolbarItems>
@@ -644,7 +609,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btnDelete" destination="Tfa-31-Qv1" id="rE2-OW-crn"/>
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
@@ -792,6 +756,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YIF-0J-FhL"/>
+        <segue reference="jFQ-oY-ha3"/>
     </inferredMetricsTieBreakers>
 </document>
