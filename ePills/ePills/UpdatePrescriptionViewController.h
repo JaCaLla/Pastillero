@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtUnitsTaken;
 @property (weak, nonatomic) IBOutlet UITextField *txtDose;
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
+@property (weak, nonatomic) IBOutlet UILabel *lblRemaining;
+@property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
 
 
 @property (nonatomic, strong) NSString *sName;
@@ -36,7 +38,6 @@
 //@property enum DosisType tDosis;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
-@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDeletePrescription;
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class

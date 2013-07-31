@@ -21,14 +21,14 @@ static UpdatePrescriptionViewController *sharedInstance;
 @implementation UpdatePrescriptionViewController
 
 @synthesize btnSave;
-@synthesize btnDelete;
 @synthesize btnDeletePrescription;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
 @synthesize txtDose;
 @synthesize lblLastDosis;
-
+@synthesize lblRemaining;
+@synthesize lblNextDose;
 
 @synthesize sName;
 @synthesize sBoxUnits;
@@ -67,11 +67,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
     txtDose.enabled=FALSE;
-    // Set the button Text Color
-    //[btnDelete setTitle:@"Click Me!" forState:UIControlStateNormal];
-    [btnDelete setBackgroundImage:[UIImage imageNamed:@"button.png"] forState:UIControlStateNormal];
-    [btnDelete setBackgroundImage:[UIImage imageNamed:@"buttonHighlighted.png"] forState:UIControlStateHighlighted];
-
+ 
     
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -81,10 +77,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
     sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
     sDosis=[NSString stringWithFormat:@"%d", currPrescription.tDosis];
-    
-    //tDosis=currPrescription.tDosis;
-    
-    
+        
 
     //Initialize fields
     txtName.text= sName;
@@ -92,6 +85,9 @@ static UpdatePrescriptionViewController *sharedInstance;
     txtUnitsTaken.text=sUnitsTaken;
     txtDose.text=sDosis;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
+    lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
+    lblNextDose.text= [NSString stringWithFormat:@"--/---/-- --:--"];
+    
     
     [self.navigationController setToolbarHidden:NO];
 
@@ -325,6 +321,31 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     
 }
+
+- (IBAction)btnDose:(id)sender {
+    //Notify model
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    //lblRemaining.text = [NSString stringWithFormat:@"%d", [appDelegate doseCurrentPrescription]];
+    
+    Prescription *currPrescription = [appDelegate getCurrentPrescription];
+    lblRemaining.text = [NSString stringWithFormat:@"%d", [currPrescription doseCurrentPrescription]];
+    
+    
+    lblNextDose.text = [currPrescription getStringNextDose];
+    
+    //Reload information
+    //[self.tableView reloadData];
+}
+
+- (IBAction)btnRefill:(id)sender {
+    
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    Prescription *currPrescription = [appDelegate getCurrentPrescription];
+    [currPrescription refillBox];
+    lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
+    
+}
+
 
 
 #pragma mark - Table view data source

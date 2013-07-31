@@ -43,4 +43,9 @@
 //Update one item of the prescription list
 -(void) addPrescription:p_Prescription;
 
+//Take a dose
+-(int) doseCurrentPrescription;
+
+
+
 @end

@@ -74,6 +74,15 @@ static AppDelegate *sharedInstance;
     
 }
 
+//Take a dose
+-(int) doseCurrentPrescription{
+    
+    Prescription *prescription=[arrPrescriptions objectAtIndex:idxPrescriptions];
+    
+    return [prescription doseCurrentPrescription];
+}
+
+
 //Add one item of the prescription list
 -(void) addPrescription:p_Prescription{
 
