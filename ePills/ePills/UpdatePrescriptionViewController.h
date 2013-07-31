@@ -37,6 +37,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
 @property (weak, nonatomic) IBOutlet UIButton *btnDelete;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDeletePrescription;
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(UpdatePrescriptionViewController *) sharedViewController;

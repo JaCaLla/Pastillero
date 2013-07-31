@@ -198,7 +198,7 @@ static ViewController *sharedInstance;
         vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
         vc.sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
     }
-    else if([segue.identifier isEqualToString:@"updatePrescription2"]){
+   // else if([segue.identifier isEqualToString:@"updatePrescription2"]){
  
         //Notify the model
         //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -215,7 +215,7 @@ static ViewController *sharedInstance;
         //vc.sBoxUnits2=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
         //vc.sUnitsTaken2=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
 
-    }
+ //   }
 }
 
 //end: Methods to implement for fulfill CollectionView Interface

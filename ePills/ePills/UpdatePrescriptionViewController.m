@@ -22,6 +22,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 
 @synthesize btnSave;
 @synthesize btnDelete;
+@synthesize btnDeletePrescription;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
@@ -84,12 +85,15 @@ static UpdatePrescriptionViewController *sharedInstance;
     //tDosis=currPrescription.tDosis;
     
     
+
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
     txtDose.text=sDosis;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
+    
+    [self.navigationController setToolbarHidden:NO];
 
     
     //BEGIN:Number pad removal handling
