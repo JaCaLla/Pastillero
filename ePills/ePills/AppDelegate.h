@@ -15,12 +15,18 @@
     
     // Current Prescription selected
     int idxPrescriptions;
-    
+
+    //Internal timer
+    NSTimer *tmr1SecTimer;
+
 }
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property int idxPrescriptions;
+//Internal timer
+@property NSTimer *tmr1SecTimer;
+
 
 //Array of timers
 @property NSMutableArray *arrPrescriptions;

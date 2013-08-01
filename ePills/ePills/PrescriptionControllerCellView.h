@@ -11,7 +11,7 @@
 @interface PrescriptionControllerCellView : UITableViewCell
 
 
-@property (weak, nonatomic) IBOutlet UILabel *txtDosis;
+@property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
 @property (weak, nonatomic) IBOutlet UILabel *txtName;
 
 

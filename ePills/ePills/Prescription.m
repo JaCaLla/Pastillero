@@ -16,6 +16,9 @@
 @synthesize tDosis;
 @synthesize iRemaining;
 @synthesize dteNextDose;
+@synthesize bPrescriptionHasStarted;
+@synthesize iSecsRemainingNextDose;
+@synthesize bIsNextDoseExpired;
 
 // Define array of seconds depending on doses intervals
 unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*24*2,3600*24*4,3600*24*7,3600*24*14,3600*24*30};
@@ -31,6 +34,8 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.iUnitsTaken=p_iUnitsTaken;
         self.tDosis=EightHours; // By default is EightHours dosis
         self.dteNextDose=nil;
+        self.bPrescriptionHasStarted=false;
+        self.iSecsRemainingNextDose=-1;
         
     }
     return self;
@@ -47,6 +52,8 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.iUnitsTaken=p_iUnitsTaken;
         self.tDosis=p_iDosis;
         self.dteNextDose=nil;
+        self.bPrescriptionHasStarted=false;
+        self.iSecsRemainingNextDose=-1;
     }
     return self;
     
@@ -67,6 +74,8 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     }else{
         dteLastDosis = [p_dateFrom dateByAddingTimeInterval:uiSecsShift];
     }
+    
+    bIsNextDoseExpired=false;
     
     return dteLastDosis;
     
@@ -91,13 +100,22 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         // Calculate next dose
         NSDate* now = [NSDate date];
         dteNextDose = [now dateByAddingTimeInterval:arrSecs[self.tDosis]];
+        NSTimeInterval secondsBetween = [dteNextDose timeIntervalSinceDate:now];
+        iSecsRemainingNextDose=secondsBetween;
     }
+    
+    //Start dose prescription
+    bPrescriptionHasStarted=true;
     
     return self.iRemaining;
 }
 
 //Returns next dosis date in string format
 -(NSString *) getStringNextDose{
+    
+    //Check if prescription has not started
+    if(!bPrescriptionHasStarted)
+        return @"--/---/-- --:--";
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
     [dateFormat setDateFormat:@"dd/MMM/yyyy hh:mm"];
@@ -107,6 +125,34 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 //Refills the box: set iRemaining to iBoxUnits
 -(void) refillBox{
     iRemaining=iBoxUnits;
+}
+
+-(NSString*) getStringRemaining{
+    
+    int iDays,iHours,iMins,iSecs;
+    int iModulus;
+    NSString *strRemainingDDHHMMSS=@"";
+    
+    iDays=iSecsRemainingNextDose/86400;
+    iModulus=iSecsRemainingNextDose%86400;
+    iHours=iModulus/3600;
+    iModulus=iModulus%3600;
+    iMins=iModulus/60;
+    iSecs=iModulus%60;
+    
+    if(!bPrescriptionHasStarted)
+        return strRemainingDDHHMMSS;
+    
+    if(iDays>0)
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%d Day(s) %02d:%02d:%02d",iDays,iHours,iMins,iSecs ];
+    else if(iHours>0)
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d:%02d:%02d",iHours,iMins,iSecs];
+    else if(iMins>0)
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d:%02d",iMins,iSecs ];
+    else
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d",iSecs ];
+    
+    return strRemainingDDHHMMSS;
 }
 
 

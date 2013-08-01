@@ -139,7 +139,6 @@ static ViewController *sharedInstance;
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *CellIdentifier = @"CellPrescriptionId";
-//    PrescriptionControllerCellView *tmrCurrent;
     
     PrescriptionControllerCellView *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -148,13 +147,10 @@ static ViewController *sharedInstance;
    
     Prescription* tmrCurrent=[arrPrescriptions objectAtIndex:[indexPath row]];
     
-    //[[cell textLabel]setText:[NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item]];
-    
-    //[cell.txtName setText:tmrCurrent.sName];
     [cell.txtName setText:[NSString stringWithFormat:@"%@[%d] UT:%d D:%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken,tmrCurrent.tDosis]];
-    //cell.txtDosis.text=[NSString stringWithFormat:@"%d",tmrCurrent.iDosis];
+    [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
     
-    
+
     return cell;
     
 }
@@ -230,6 +226,20 @@ static ViewController *sharedInstance;
     NSLog(@"buttonUpdatePrescription");
 }
 
+//Refresh view. Request AppDelegate for the array of prescriptions and update the view
+-(void) updateView{
+    
+    //Request to AppDelegate the array of timers
+    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+    NSArray *arrCoreTimers = [appDelegate allPrescriptions];
+    
+    // Array is only copied when the differs from the amount of timers defined in the AppDelegate
+    if([arrPrescriptions count]!=[arrCoreTimers count])
+        arrPrescriptions = [arrCoreTimers mutableCopy];
+    
+    // Reload table data
+    [self.tbvPrescriptions reloadData];
+}
 
 
 

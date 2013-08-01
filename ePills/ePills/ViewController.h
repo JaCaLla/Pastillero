@@ -35,6 +35,7 @@
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(ViewController *) sharedViewController;
 
-
+//Refresh the view
+-(void) updateView;
 
 @end

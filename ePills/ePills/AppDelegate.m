@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Prescription.h"
+#import "ViewController.h"
 
 // Defining this object as a singleton View controllers can call its methods
 static AppDelegate *sharedInstance;
@@ -18,6 +19,7 @@ static AppDelegate *sharedInstance;
 
 @synthesize arrPrescriptions;
 @synthesize idxPrescriptions;
+@synthesize tmr1SecTimer;
 
 
 
@@ -28,6 +30,13 @@ static AppDelegate *sharedInstance;
     
     self=[super init];
     sharedInstance=self;
+    
+    //Program internal timer 1 sec
+    tmr1SecTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                    target:self
+                                                  selector:@selector(timerFired:)
+                                                  userInfo:nil
+                                                   repeats:YES];
     
     
     arrPrescriptions = [[NSMutableArray alloc]init];
@@ -78,6 +87,7 @@ static AppDelegate *sharedInstance;
 -(int) doseCurrentPrescription{
     
     Prescription *prescription=[arrPrescriptions objectAtIndex:idxPrescriptions];
+
     
     return [prescription doseCurrentPrescription];
 }
@@ -88,6 +98,51 @@ static AppDelegate *sharedInstance;
 
     //Insert new prescription
     [arrPrescriptions addObject:p_Prescription];
+    
+}
+
+//Internal timer callback
+- (void) timerFired:(NSTimer *) timer {
+    
+    bool stopInternalTimer=TRUE;
+    int iRow=0;
+    
+    //Iterate throught all timers to decrease its value
+    for (Prescription *tmrCurr in arrPrescriptions){
+        //If timer is not still expired
+        if(tmrCurr.iSecsRemainingNextDose>0){
+            //Decrease timer
+            tmrCurr.iSecsRemainingNextDose--;
+            //Invalidate the internal timer stop execution
+            stopInternalTimer=FALSE;
+        }
+        else{
+            if(!tmrCurr.bIsNextDoseExpired && tmrCurr.bPrescriptionHasStarted)
+            {
+                tmrCurr.bIsNextDoseExpired=TRUE;
+                
+                NSString *cellText = [NSString stringWithFormat:@"TIMER EXPIRED!"];
+                NSString *cellText2 =  [NSString stringWithFormat:@"Row #:%d",iRow];
+                
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText
+                                                                message:cellText2
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+        }
+        // Next timer
+        iRow++;
+    }
+    
+    //Stop internal timer
+    //if(stopInternalTimer) [tmr1SecTimer invalidate];
+    
+    //Update all views
+    ViewController *vewControler = [ViewController sharedViewController];
+    [vewControler updateView];
     
 }
 

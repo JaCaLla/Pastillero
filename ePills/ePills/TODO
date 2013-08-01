@@ -9,7 +9,8 @@ v Remove a prescription
 v Calculate last dosis
 v Refill
 * Next dosis 
-  * (Program timer)
+  v (Program timer)
+  * Wake up timer from foreground
 * Final GUI 
 * Store data in core (sqlite)
 * Support for Spanish

@@ -86,7 +86,8 @@ static UpdatePrescriptionViewController *sharedInstance;
     txtDose.text=sDosis;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
-    lblNextDose.text= [NSString stringWithFormat:@"--/---/-- --:--"];
+    lblNextDose.text=[currPrescription getStringNextDose];
+    
     
     
     [self.navigationController setToolbarHidden:NO];
