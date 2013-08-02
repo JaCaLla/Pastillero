@@ -326,7 +326,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 - (IBAction)btnDose:(id)sender {
     //Notify model
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-    //lblRemaining.text = [NSString stringWithFormat:@"%d", [appDelegate doseCurrentPrescription]];
+    [appDelegate doseCurrentPrescription];
     
     Prescription *currPrescription = [appDelegate getCurrentPrescription];
     lblRemaining.text = [NSString stringWithFormat:@"%d", [currPrescription doseCurrentPrescription]];
@@ -334,8 +334,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     lblNextDose.text = [currPrescription getStringNextDose];
     
-    //Reload information
-    //[self.tableView reloadData];
+    
 }
 
 - (IBAction)btnRefill:(id)sender {

@@ -61,11 +61,16 @@ static ViewController *sharedInstance;
     //???
     sharedInstance=self;
     
+    //Request to AppDelegate the array of timers
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-    NSArray *arrCoreTimers = [appDelegate allPrescriptions];
+    //NSArray *arrCoreTimers = [appDelegate allPrescriptions];
+    arrPrescriptions = [appDelegate allPrescriptions];
+    
+    // Array is only copied when the differs from the amount of timers defined in the AppDelegate
+    //if([arrPrescriptions count]!=[arrCoreTimers count])
+    //    arrPrescriptions = [arrCoreTimers mutableCopy];
 
-    arrPrescriptions = [arrCoreTimers mutableCopy];
-    NSLog(@"Timers: %d",[arrPrescriptions count]);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,7 +152,7 @@ static ViewController *sharedInstance;
    
     Prescription* tmrCurrent=[arrPrescriptions objectAtIndex:[indexPath row]];
     
-    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d] UT:%d D:%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken,tmrCurrent.tDosis]];
+    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d] UT:%d D:%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken,tmrCurrent.bIsNextDoseExpired]];
     [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
     
 

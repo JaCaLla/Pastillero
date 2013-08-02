@@ -18,14 +18,18 @@
 
     //Internal timer
     NSTimer *tmr1SecTimer;
+    Boolean bTimerStarted;
+    
+    //Timestamp when app entered in background mode
+    NSDate *dteEnteredInBackground;
 
 }
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property int idxPrescriptions;
-//Internal timer
 @property NSTimer *tmr1SecTimer;
+//@property NSDate *dteEnteredInBackground;
 
 
 //Array of timers

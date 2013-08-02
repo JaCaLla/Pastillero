@@ -10,6 +10,7 @@
 
 @implementation Prescription
 
+
 @synthesize sName;
 @synthesize iBoxUnits;
 @synthesize iUnitsTaken;
@@ -20,8 +21,9 @@
 @synthesize iSecsRemainingNextDose;
 @synthesize bIsNextDoseExpired;
 
+
 // Define array of seconds depending on doses intervals
-unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*24*2,3600*24*4,3600*24*7,3600*24*14,3600*24*30};
+unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*24*2,3600*24*4,3600*24*7,3600*24*14,3600*24*30,20,60,120};
 
 
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken{
@@ -35,6 +37,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.tDosis=EightHours; // By default is EightHours dosis
         self.dteNextDose=nil;
         self.bPrescriptionHasStarted=false;
+        self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
         
     }
@@ -53,6 +56,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.tDosis=p_iDosis;
         self.dteNextDose=nil;
         self.bPrescriptionHasStarted=false;
+        self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
     }
     return self;
@@ -75,7 +79,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         dteLastDosis = [p_dateFrom dateByAddingTimeInterval:uiSecsShift];
     }
     
-    bIsNextDoseExpired=false;
+    
     
     return dteLastDosis;
     
@@ -106,6 +110,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     
     //Start dose prescription
     bPrescriptionHasStarted=true;
+    bIsNextDoseExpired=false;
     
     return self.iRemaining;
 }
@@ -154,6 +159,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     
     return strRemainingDDHHMMSS;
 }
+
 
 
 @end

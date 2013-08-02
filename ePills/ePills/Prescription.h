@@ -21,7 +21,10 @@ typedef enum DosisType : NSUInteger {
     FourDays,
     OneWeek,
     TwoWeeks,
-    OneMonth
+    OneMonth,
+    ThirtySecs,
+    OneMin,
+    TwoMin
 } ShapeType;
 
 @property NSString *sName;
@@ -31,8 +34,8 @@ typedef enum DosisType : NSUInteger {
 @property int iRemaining;
 @property NSDate *dteNextDose;
 @property bool bPrescriptionHasStarted;
-@property int iSecsRemainingNextDose;
-@property bool bIsNextDoseExpired;
+@property (atomic) int  iSecsRemainingNextDose;
+@property (atomic) bool bIsNextDoseExpired;
 
 
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken;
@@ -44,5 +47,6 @@ typedef enum DosisType : NSUInteger {
 -(NSString *) getStringNextDose;
 -(NSString*) getStringRemaining;
 -(void) refillBox;
+-(void) recalculateSecsRemainingNextDose;
 
 @end

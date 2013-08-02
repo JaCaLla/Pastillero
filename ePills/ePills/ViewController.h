@@ -14,8 +14,8 @@
 @interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
     
 
-    NSMutableArray *arrPrescriptions;
-    
+   // NSMutableArray *arrPrescriptions;
+   NSArray *arrPrescriptions;
 
     
 }
@@ -28,7 +28,8 @@
 
 
 //Array of timers
-@property NSMutableArray *arrPrescriptions;
+//@property NSMutableArray *arrPrescriptions;
+@property NSArray *arrPrescriptions;
 
 
 
