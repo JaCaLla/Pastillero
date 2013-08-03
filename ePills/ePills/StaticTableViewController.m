@@ -73,7 +73,7 @@ static StaticTableViewController *sharedInstance;
     
     sName=@""; //currPrescription.sName;
     sBoxUnits=@"";//[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
-    sUnitsTaken=@"";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
+    sUnitsTaken=@"1";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
     sDosis=[NSString stringWithFormat:@"%d", EightHours];
     
     //tDosis=currPrescription.tDosis;
@@ -115,14 +115,26 @@ static StaticTableViewController *sharedInstance;
     if([sDosis integerValue]!=p_iDose){//txtDosis.text){
         sDosis=[NSString stringWithFormat:@"%d", p_iDose];
         
-        btnSave.enabled=TRUE;
-        
+        //Validate form
+        [self validateForm];
+
+    }
+}
+//END:ModelViewDelegat callbacks
+
+-(void)  validateForm{
+    
+    btnSave.enabled=([sName length]>0) && ([sBoxUnits length]>0);
+    
+    //Update next dosis
+    if([txtBoxUnits.text length]>0){
         //Update last dosis
         Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
         lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
     }
+    
 }
-//END:ModelViewDelegat callbacks
+
 
 
 
@@ -167,20 +179,20 @@ static StaticTableViewController *sharedInstance;
         txtBoxUnits.text= sBoxUnits;
         
     }
-    else if([txtName.text length]==0 ||
-            [txtUnitsTaken.text length]==0){
-        // Do not do anything there are still textboxes pending to fill
-    }
+//    else if([txtName.text length]==0 ||
+//            [txtUnitsTaken.text length]==0){
+//        // Do not do anything there are still textboxes pending to fill
+//    }
     else{
+        
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtBoxUnits.text!= sBoxUnits);
             
-            //Update last dosis
-            if(btnSave.enabled){
-                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
-                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
-            }
+
         }
         // Store the value for future recover
         sBoxUnits=txtBoxUnits.text;
@@ -249,20 +261,19 @@ static StaticTableViewController *sharedInstance;
         //Recover old value
         txtUnitsTaken.text= sUnitsTaken;
     }
-    else if([txtBoxUnits.text length]==0 ||
-            [txtName.text length]==0){
-        // Do not do anything there are still textboxes pending to fill
-    }
+//    else if([txtBoxUnits.text length]==0 ||
+//            [txtName.text length]==0){
+//        // Do not do anything there are still textboxes pending to fill
+//    }
     else{
+        
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtUnitsTaken.text!= sUnitsTaken);
             
-            //Update last dosis
-            if(btnSave.enabled){
-                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
-                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
-            }
         }
         // Store the value for future recover
         sUnitsTaken=txtUnitsTaken.text;
@@ -288,11 +299,14 @@ static StaticTableViewController *sharedInstance;
         txtName.text= sName;
         
     }
-    else if([txtBoxUnits.text length]==0 ||
-            [txtUnitsTaken.text length]==0){
-        // Do not do anything there are still textboxes pending to fill
-    }
+//    else if([txtBoxUnits.text length]==0 ||
+//            [txtUnitsTaken.text length]==0){
+//        // Do not do anything there are still textboxes pending to fill
+//    }
     else{
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtName.text!= sName);

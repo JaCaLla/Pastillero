@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Prescription.h"
+#import "Database.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     //Array of timers
@@ -22,6 +24,8 @@
     
     //Timestamp when app entered in background mode
     NSDate *dteEnteredInBackground;
+    
+
 
 }
 
@@ -33,7 +37,7 @@
 
 
 //Array of timers
-@property NSMutableArray *arrPrescriptions;
+@property (strong, nonatomic) NSMutableArray *arrPrescriptions;
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(AppDelegate *) sharedAppDelegate;

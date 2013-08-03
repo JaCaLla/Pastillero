@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Prescription : NSObject
+@interface Prescription : NSObject <NSCoding>
 
 typedef enum DosisType : NSUInteger {
     OneHour,
@@ -47,6 +47,6 @@ typedef enum DosisType : NSUInteger {
 -(NSString *) getStringNextDose;
 -(NSString*) getStringRemaining;
 -(void) refillBox;
--(void) recalculateSecsRemainingNextDose;
+//-(void) recalculateSecsRemainingNextDose;
 
 @end

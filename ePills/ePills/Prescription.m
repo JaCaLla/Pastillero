@@ -161,5 +161,33 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 }
 
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.sName =[ decoder decodeObjectForKey:@"Name"];
+        self.iBoxUnits = [decoder decodeInt32ForKey:@"BoxUnits"];
+        self.iUnitsTaken = [decoder decodeInt32ForKey:@"UnitsTaken"];
+        self.tDosis = [decoder decodeInt32ForKey:@"Dosis"];
+        self.iRemaining = [decoder decodeInt32ForKey:@"Remaining"];
+        self.dteNextDose = [decoder decodeObjectForKey:@"NextDose"];
+        self.bPrescriptionHasStarted = [decoder decodeBoolForKey:@"PrescriptionHasStarted"];
+        self.iSecsRemainingNextDose = [decoder decodeInt32ForKey:@"SecsRemainingNextDose"];
+        self.bIsNextDoseExpired = [decoder decodeBoolForKey:@"IsNextDoseExpired"];
+    }
+    return self;
+}
+
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:self.sName forKey:@"Name"];
+    [encoder encodeInt32:self.iBoxUnits forKey:@"BoxUnits"];
+    [encoder encodeInt32:self.iUnitsTaken forKey:@"UnitsTaken"];
+    [encoder encodeInt32:self.tDosis forKey:@"Dosis"];
+    [encoder encodeInt32:self.iRemaining forKey:@"Remaining"];
+    [encoder encodeObject:self.dteNextDose forKey:@"NextDose"];
+    [encoder encodeBool:self.bPrescriptionHasStarted forKey:@"PrescriptionHasStarted"];
+    [encoder encodeInt32:self.iSecsRemainingNextDose forKey:@"SecsRemainingNextDose"];
+    [encoder encodeBool:self.bIsNextDoseExpired forKey:@"IsNextDoseExpired"];
+}
 
 @end
