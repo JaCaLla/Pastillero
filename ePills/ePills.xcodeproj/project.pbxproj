@@ -11,6 +11,8 @@
 		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
+		5A8D107317AD5AAB00E6702E /* App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8D107217AD5AAB00E6702E /* App@2x.png */; };
+		5A8D107517AD5AB800E6702E /* App.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8D107417AD5AB800E6702E /* App.png */; };
 		5AA3F5BF17A2D052001717EB /* DosisUpdateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */; };
 		5AA79FF917AC199E0078DC57 /* Prescriptions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AA79FF717AC199E0078DC57 /* Prescriptions.xcdatamodeld */; };
 		5AA9385117A80C04003212FC /* testPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9385017A80C04003212FC /* testPrescription.m */; };
@@ -34,8 +36,6 @@
 		5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65D617889BD300ED59D1 /* InfoPlist.strings */; };
 		5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65DA17889BD300ED59D1 /* ePillsTests.m */; };
 		5ACC65E517889C0200ED59D1 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65E417889C0200ED59D1 /* TODO */; };
-		5AEB48C117A6FD1200A71EE8 /* buttonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */; };
-		5AEB48C317A6FD1800A71EE8 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AEB48C217A6FD1800A71EE8 /* button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,8 @@
 		5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionControllerCellView.h; sourceTree = "<group>"; };
 		5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionControllerCellView.m; sourceTree = "<group>"; };
 		5A87E33C17A45395000CADA4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		5A8D107217AD5AAB00E6702E /* App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App@2x.png"; sourceTree = "<group>"; };
+		5A8D107417AD5AB800E6702E /* App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App.png; sourceTree = "<group>"; };
 		5AA3F5BD17A2D052001717EB /* DosisUpdateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisUpdateTableViewController.h; sourceTree = "<group>"; };
 		5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DosisUpdateTableViewController.m; sourceTree = "<group>"; };
 		5AA79FF817AC199E0078DC57 /* Prescriptions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prescriptions.xcdatamodel; sourceTree = "<group>"; };
@@ -75,8 +77,8 @@
 		5ACC65B717889BD300ED59D1 /* ePills-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ePills-Prefix.pch"; sourceTree = "<group>"; };
 		5ACC65B817889BD300ED59D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5ACC65B917889BD300ED59D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5ACC65BB17889BD300ED59D1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5ACC65BD17889BD300ED59D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5ACC65BB17889BD300ED59D1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		5ACC65BD17889BD300ED59D1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../Default@2x.png"; sourceTree = "<group>"; };
 		5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5ACC65C217889BD300ED59D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5ACC65C417889BD300ED59D1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -88,8 +90,6 @@
 		5ACC65D917889BD300ED59D1 /* ePillsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ePillsTests.h; sourceTree = "<group>"; };
 		5ACC65DA17889BD300ED59D1 /* ePillsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ePillsTests.m; sourceTree = "<group>"; };
 		5ACC65E417889C0200ED59D1 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
-		5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonHighlighted.png; sourceTree = "<group>"; };
-		5AEB48C217A6FD1800A71EE8 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,12 +217,12 @@
 		5ACC65B017889BD300ED59D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5A8D107417AD5AB800E6702E /* App.png */,
+				5A8D107217AD5AAB00E6702E /* App@2x.png */,
 				5ACC65B117889BD300ED59D1 /* ePills-Info.plist */,
 				5ACC65B217889BD300ED59D1 /* InfoPlist.strings */,
 				5ACC65B517889BD300ED59D1 /* main.m */,
 				5ACC65B717889BD300ED59D1 /* ePills-Prefix.pch */,
-				5AEB48C017A6FD1200A71EE8 /* buttonHighlighted.png */,
-				5AEB48C217A6FD1800A71EE8 /* button.png */,
 				5ACC65BB17889BD300ED59D1 /* Default.png */,
 				5ACC65BD17889BD300ED59D1 /* Default@2x.png */,
 				5ACC65BF17889BD300ED59D1 /* Default-568h@2x.png */,
@@ -328,8 +328,8 @@
 				5ACC65C017889BD300ED59D1 /* Default-568h@2x.png in Resources */,
 				5ACC65C317889BD300ED59D1 /* MainStoryboard.storyboard in Resources */,
 				5ACC65E517889C0200ED59D1 /* TODO in Resources */,
-				5AEB48C117A6FD1200A71EE8 /* buttonHighlighted.png in Resources */,
-				5AEB48C317A6FD1800A71EE8 /* button.png in Resources */,
+				5A8D107317AD5AAB00E6702E /* App@2x.png in Resources */,
+				5A8D107517AD5AB800E6702E /* App.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

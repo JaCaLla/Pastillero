@@ -10,8 +10,11 @@ v Calculate last dosis
 v Refill
 * Next dosis 
   v (Program timer)
-  * Wake up timer from foreground
+  v Wake up timer from foreground
 * Final GUI 
-* Store data in core (sqlite)
+  v Icons in launch image
+  * Background for table view
+  * Cell information
+v Serialization
 * Support for Spanish
 * Advise for app punctuation
