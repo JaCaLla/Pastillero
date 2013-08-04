@@ -136,7 +136,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     
     int iDays,iHours,iMins,iSecs;
     int iModulus;
-    NSString *strRemainingDDHHMMSS=@"";
+    NSString *strRemainingDDHHMMSS=@"Next dose not set.";
     
     iDays=iSecsRemainingNextDose/86400;
     iModulus=iSecsRemainingNextDose%86400;

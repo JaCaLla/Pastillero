@@ -40,8 +40,9 @@
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-3R-aeT">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="245" id="ax2-a6-QYV"/>
+                                                                <constraint firstAttribute="height" constant="21" id="nDC-iR-L0e"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
@@ -107,6 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="C0B-P7-5vU"/>
                     <connections>
+                        <outlet property="btnSegueUpdate" destination="zru-J6-HGf" id="Dp0-RU-P90"/>
                         <outlet property="tbvPrescriptions" destination="0E8-or-eKH" id="4Xu-R6-r7R"/>
                     </connections>
                 </viewController>
@@ -768,6 +770,60 @@
             <point key="canvasLocation" x="1157" y="-1105"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DosisTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
+        </class>
+        <class className="DosisUpdateTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisUpdateTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StaticTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnDose:"/>
+                <relationship kind="action" name="btnNameEditingDidEd:"/>
+                <relationship kind="action" name="btnRefill:"/>
+                <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtDose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnUpdatePrescription:"/>
+                <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

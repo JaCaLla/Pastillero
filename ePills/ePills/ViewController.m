@@ -66,9 +66,16 @@ static ViewController *sharedInstance;
     //NSArray *arrCoreTimers = [appDelegate allPrescriptions];
     arrPrescriptions = [appDelegate allPrescriptions];
     
-    // Array is only copied when the differs from the amount of timers defined in the AppDelegate
-    //if([arrPrescriptions count]!=[arrCoreTimers count])
-    //    arrPrescriptions = [arrCoreTimers mutableCopy];
+    // Remove table cell separator
+    [self.tbvPrescriptions setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    // Assign our own backgroud for the view
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
+    self.tbvPrescriptions.backgroundColor = [UIColor clearColor];
+    
+    // Add padding to the top of the table view
+    UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
+    self.tbvPrescriptions.contentInset = inset;
 
 
 }
@@ -152,10 +159,22 @@ static ViewController *sharedInstance;
    
     Prescription* tmrCurrent=[arrPrescriptions objectAtIndex:[indexPath row]];
     
-    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d] UT:%d D:%d",tmrCurrent.sName,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken,tmrCurrent.bIsNextDoseExpired]];
-    [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
+    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d]",tmrCurrent.sName,tmrCurrent.iBoxUnits]];
     
+    [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
+    if(tmrCurrent.bPrescriptionHasStarted){
+        cell.lblNextDose.textColor = [UIColor blackColor];
+    }
+    else {
+        cell.lblNextDose.textColor = [UIColor redColor];
+    }
 
+    // Assign our own background image for the cell
+    UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
+    
+    UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:background];
+    cellBackgroundView.image = background;
+    cell.backgroundView = cellBackgroundView;
     return cell;
     
 }
@@ -176,6 +195,24 @@ static ViewController *sharedInstance;
     [self performSegueWithIdentifier:@"updatePrescription2" sender:self.view];
 
     
+}
+
+- (UIImage *)cellBackgroundForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSInteger rowCount = [self tableView:[self tableView] numberOfRowsInSection:0];
+    NSInteger rowCount = [arrPrescriptions count];
+    NSInteger rowIndex = indexPath.row;
+    UIImage *background = nil;
+    
+    if (rowIndex == 0) {
+        background = [UIImage imageNamed:@"cell_top.png"];
+    } else if (rowIndex == rowCount - 1) {
+        background = [UIImage imageNamed:@"cell_bottom.png"];
+    } else {
+        background = [UIImage imageNamed:@"cell_middle.png"];
+    }
+    
+    return background;
 }
 
 
