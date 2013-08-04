@@ -27,14 +27,14 @@
                                             <segue destination="ALV-MI-aKq" kind="modal" identifier="updatePrescription2" id="4xA-77-j71"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="112" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0E8-or-eKH">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0E8-or-eKH">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellPrescriptionId" rowHeight="112" id="7qi-yR-nNt" customClass="PrescriptionControllerCellView">
-                                                <rect key="frame" x="0.0" y="22" width="320" height="112"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellPrescriptionId" rowHeight="70" id="7qi-yR-nNt" customClass="PrescriptionControllerCellView">
+                                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="111"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-3R-aeT">
@@ -58,10 +58,10 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="12" id="8D1-aq-KEp"/>
+                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="10" id="9ry-8v-JGk"/>
                                                     <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="36" id="bzR-Rd-4cm"/>
                                                     <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="37" id="mQb-xV-lU9"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="45" id="yl5-EJ-HTS"/>
+                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="rWx-Fk-LKH"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="lblNextDose" destination="xtx-mJ-lkx" id="fp8-rA-9Ts"/>
