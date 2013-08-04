@@ -27,6 +27,9 @@ static AppDelegate *sharedInstance;
 //Application routines:Begin
 -(id) init{
      NSLog(@"init");
+    
+
+    
     if(sharedInstance){
         NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
     }
@@ -49,8 +52,23 @@ static AppDelegate *sharedInstance;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar_bg"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    
+    // Override point for customization after application launch.
     NSLog(@"didFinishLaunchingWithOptions");
+    
+    
+    // Change the appearance of other navigation button
+    UIImage *barButtonImage = [[UIImage imageNamed:@"button_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 6, 0, 6)];
+    [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    // Change the appearance of back button
+    UIImage *backButtonImage = [[UIImage imageNamed:@"button_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
