@@ -126,7 +126,7 @@
                         <sections>
                             <tableViewSection headerTitle="Medicine" id="e1c-PB-3By">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GZl-Uu-x8v">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GZl-Uu-x8v">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -162,7 +162,7 @@
                                             <constraint firstItem="18y-Qt-g73" firstAttribute="baseline" secondItem="3dc-qY-FxA" secondAttribute="baseline" type="default" id="cKU-q4-giS"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="W27-UU-IUQ">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="W27-UU-IUQ">
                                         <rect key="frame" x="0.0" y="91" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -199,14 +199,18 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Administration" id="C2J-ta-fds">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FrC-bJ-Wa8">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FrC-bJ-Wa8">
                                         <rect key="frame" x="0.0" y="182" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-jp-aOY">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-jp-aOY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="74" id="OyS-Sq-ZEf"/>
+                                                        <constraint firstAttribute="height" constant="40" id="pdf-tf-62J"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -231,13 +235,13 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="3lH-6S-bcl" firstAttribute="top" secondItem="FrC-bJ-Wa8" secondAttribute="top" constant="7" id="Cyo-dk-elu"/>
                                             <constraint firstItem="3lH-6S-bcl" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="22" id="NuF-NU-fmv"/>
-                                            <constraint firstAttribute="trailing" secondItem="JUn-jp-aOY" secondAttribute="trailing" constant="20" type="default" id="jXA-mr-NvG"/>
-                                            <constraint firstItem="JUn-jp-aOY" firstAttribute="centerY" secondItem="FrC-bJ-Wa8" secondAttribute="centerY" type="default" id="lN9-Jh-m2r"/>
-                                            <constraint firstItem="3lH-6S-bcl" firstAttribute="top" secondItem="JUn-jp-aOY" secondAttribute="top" type="default" id="lfG-fb-GHM"/>
+                                            <constraint firstAttribute="trailing" secondItem="JUn-jp-aOY" secondAttribute="trailing" constant="13" id="amb-VI-uk6"/>
+                                            <constraint firstItem="JUn-jp-aOY" firstAttribute="top" secondItem="FrC-bJ-Wa8" secondAttribute="top" constant="4" id="xTu-mq-yH9"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i4H-gj-hFp">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="i4H-gj-hFp">
                                         <rect key="frame" x="0.0" y="227" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -270,7 +274,7 @@
                                             <constraint firstItem="3G9-KO-zQ2" firstAttribute="leading" secondItem="i4H-gj-hFp" secondAttribute="leading" constant="124" id="zEk-fH-MPK"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TpG-mf-zng">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TpG-mf-zng">
                                         <rect key="frame" x="0.0" y="271" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -327,8 +331,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnDisclosure" destination="JUn-jp-aOY" id="1fH-Dh-71d"/>
                         <outlet property="btnSave" destination="kFM-Ro-NHP" id="PCY-ew-hQp"/>
                         <outlet property="lblLastDosis" destination="SUf-bq-Gs8" id="5uC-Y6-2hM"/>
+                        <outlet property="tbvNewPrescription" destination="UPR-zg-m7E" id="zrj-pU-iIy"/>
                         <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="cV2-8W-PxC"/>
                         <outlet property="txtName" destination="3dc-qY-FxA" id="DEd-pn-3Fh"/>
                         <outlet property="txtUnitsTaken" destination="3G9-KO-zQ2" id="Kg9-Wm-XkA"/>
@@ -366,6 +372,9 @@
                     <navigationItem key="navigationItem" title="Dosis" id="umN-Co-1nP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Dj6-Zx-iJK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tbvDoses" destination="1kL-Rg-8YF" id="VaA-X3-Kwg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MpZ-bf-BTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,6 +782,9 @@
     <classes>
         <class className="DosisTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="DosisUpdateTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisUpdateTableViewController.h"/>
@@ -791,8 +803,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tbvNewPrescription" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
@@ -830,6 +844,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jFQ-oY-ha3"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>

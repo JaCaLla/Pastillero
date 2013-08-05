@@ -26,8 +26,8 @@
 		5AA0BFBD17AE31A2002DCB95 /* common_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFBB17AE31A2002DCB95 /* common_bg@2x.png */; };
 		5AA0BFBE17AE31A2002DCB95 /* common_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFBC17AE31A2002DCB95 /* common_bg.png */; };
 		5AA3F5BF17A2D052001717EB /* DosisUpdateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */; };
-		5AA79FF917AC199E0078DC57 /* Prescriptions.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AA79FF717AC199E0078DC57 /* Prescriptions.xcdatamodeld */; };
 		5AA9385117A80C04003212FC /* testPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9385017A80C04003212FC /* testPrescription.m */; };
+		5AB041F317B00D500027A6BF /* cell_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AB041F217B00D500027A6BF /* cell_top@2x.png */; };
 		5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */; };
 		5ABD057B178931DC008BFF19 /* StaticTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057A178931DC008BFF19 /* StaticTableViewController.m */; };
 		5ABD057E17895C25008BFF19 /* DosisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD057D17895C25008BFF19 /* DosisTableViewController.m */; };
@@ -82,9 +82,9 @@
 		5AA0BFBC17AE31A2002DCB95 /* common_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = common_bg.png; sourceTree = "<group>"; };
 		5AA3F5BD17A2D052001717EB /* DosisUpdateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DosisUpdateTableViewController.h; sourceTree = "<group>"; };
 		5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DosisUpdateTableViewController.m; sourceTree = "<group>"; };
-		5AA79FF817AC199E0078DC57 /* Prescriptions.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prescriptions.xcdatamodel; sourceTree = "<group>"; };
 		5AA9384F17A80C04003212FC /* testPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPrescription.h; sourceTree = "<group>"; };
 		5AA9385017A80C04003212FC /* testPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPrescription.m; sourceTree = "<group>"; };
+		5AB041F217B00D500027A6BF /* cell_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_top@2x.png"; sourceTree = "<group>"; };
 		5AB2B78E178C6B36000BA2FA /* UpdatePrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePrescriptionViewController.h; sourceTree = "<group>"; };
 		5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePrescriptionViewController.m; sourceTree = "<group>"; };
 		5ABD0579178931DC008BFF19 /* StaticTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticTableViewController.h; sourceTree = "<group>"; };
@@ -233,7 +233,6 @@
 				5ACC65B017889BD300ED59D1 /* Supporting Files */,
 				5ACC65E417889C0200ED59D1 /* TODO */,
 				5A87E33C17A45395000CADA4 /* Constants.h */,
-				5AA79FF717AC199E0078DC57 /* Prescriptions.xcdatamodeld */,
 			);
 			path = ePills;
 			sourceTree = "<group>";
@@ -251,6 +250,7 @@
 				5AA0BFB217AE2A05002DCB95 /* cell_middle@2x.png */,
 				5AA0BFB317AE2A05002DCB95 /* cell_top_tile.png */,
 				5AA0BFB417AE2A05002DCB95 /* cell_top.png */,
+				5AB041F217B00D500027A6BF /* cell_top@2x.png */,
 				5AA0BFBB17AE31A2002DCB95 /* common_bg@2x.png */,
 				5AA0BFBC17AE31A2002DCB95 /* common_bg.png */,
 				5A8D107417AD5AB800E6702E /* App.png */,
@@ -378,6 +378,7 @@
 				5A7399C317AE47F40068B315 /* navbar_bg.png in Resources */,
 				5A7399D917AE53F90068B315 /* button_normal.png in Resources */,
 				5A7399DD17AE93330068B315 /* button_back.png in Resources */,
+				5AB041F317B00D500027A6BF /* cell_top@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +422,6 @@
 				5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */,
 				5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */,
 				5AA3F5BF17A2D052001717EB /* DosisUpdateTableViewController.m in Sources */,
-				5AA79FF917AC199E0078DC57 /* Prescriptions.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,19 +617,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5AA79FF717AC199E0078DC57 /* Prescriptions.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5AA79FF817AC199E0078DC57 /* Prescriptions.xcdatamodel */,
-			);
-			currentVersion = 5AA79FF817AC199E0078DC57 /* Prescriptions.xcdatamodel */;
-			path = Prescriptions.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5ACC659E17889BD300ED59D1 /* Project object */;
 }

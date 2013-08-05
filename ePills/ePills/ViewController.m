@@ -71,6 +71,8 @@ static ViewController *sharedInstance;
     
     // Assign our own backgroud for the view
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
+    
+    self.tbvPrescriptions.backgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg"]];
     self.tbvPrescriptions.backgroundColor = [UIColor clearColor];
     
     // Add padding to the top of the table view
