@@ -22,6 +22,7 @@
 @synthesize delegate;
 @synthesize arrDosis;
 @synthesize tDosis;
+@synthesize tbvDoses;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -45,8 +46,10 @@
     //Initialize dosis array
     arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
     
-    // Default initialization
-    //idxSelecteDose=EightHours;
+    // Assign our own backgroud for the view
+    UIView* bview = [[UIView alloc] init];
+    bview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg.png"]];
+    [self.tbvDoses setBackgroundView:bview];
 
 }
 

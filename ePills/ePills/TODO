@@ -11,10 +11,11 @@ v Refill
 * Next dosis 
   v (Program timer)
   v Wake up timer from foreground
-* Final GUI 
-  v Icons in launch image
-  * Background for table view
-  * Cell information
+v Final GUI
+  * Icons in launch image
+  v Background for table view
+  v Cell information
 v Serialization
+
 * Support for Spanish
 * Advise for app punctuation

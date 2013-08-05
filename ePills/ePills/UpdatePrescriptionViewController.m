@@ -30,6 +30,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize lblRemaining;
 @synthesize lblNextDose;
 
+
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
@@ -95,7 +96,9 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     
     //Show navigation bar
-    [self.navigationController setToolbarHidden:NO];
+    //[self.navigationController setToolbarHidden:NO];
+      //  tlbBottom.backgroundColor =[UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar.png"]];
+    //tlbBottom.backgroundColor =[UIColor colorRed];
 
     
     //BEGIN:Number pad removal handling
