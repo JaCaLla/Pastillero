@@ -21,6 +21,7 @@
 @interface UpdatePrescriptionViewController : UITableViewController <ModalViewDelegate>{
     
 }
+@property (strong, nonatomic) IBOutlet UITableView *tbvUpdatePrescription;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;

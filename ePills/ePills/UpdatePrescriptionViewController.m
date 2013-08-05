@@ -88,8 +88,13 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
     
+    // Assign our own backgroud for the view
+    UIView* bview = [[UIView alloc] init];
+    bview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg.png"]];
+    [self.tbvUpdatePrescription setBackgroundView:bview];
     
     
+    //Show navigation bar
     [self.navigationController setToolbarHidden:NO];
 
     
