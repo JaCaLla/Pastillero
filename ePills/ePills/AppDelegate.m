@@ -367,6 +367,11 @@ static AppDelegate *sharedInstance;
     NSData * myData = [NSData dataWithContentsOfFile:[self prescriptionsFilename]];
     arrPrescriptions = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
+    //Add a sample prescription when there are not any prescription
+    if([arrPrescriptions count]==0){
+        Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine name" BoxUnits:20 UnitsTaken:1 Dosis:11];
+        [arrPrescriptions addObject:prescription];
+    }
     
     /*
     arrPrescriptions = [[NSMutableArray alloc]init];
