@@ -225,7 +225,7 @@
                                                         <segue destination="TXc-lZ-7Mm" kind="push" identifier="showAddDosisTable" id="ZKn-vZ-8yr"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="69" id="NvT-oL-hRD"/>
                                                     </constraints>
@@ -233,10 +233,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-pk-fnj">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="141" id="XQ1-Y6-2cS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="115" id="3KI-0q-a6R"/>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="baseline" secondItem="3lH-6S-bcl" secondAttribute="baseline" type="default" id="Bk4-XT-XPL"/>
                                             <constraint firstItem="3lH-6S-bcl" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="22" id="NuF-NU-fmv"/>
                                             <constraint firstItem="3lH-6S-bcl" firstAttribute="top" secondItem="FrC-bJ-Wa8" secondAttribute="top" constant="6" id="QTy-3P-Skg"/>
                                             <constraint firstAttribute="trailing" secondItem="JUn-jp-aOY" secondAttribute="trailing" constant="13" id="amb-VI-uk6"/>
@@ -337,6 +347,7 @@
                     <connections>
                         <outlet property="btnDisclosure" destination="JUn-jp-aOY" id="1fH-Dh-71d"/>
                         <outlet property="btnSave" destination="kFM-Ro-NHP" id="PCY-ew-hQp"/>
+                        <outlet property="lblDose" destination="cB9-pk-fnj" id="sEz-XR-IwG"/>
                         <outlet property="lblLastDosis" destination="SUf-bq-Gs8" id="5uC-Y6-2hM"/>
                         <outlet property="tbvNewPrescription" destination="UPR-zg-m7E" id="zrj-pU-iIy"/>
                         <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="cV2-8W-PxC"/>
@@ -523,7 +534,7 @@
                                                         <constraint firstAttribute="width" constant="169" id="11W-Sv-0Ft"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -831,6 +842,7 @@
                 <relationship kind="action" name="btnNameDidEndOnExit:"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tbvNewPrescription" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
@@ -846,12 +858,12 @@
                 <relationship kind="action" name="btnRefill:"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tbvUpdatePrescription" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
             </relationships>

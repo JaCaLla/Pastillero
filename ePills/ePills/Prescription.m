@@ -23,7 +23,7 @@
 
 
 // Define array of seconds depending on doses intervals
-unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*24*2,3600*24*4,3600*24*7,3600*24*14,3600*24*30,20,60,120};
+unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*24*2,3600*24*4,3600*24*7,3600*24*14,3600*24*30,60,120,240};
 
 
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken{
@@ -149,13 +149,13 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         return strRemainingDDHHMMSS;
     
     if(iDays>0)
-        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%d Day(s) %02d:%02d:%02d",iDays,iHours,iMins,iSecs ];
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %d Day(s) %02dh:%02dm:%02ds",iDays,iHours,iMins,iSecs ];
     else if(iHours>0)
-        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d:%02d:%02d",iHours,iMins,iSecs];
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %02dh:%02dm:%02ds",iHours,iMins,iSecs];
     else if(iMins>0)
-        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d:%02d",iMins,iSecs ];
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %02dm:%02ds",iMins,iSecs ];
     else
-        strRemainingDDHHMMSS=[NSString stringWithFormat:@"%02d",iSecs ];
+        strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: 00m:%02ds",iSecs ];
     
     return strRemainingDDHHMMSS;
 }

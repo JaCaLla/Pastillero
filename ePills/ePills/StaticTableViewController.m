@@ -27,8 +27,8 @@ static StaticTableViewController *sharedInstance;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
 @synthesize lblLastDosis;
-
-//@synthesize txtDose;
+@synthesize lblDose;
+@synthesize arrDosis;
 
 
 @synthesize sName;
@@ -76,13 +76,17 @@ static StaticTableViewController *sharedInstance;
     sUnitsTaken=@"1";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
     sDosis=[NSString stringWithFormat:@"%d", EightHours];
     
-    //tDosis=currPrescription.tDosis;
+
+    //sDosis=//[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];
     
     
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
+    //Initialize dosis array
+    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month",@"60",@"120",@"240", nil];
+    lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];;
     
     // Assign our own backgroud for the view    
     UIView* bview = [[UIView alloc] init];
@@ -322,7 +326,7 @@ static StaticTableViewController *sharedInstance;
             //Update last dosis
             if(btnSave.enabled){
                 Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
-                lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+                //lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
             }
         }
         // Store the value for future recover
