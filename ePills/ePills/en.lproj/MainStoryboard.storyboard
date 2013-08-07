@@ -510,7 +510,7 @@
                                                         <segue destination="aJB-aX-JNr" kind="push" identifier="showUpdateDosisTable" id="1x1-kH-k2J"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QQ-c0-7cU">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QQ-c0-7cU">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="69" id="DND-87-fNN"/>
                                                     </constraints>
@@ -518,22 +518,23 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1YG-oo-RuB">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Every X...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj6-2j-56S">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="sZB-3N-lSf"/>
+                                                        <constraint firstAttribute="width" constant="169" id="11W-Sv-0Ft"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="1QQ-c0-7cU" firstAttribute="baseline" secondItem="1YG-oo-RuB" secondAttribute="baseline" type="default" id="2y8-Vg-U3g"/>
-                                            <constraint firstItem="1YG-oo-RuB" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="122" id="MQu-da-aPa"/>
+                                            <constraint firstItem="Jj6-2j-56S" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="89" id="KPX-zV-Y1N"/>
+                                            <constraint firstItem="Jj6-2j-56S" firstAttribute="top" secondItem="xg6-mq-FxW" secondAttribute="top" constant="7" id="SG9-fk-Iyo"/>
                                             <constraint firstItem="1QQ-c0-7cU" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="22" id="Vh8-vQ-DWo"/>
                                             <constraint firstItem="leR-jw-jaX" firstAttribute="top" secondItem="xg6-mq-FxW" secondAttribute="top" type="default" id="VnV-zh-9Vu"/>
-                                            <constraint firstItem="leR-jw-jaX" firstAttribute="centerY" secondItem="1YG-oo-RuB" secondAttribute="centerY" type="default" id="fmh-J7-Rib"/>
+                                            <constraint firstItem="Jj6-2j-56S" firstAttribute="baseline" secondItem="1QQ-c0-7cU" secondAttribute="baseline" type="default" id="kFe-jM-64k"/>
                                             <constraint firstAttribute="trailing" secondItem="leR-jw-jaX" secondAttribute="trailing" constant="15" id="qpf-BN-bKt"/>
                                         </constraints>
                                     </tableViewCell>
@@ -705,12 +706,12 @@
                     <connections>
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
+                        <outlet property="lblDose" destination="Jj6-2j-56S" id="DlE-Nv-PmJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
                         <outlet property="lblNextDose" destination="S1h-XR-JIt" id="5ok-GR-S9E"/>
                         <outlet property="lblRemaining" destination="W6s-Os-gLW" id="0Y2-af-su5"/>
                         <outlet property="tbvUpdatePrescription" destination="TLS-Ty-xDO" id="bgP-F8-hIr"/>
                         <outlet property="txtBoxUnits" destination="LXD-Pt-O4L" id="goN-QI-i7i"/>
-                        <outlet property="txtDose" destination="1YG-oo-RuB" id="ZF6-y8-vwh"/>
                         <outlet property="txtName" destination="3Pz-Il-cgJ" id="NnY-OE-QRq"/>
                         <outlet property="txtUnitsTaken" destination="gfY-p6-Zeb" id="P09-vK-d3S"/>
                     </connections>
@@ -827,6 +828,7 @@
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="btnNameDidEndOnExit:"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
@@ -849,7 +851,7 @@
                 <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tbvUpdatePrescription" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtDose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
             </relationships>
@@ -857,6 +859,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="btnUpdatePrescription:"/>
                 <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
             </relationships>
@@ -868,6 +871,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="jFQ-oY-ha3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,6 @@ v Final GUI
   v Background for table view
   v Cell information
 v Serialization
-
+* Add time period in text into the field Dose
 * Support for Spanish
 * Advise for app punctuation

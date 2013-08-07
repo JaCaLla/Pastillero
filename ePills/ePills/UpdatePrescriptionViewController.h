@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
 @property (weak, nonatomic) IBOutlet UITextField *txtUnitsTaken;
-@property (weak, nonatomic) IBOutlet UITextField *txtDose;
+@property (weak, nonatomic) IBOutlet UILabel *lblDose;
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
 @property (weak, nonatomic) IBOutlet UILabel *lblRemaining;
 @property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
@@ -37,6 +37,9 @@
 @property (nonatomic, strong) NSString *sBoxUnits;
 @property (nonatomic, strong) NSString *sUnitsTaken;
 @property (nonatomic, strong) NSString *sDosis;
+@property NSArray *arrDosis;
+
+
 //@property enum DosisType tDosis;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;

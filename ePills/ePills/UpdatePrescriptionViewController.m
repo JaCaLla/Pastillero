@@ -25,7 +25,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
-@synthesize txtDose;
+@synthesize lblDose;
 @synthesize lblLastDosis;
 @synthesize lblRemaining;
 @synthesize lblNextDose;
@@ -35,6 +35,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
 @synthesize sDosis;
+@synthesize arrDosis;
 
 
 
@@ -67,7 +68,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     [super viewDidLoad];
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
-    txtDose.enabled=FALSE;
+    lblDose.enabled=FALSE;
  
     
     //Get current prescription from delegate (Model)
@@ -77,14 +78,18 @@ static UpdatePrescriptionViewController *sharedInstance;
     sName= currPrescription.sName;
     sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
     sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
-    sDosis=[NSString stringWithFormat:@"%d", currPrescription.tDosis];
+    
+    
+    //Initialize dosis array
+    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
+    sDosis=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
         
 
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
-    txtDose.text=sDosis;
+    lblDose.text=sDosis;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
@@ -136,8 +141,8 @@ static UpdatePrescriptionViewController *sharedInstance;
 - (void)setDosis:(int)p_iDose {
     //Check if there were changes with dosis
     if([sDosis integerValue]!=p_iDose){//txtDosis.text){
-        txtDose.text=[NSString stringWithFormat:@"%d", p_iDose];
-        sDosis=txtDose.text;
+        lblDose.text=[NSString stringWithFormat:@"%d", p_iDose];
+        sDosis=lblDose.text;
         
         btnSave.enabled=TRUE;
     }
@@ -301,7 +306,7 @@ static UpdatePrescriptionViewController *sharedInstance;
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[txtDose.text integerValue]];
+        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue]];
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
