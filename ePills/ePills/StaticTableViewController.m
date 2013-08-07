@@ -322,12 +322,13 @@ static StaticTableViewController *sharedInstance;
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtName.text!= sName);
-            
+            /* TO EWMOCW
             //Update last dosis
             if(btnSave.enabled){
                 Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
                 //lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
             }
+             */
         }
         // Store the value for future recover
         sName=txtName.text;
