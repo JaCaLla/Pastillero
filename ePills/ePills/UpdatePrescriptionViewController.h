@@ -36,7 +36,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblRemaining;
 @property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;

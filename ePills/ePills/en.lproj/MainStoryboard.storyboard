@@ -37,6 +37,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rux-QQ-Rmo">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="ERc-Gj-pbJ"/>
+                                                                <constraint firstAttribute="width" constant="70" id="bqB-HL-beM"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-3R-aeT">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="245" id="ax2-a6-QYV"/>
@@ -48,7 +54,7 @@
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtNextDose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-mJ-lkx">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="245" id="F9F-nh-23i"/>
+                                                                <constraint firstAttribute="width" constant="245" id="w8A-Id-ijd"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,12 +64,15 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="10" id="9ry-8v-JGk"/>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="36" id="bzR-Rd-4cm"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="37" id="mQb-xV-lU9"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="rWx-Fk-LKH"/>
+                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="OlG-x4-Qs1"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="top" secondItem="bf1-3R-aeT" secondAttribute="top" type="default" id="YrO-ov-PPB"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="10" id="ZW8-Ua-9wm"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="centerY" secondItem="7qi-yR-nNt" secondAttribute="centerY" type="default" id="bWK-Af-aLu"/>
+                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="81" id="i0p-fj-Y5w"/>
+                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="82" id="z6D-DC-oeL"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="imageView" destination="rux-QQ-Rmo" id="Ewc-1L-uKd"/>
                                                     <outlet property="lblNextDose" destination="xtx-mJ-lkx" id="fp8-rA-9Ts"/>
                                                     <outlet property="txtName" destination="bf1-3R-aeT" id="2T6-3w-Oi2"/>
                                                 </connections>
@@ -404,7 +413,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dIq-rO-i2d">
-                            <rect key="frame" x="0.0" y="425" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="385" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem systemItem="trash" id="uaD-KL-bqz">
@@ -560,7 +569,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="4zh-WG-aue">
-                                        <rect key="frame" x="0.0" y="166" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="166" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -586,36 +595,23 @@
                                                         <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="IWv-eH-3R0"/>
                                                     </connections>
                                                 </textField>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="2" id="C9W-gk-2D7"/>
-                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="6" id="FG3-HF-hNb"/>
-                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="24" id="PvJ-y3-1oP"/>
-                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="124" id="eip-5t-Oyg"/>
-                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="baseline" secondItem="gfY-p6-Zeb" secondAttribute="baseline" type="default" id="p4V-jN-qtd"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="WHg-oV-RFO">
-                                        <rect key="frame" x="0.0" y="206" width="320" height="41"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="39"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz2-Hn-3LT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-Mv-cQh">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="g43-u2-Tel"/>
-                                                        <constraint firstAttribute="height" constant="39" id="yI4-Yy-iRt"/>
+                                                        <constraint firstAttribute="height" constant="32" id="6i0-9T-2Jy"/>
+                                                        <constraint firstAttribute="width" constant="32" id="g6I-Bd-Zva"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="oz2-Hn-3LT" firstAttribute="top" secondItem="WHg-oV-RFO" secondAttribute="top" type="default" id="CE8-cC-aju"/>
-                                            <constraint firstItem="oz2-Hn-3LT" firstAttribute="centerX" secondItem="WHg-oV-RFO" secondAttribute="centerX" type="default" id="mQx-85-Rid"/>
+                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="6" id="CwC-wE-fHb"/>
+                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="24" id="PvJ-y3-1oP"/>
+                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="124" id="eip-5t-Oyg"/>
+                                            <constraint firstAttribute="trailing" secondItem="6SM-Mv-cQh" secondAttribute="trailing" constant="39" id="fwt-Mv-T3n"/>
+                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="baseline" secondItem="gfY-p6-Zeb" secondAttribute="baseline" type="default" id="p4V-jN-qtd"/>
+                                            <constraint firstItem="6SM-Mv-cQh" firstAttribute="centerY" secondItem="4zh-WG-aue" secondAttribute="centerY" type="default" id="qwb-pp-KZg"/>
+                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="2" id="wKy-5P-neJ"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -623,7 +619,7 @@
                             <tableViewSection headerTitle="Administration" id="Ffz-aD-VN7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="vVC-qb-BLW">
-                                        <rect key="frame" x="0.0" y="293" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="253" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="39"/>
@@ -658,7 +654,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="uDH-vh-xmJ">
-                                        <rect key="frame" x="0.0" y="334" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="294" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -693,7 +689,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="w5A-ds-axB">
-                                        <rect key="frame" x="0.0" y="374" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="334" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -748,7 +744,6 @@
                     <connections>
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
-                        <outlet property="imageView" destination="oz2-Hn-3LT" id="IEo-tQ-yQk"/>
                         <outlet property="lblDose" destination="Jj6-2j-56S" id="DlE-Nv-PmJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
                         <outlet property="lblNextDose" destination="S1h-XR-JIt" id="5ok-GR-S9E"/>
@@ -757,7 +752,7 @@
                         <outlet property="txtBoxUnits" destination="LXD-Pt-O4L" id="goN-QI-i7i"/>
                         <outlet property="txtName" destination="3Pz-Il-cgJ" id="NnY-OE-QRq"/>
                         <outlet property="txtUnitsTaken" destination="gfY-p6-Zeb" id="P09-vK-d3S"/>
-                        <outlet property="uiImageView" destination="oz2-Hn-3LT" id="7wL-3p-Rgp"/>
+                        <outlet property="uiImageView" destination="6SM-Mv-cQh" id="pnn-f3-qOh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAO-5h-3EK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -865,6 +860,7 @@
         <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
             <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UILabel"/>
             </relationships>
@@ -872,7 +868,6 @@
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnNameDidEndOnExit:"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
@@ -893,7 +888,6 @@
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>

@@ -81,9 +81,21 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
         //self.dChosenImage=[self base64Encoding:UIImagePNGRepresentation(p_imgImage)];
-        self.dChosenImage= UIImagePNGRepresentation(p_imgImage);
+        
+        p_imgImage=[self scaled:p_imgImage toSize:CGSizeMake(70, 50)];
+        self.dChosenImage=UIImagePNGRepresentation(p_imgImage);
     }
     return self;
+}
+
+
+- (UIImage *)scaled:(UIImage *)image toSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
 }
 
 -(NSDate*) getLastDosisTaken:(NSDate*)p_dateFrom{

@@ -29,7 +29,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize lblLastDosis;
 @synthesize lblRemaining;
 @synthesize lblNextDose;
-@synthesize imageView;
+
 
 
 @synthesize sName;
@@ -37,6 +37,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize sUnitsTaken;
 @synthesize sDosis;
 @synthesize arrDosis;
+@synthesize uiImageView;
 
 
 
@@ -71,6 +72,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     btnSave.enabled=FALSE;
     lblDose.enabled=FALSE;
  
+
     
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -95,14 +97,19 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
     
+    //Image
     if(currPrescription.dChosenImage==nil){
-        self.imageView.image=nil;
+        self.uiImageView.image=nil;
     }
     else{
         //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];
         NSData *nsData=currPrescription.dChosenImage;
-        self.imageView.image =[UIImage imageWithData:nsData];
+        self.uiImageView.image =[UIImage imageWithData:nsData];
+        //self.uiImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
+    uiImageView.hidden=true;
+    
+
     
     // Assign our own backgroud for the view
     UIView* bview = [[UIView alloc] init];
@@ -317,12 +324,12 @@ static UpdatePrescriptionViewController *sharedInstance;
         
         //Create a new prescription object
         Prescription *p1;
-        if (self.imageView==nil) {//There is no image
+        if (uiImageView.image==nil) {//There is no image
             p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue]];
         }
         else{
-            UIImage *i=imageView.image;
-            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue] Image:i];
+           // UIImage *i=uiImageView.image;
+            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue] Image:uiImageView.image];
         }
         
         
@@ -408,7 +415,13 @@ static UpdatePrescriptionViewController *sharedInstance;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.imageView.image = chosenImage;
+    self.uiImageView.image = chosenImage;
+    
+    //Manage save button status
+    if (!btnSave.enabled){
+        //Enable Save button if the value is different from previous one
+        btnSave.enabled=TRUE;
+    }
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     

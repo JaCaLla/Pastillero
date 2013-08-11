@@ -20,6 +20,8 @@ v Serialization
 * Support for Spanish
 * Advise for app punctuation
 * Camera integration (http://www.youtube.com/watch?v=T7COfFjhXo8)
-    * Save button when image is added
+    v Save button when image is updated
     v Save image when apps is send to background
     * Add picture button when is being added a prescription
+    v Move image from update screen to main prescription list
+* BUG. Cell background when there is only one cell
