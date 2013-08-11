@@ -36,7 +36,7 @@ typedef enum DosisType : NSUInteger {
 @property bool bPrescriptionHasStarted;
 @property (atomic) int  iSecsRemainingNextDose;
 @property (atomic) bool bIsNextDoseExpired;
-@property NSString *s64imgChosenImage;
+@property NSData *dChosenImage;
 
 
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken;
