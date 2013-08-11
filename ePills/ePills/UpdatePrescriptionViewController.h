@@ -20,12 +20,7 @@
 //Implements ModalViewDelegate bacause another view calls one of its methods
 @interface UpdatePrescriptionViewController : UITableViewController <ModalViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
 
-    //Camera and picture album:BEGIN
-    UIImagePickerController *uiImagePickerController1;
-    UIImagePickerController *uiImagePickerController2;
-    UIImage *uiImage;
-    //IBOutlet UIImageView *uiImageView;
-    //Camera and picture album:END
+
     
 }
 

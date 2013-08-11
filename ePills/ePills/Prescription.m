@@ -20,6 +20,7 @@
 @synthesize bPrescriptionHasStarted;
 @synthesize iSecsRemainingNextDose;
 @synthesize bIsNextDoseExpired;
+@synthesize s64imgChosenImage;
 
 
 // Define array of seconds depending on doses intervals
@@ -39,6 +40,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted=false;
         self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
+        self.s64imgChosenImage=nil;
         
     }
     return self;
@@ -58,9 +60,29 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted=false;
         self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
+        self.s64imgChosenImage=nil;
     }
     return self;
     
+}
+
+-(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken Dosis:(int)p_iDosis Image:(UIImage*)p_imgImage{
+    
+    if (self = [super init])
+    {
+        // Initialization code here
+        self.sName=p_strName;
+        self.iBoxUnits=p_iBoxUnits;
+        self.iRemaining=p_iBoxUnits;
+        self.iUnitsTaken=p_iUnitsTaken;
+        self.tDosis=p_iDosis;
+        self.dteNextDose=nil;
+        self.bPrescriptionHasStarted=false;
+        self.bIsNextDoseExpired=true;
+        self.iSecsRemainingNextDose=-1;
+        self.s64imgChosenImage=[self base64Encoding:UIImagePNGRepresentation(p_imgImage)];
+    }
+    return self;
 }
 
 -(NSDate*) getLastDosisTaken:(NSDate*)p_dateFrom{
@@ -172,6 +194,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted = [decoder decodeBoolForKey:@"PrescriptionHasStarted"];
         self.iSecsRemainingNextDose = [decoder decodeInt32ForKey:@"SecsRemainingNextDose"];
         self.bIsNextDoseExpired = [decoder decodeBoolForKey:@"IsNextDoseExpired"];
+        self.s64imgChosenImage =[ decoder decodeObjectForKey:@"Image"];
     }
     return self;
 }
@@ -188,6 +211,42 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     [encoder encodeBool:self.bPrescriptionHasStarted forKey:@"PrescriptionHasStarted"];
     [encoder encodeInt32:self.iSecsRemainingNextDose forKey:@"SecsRemainingNextDose"];
     [encoder encodeBool:self.bIsNextDoseExpired forKey:@"IsNextDoseExpired"];
+    [encoder encodeObject:self.s64imgChosenImage forKey:@"Image"];
+}
+
+
+static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+- (NSString *)base64Encoding:(NSData*)p_NSDataValue;
+{
+    if ([p_NSDataValue length] == 0)
+        return @"";
+    
+    char *characters = malloc((([p_NSDataValue length] + 2) / 3) * 4);
+    if (characters == NULL)
+        return nil;
+    NSUInteger length = 0;
+    
+    NSUInteger i = 0;
+    while (i < [p_NSDataValue length])
+    {
+        char buffer[3] = {0,0,0};
+        short bufferLength = 0;
+        while (bufferLength < 3 && i < [p_NSDataValue length])
+            buffer[bufferLength++] = ((char *)[p_NSDataValue bytes])[i++];
+        
+        //  Encode the bytes in the buffer to four characters, including padding "=" characters if necessary.
+        characters[length++] = encodingTable[(buffer[0] & 0xFC) >> 2];
+        characters[length++] = encodingTable[((buffer[0] & 0x03) << 4) | ((buffer[1] & 0xF0) >> 4)];
+        if (bufferLength > 1)
+            characters[length++] = encodingTable[((buffer[1] & 0x0F) << 2) | ((buffer[2] & 0xC0) >> 6)];
+        else characters[length++] = '=';
+        if (bufferLength > 2)
+            characters[length++] = encodingTable[buffer[2] & 0x3F];
+        else characters[length++] = '=';
+    }
+    
+    return [[NSString alloc] initWithBytesNoCopy:characters length:length encoding:NSASCIIStringEncoding freeWhenDone:YES];
 }
 
 @end
