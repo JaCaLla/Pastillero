@@ -404,7 +404,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dIq-rO-i2d">
-                            <rect key="frame" x="0.0" y="385" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="425" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
                                 <barButtonItem systemItem="trash" id="uaD-KL-bqz">
@@ -420,6 +420,16 @@
                                 <barButtonItem title="Refill" id="LhU-gL-etV">
                                     <connections>
                                         <action selector="btnRefill:" destination="opj-XB-eVa" id="11K-s0-XwI"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="camera" id="cpl-VQ-83W">
+                                    <connections>
+                                        <action selector="takePhoto:" destination="opj-XB-eVa" id="b0Q-lr-nHv"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="search" id="Joe-9V-PiI">
+                                    <connections>
+                                        <action selector="selectPhoto:" destination="opj-XB-eVa" id="2J1-IG-Hjn"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -550,7 +560,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="4zh-WG-aue">
-                                        <rect key="frame" x="0.0" y="166" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="166" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -587,12 +597,33 @@
                                             <constraint firstItem="rKS-g2-FKu" firstAttribute="baseline" secondItem="gfY-p6-Zeb" secondAttribute="baseline" type="default" id="p4V-jN-qtd"/>
                                         </constraints>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="WHg-oV-RFO">
+                                        <rect key="frame" x="0.0" y="206" width="320" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oz2-Hn-3LT">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="g43-u2-Tel"/>
+                                                        <constraint firstAttribute="height" constant="39" id="yI4-Yy-iRt"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="oz2-Hn-3LT" firstAttribute="top" secondItem="WHg-oV-RFO" secondAttribute="top" type="default" id="CE8-cC-aju"/>
+                                            <constraint firstItem="oz2-Hn-3LT" firstAttribute="centerX" secondItem="WHg-oV-RFO" secondAttribute="centerX" type="default" id="mQx-85-Rid"/>
+                                        </constraints>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Administration" id="Ffz-aD-VN7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="vVC-qb-BLW">
-                                        <rect key="frame" x="0.0" y="253" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="293" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="39"/>
@@ -627,7 +658,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="uDH-vh-xmJ">
-                                        <rect key="frame" x="0.0" y="294" width="320" height="40"/>
+                                        <rect key="frame" x="0.0" y="334" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -662,7 +693,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="w5A-ds-axB">
-                                        <rect key="frame" x="0.0" y="334" width="320" height="41"/>
+                                        <rect key="frame" x="0.0" y="374" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
@@ -717,6 +748,7 @@
                     <connections>
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
+                        <outlet property="imageView" destination="oz2-Hn-3LT" id="IEo-tQ-yQk"/>
                         <outlet property="lblDose" destination="Jj6-2j-56S" id="DlE-Nv-PmJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
                         <outlet property="lblNextDose" destination="S1h-XR-JIt" id="5ok-GR-S9E"/>
@@ -725,6 +757,7 @@
                         <outlet property="txtBoxUnits" destination="LXD-Pt-O4L" id="goN-QI-i7i"/>
                         <outlet property="txtName" destination="3Pz-Il-cgJ" id="NnY-OE-QRq"/>
                         <outlet property="txtUnitsTaken" destination="gfY-p6-Zeb" id="P09-vK-d3S"/>
+                        <outlet property="uiImageView" destination="oz2-Hn-3LT" id="7wL-3p-Rgp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAO-5h-3EK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -856,8 +889,11 @@
                 <relationship kind="action" name="btnDose:"/>
                 <relationship kind="action" name="btnNameEditingDidEd:"/>
                 <relationship kind="action" name="btnRefill:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
@@ -866,6 +902,7 @@
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
@@ -883,6 +920,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jFQ-oY-ha3"/>
+        <segue reference="PD7-gL-gcI"/>
     </inferredMetricsTieBreakers>
 </document>
