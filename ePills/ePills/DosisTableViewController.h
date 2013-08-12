@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tbvDoses;
 
+
 @property id<ModalViewDelegate> delegate;
 @property NSArray *arrDosis;
 

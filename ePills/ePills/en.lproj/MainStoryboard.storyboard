@@ -133,6 +133,23 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UPR-zg-m7E">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FVN-pp-FWC">
+                            <rect key="frame" x="0.0" y="306" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem systemItem="camera" id="CtD-Ok-7W2">
+                                    <connections>
+                                        <action selector="takePhoto:" destination="0j9-Ez-7Vn" id="NKC-WD-Wdd"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="search" id="9Ud-4D-5vQ">
+                                    <connections>
+                                        <action selector="selectPhoto:" destination="0j9-Ez-7Vn" id="GJ7-Qh-9l9"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                            <color key="tintColor" red="0.42745098039215684" green="0.396078431372549" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                        </toolbar>
                         <sections>
                             <tableViewSection headerTitle="Medicine" id="e1c-PB-3By">
                                 <cells>
@@ -322,6 +339,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5IU-fT-ZZc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="Iie-V7-CIO"/>
+                                                        <constraint firstAttribute="height" constant="32" id="Lxe-Ls-sNF"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -329,7 +352,9 @@
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="24" id="4U5-Jv-XLI"/>
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="5" id="5qe-wG-pT4"/>
                                             <constraint firstItem="SUf-bq-Gs8" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="123" id="9Az-mW-nz4"/>
+                                            <constraint firstItem="5IU-fT-ZZc" firstAttribute="centerY" secondItem="TpG-mf-zng" secondAttribute="centerY" type="default" id="ZAo-Xv-oBq"/>
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="top" secondItem="SUf-bq-Gs8" secondAttribute="top" type="default" id="ZcP-Ue-R21"/>
+                                            <constraint firstAttribute="trailing" secondItem="5IU-fT-ZZc" secondAttribute="trailing" constant="20" type="default" id="uK5-pu-bkq"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -362,6 +387,7 @@
                         <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="cV2-8W-PxC"/>
                         <outlet property="txtName" destination="3dc-qY-FxA" id="DEd-pn-3Fh"/>
                         <outlet property="txtUnitsTaken" destination="3G9-KO-zQ2" id="Kg9-Wm-XkA"/>
+                        <outlet property="uiImageView" destination="5IU-fT-ZZc" id="G6k-Fm-dgx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46k-Ql-HJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -837,6 +863,62 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lgC-iG-CUG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="trash" id="Hvy-qC-jaV"/>
+                        <barButtonItem title="Dose" id="wDX-Fv-8kI">
+                            <connections>
+                                <action selector="btnDose:" destination="opj-XB-eVa" id="J9S-j5-WHf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Refill" id="JRH-1M-ea0">
+                            <connections>
+                                <action selector="btnRefill:" destination="opj-XB-eVa" id="K9T-YR-E3P"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="camera" id="4Wi-Xb-okR">
+                            <connections>
+                                <action selector="takePhoto:" destination="opj-XB-eVa" id="uKG-Zz-vuz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="search" id="LUZ-ri-Nkf">
+                            <connections>
+                                <action selector="selectPhoto:" destination="opj-XB-eVa" id="Uds-cO-Lt5"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="0.42745098040000001" green="0.39607843139999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yVW-8y-4rY">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="trash" id="63z-wS-Li7"/>
+                        <barButtonItem title="Dose" id="edt-h8-QYk">
+                            <connections>
+                                <action selector="btnDose:" destination="opj-XB-eVa" id="TkS-SL-sdf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Refill" id="IXR-4x-ywk">
+                            <connections>
+                                <action selector="btnRefill:" destination="opj-XB-eVa" id="FpS-rM-e7J"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="camera" id="pM8-3n-gej">
+                            <connections>
+                                <action selector="takePhoto:" destination="opj-XB-eVa" id="2hF-jR-pO7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="search" id="Wtj-SK-93R">
+                            <connections>
+                                <action selector="selectPhoto:" destination="opj-XB-eVa" id="Zfi-42-mRc"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="0.42745098040000001" green="0.39607843139999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="1157" y="-1105"/>
         </scene>
@@ -868,6 +950,9 @@
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
@@ -876,6 +961,7 @@
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
@@ -914,6 +1000,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="PD7-gL-gcI"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>

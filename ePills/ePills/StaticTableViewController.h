@@ -18,11 +18,12 @@
 @end
 
 //Implements ModalViewDelegate bacause another view calls one of its methods
-@interface StaticTableViewController : UITableViewController <ModalViewDelegate>{
+@interface StaticTableViewController : UITableViewController <ModalViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *tbvNewPrescription;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisclosure;
+@property (weak, nonatomic) IBOutlet UIImageView *uiImageView;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
@@ -43,5 +44,10 @@
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(StaticTableViewController *) sharedViewController;
+
+//Camera and picture album:BEGIN
+-(IBAction)takePhoto:(UIButton *)sender ;
+-(IBAction)selectPhoto:(UIButton *)sender;
+//Camera and picture album:END
 
 @end

@@ -28,6 +28,7 @@ static StaticTableViewController *sharedInstance;
 @synthesize txtUnitsTaken;
 @synthesize lblLastDosis;
 @synthesize lblDose;
+@synthesize uiImageView;
 @synthesize arrDosis;
 
 
@@ -77,7 +78,8 @@ static StaticTableViewController *sharedInstance;
     sDosis=[NSString stringWithFormat:@"%d", EightHours];
     
 
-    //sDosis=//[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];
+    //Hide uiImage control
+    uiImageView.hidden=true;
     
     
     //Initialize fields
@@ -351,9 +353,21 @@ static StaticTableViewController *sharedInstance;
     if([segue.identifier isEqualToString:@"backFromAddSave"]){
         
         NSLog(@"prepareForSegue:backFromAddSave");
-        
+        /*
         //Create a new prescription object
         Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        */
+        //Create a new prescription object
+        Prescription *prescription;
+        if (uiImageView.image==nil) {//There is no image
+            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        }
+        else{
+            // UIImage *i=uiImageView.image;
+            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue] Image:uiImageView.image];
+        }
+        
+        
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -377,6 +391,58 @@ static StaticTableViewController *sharedInstance;
     
     
 }
+
+//Camera and picture album:BEGIN
+//http://www.appcoda.com/ios-programming-camera-iphone-app/
+-(IBAction)takePhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+
+
+- (IBAction)selectPhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
+}
+
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.uiImageView.image = chosenImage;
+    
+    //Manage save button status
+    if (!btnSave.enabled){
+        //Enable Save button if the value is different from previous one
+        btnSave.enabled=TRUE;
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+//Camera and picture album:END
 
 
 #pragma mark - Table view data source
