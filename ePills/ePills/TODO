@@ -24,4 +24,5 @@ v Serialization
     v Save image when apps is send to background
     v Add picture button when is being added a prescription
     v Move image from update screen to main prescription list
+    * Merge branch to master
 * BUG. Cell background when there is only one cell
