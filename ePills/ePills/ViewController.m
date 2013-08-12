@@ -239,12 +239,18 @@ static ViewController *sharedInstance;
     NSInteger rowIndex = indexPath.row;
     UIImage *background = nil;
     
-    if (rowIndex == 0) {
-        background = [UIImage imageNamed:@"cell_top.png"];
-    } else if (rowIndex == rowCount - 1) {
-        background = [UIImage imageNamed:@"cell_bottom.png"];
-    } else {
-        background = [UIImage imageNamed:@"cell_middle.png"];
+    
+    if(rowCount==1){
+        background = [UIImage imageNamed:@"cell_unique.png"];
+    }
+    else{
+        if (rowIndex == 0) {
+            background = [UIImage imageNamed:@"cell_top.png"];
+        } else if (rowIndex == rowCount - 1) {
+            background = [UIImage imageNamed:@"cell_bottom.png"];
+        } else {
+            background = [UIImage imageNamed:@"cell_middle.png"];
+        }
     }
     
     return background;
