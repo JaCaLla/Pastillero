@@ -20,6 +20,7 @@
 @synthesize bPrescriptionHasStarted;
 @synthesize iSecsRemainingNextDose;
 @synthesize bIsNextDoseExpired;
+@synthesize dChosenImage;
 
 
 // Define array of seconds depending on doses intervals
@@ -39,6 +40,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted=false;
         self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
+        self.dChosenImage=nil;
         
     }
     return self;
@@ -58,9 +60,42 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted=false;
         self.bIsNextDoseExpired=true;
         self.iSecsRemainingNextDose=-1;
+        self.dChosenImage=nil;
     }
     return self;
     
+}
+
+-(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken Dosis:(int)p_iDosis Image:(UIImage*)p_imgImage{
+    
+    if (self = [super init])
+    {
+        // Initialization code here
+        self.sName=p_strName;
+        self.iBoxUnits=p_iBoxUnits;
+        self.iRemaining=p_iBoxUnits;
+        self.iUnitsTaken=p_iUnitsTaken;
+        self.tDosis=p_iDosis;
+        self.dteNextDose=nil;
+        self.bPrescriptionHasStarted=false;
+        self.bIsNextDoseExpired=true;
+        self.iSecsRemainingNextDose=-1;
+        //self.dChosenImage=[self base64Encoding:UIImagePNGRepresentation(p_imgImage)];
+        
+        p_imgImage=[self scaled:p_imgImage toSize:CGSizeMake(70, 50)];
+        self.dChosenImage=UIImagePNGRepresentation(p_imgImage);
+    }
+    return self;
+}
+
+
+- (UIImage *)scaled:(UIImage *)image toSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
 }
 
 -(NSDate*) getLastDosisTaken:(NSDate*)p_dateFrom{
@@ -172,6 +207,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         self.bPrescriptionHasStarted = [decoder decodeBoolForKey:@"PrescriptionHasStarted"];
         self.iSecsRemainingNextDose = [decoder decodeInt32ForKey:@"SecsRemainingNextDose"];
         self.bIsNextDoseExpired = [decoder decodeBoolForKey:@"IsNextDoseExpired"];
+        self.dChosenImage =[ decoder decodeObjectForKey:@"Image"];
     }
     return self;
 }
@@ -188,6 +224,9 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     [encoder encodeBool:self.bPrescriptionHasStarted forKey:@"PrescriptionHasStarted"];
     [encoder encodeInt32:self.iSecsRemainingNextDose forKey:@"SecsRemainingNextDose"];
     [encoder encodeBool:self.bIsNextDoseExpired forKey:@"IsNextDoseExpired"];
+    [encoder encodeObject:self.dChosenImage forKey:@"Image"];
 }
+
+
 
 @end

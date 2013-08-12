@@ -37,6 +37,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rux-QQ-Rmo">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="ERc-Gj-pbJ"/>
+                                                                <constraint firstAttribute="width" constant="70" id="bqB-HL-beM"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-3R-aeT">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="245" id="ax2-a6-QYV"/>
@@ -48,7 +54,7 @@
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtNextDose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-mJ-lkx">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="245" id="F9F-nh-23i"/>
+                                                                <constraint firstAttribute="width" constant="245" id="w8A-Id-ijd"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -58,12 +64,15 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="10" id="9ry-8v-JGk"/>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="36" id="bzR-Rd-4cm"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="37" id="mQb-xV-lU9"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="rWx-Fk-LKH"/>
+                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="OlG-x4-Qs1"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="top" secondItem="bf1-3R-aeT" secondAttribute="top" type="default" id="YrO-ov-PPB"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="10" id="ZW8-Ua-9wm"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="centerY" secondItem="7qi-yR-nNt" secondAttribute="centerY" type="default" id="bWK-Af-aLu"/>
+                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="81" id="i0p-fj-Y5w"/>
+                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="82" id="z6D-DC-oeL"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="imageView" destination="rux-QQ-Rmo" id="Ewc-1L-uKd"/>
                                                     <outlet property="lblNextDose" destination="xtx-mJ-lkx" id="fp8-rA-9Ts"/>
                                                     <outlet property="txtName" destination="bf1-3R-aeT" id="2T6-3w-Oi2"/>
                                                 </connections>
@@ -124,6 +133,23 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UPR-zg-m7E">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FVN-pp-FWC">
+                            <rect key="frame" x="0.0" y="306" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem systemItem="camera" id="CtD-Ok-7W2">
+                                    <connections>
+                                        <action selector="takePhoto:" destination="0j9-Ez-7Vn" id="NKC-WD-Wdd"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="search" id="9Ud-4D-5vQ">
+                                    <connections>
+                                        <action selector="selectPhoto:" destination="0j9-Ez-7Vn" id="GJ7-Qh-9l9"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                            <color key="tintColor" red="0.42745098039215684" green="0.396078431372549" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                        </toolbar>
                         <sections>
                             <tableViewSection headerTitle="Medicine" id="e1c-PB-3By">
                                 <cells>
@@ -313,6 +339,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5IU-fT-ZZc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="Iie-V7-CIO"/>
+                                                        <constraint firstAttribute="height" constant="32" id="Lxe-Ls-sNF"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -320,7 +352,9 @@
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="24" id="4U5-Jv-XLI"/>
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="5" id="5qe-wG-pT4"/>
                                             <constraint firstItem="SUf-bq-Gs8" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="123" id="9Az-mW-nz4"/>
+                                            <constraint firstItem="5IU-fT-ZZc" firstAttribute="centerY" secondItem="TpG-mf-zng" secondAttribute="centerY" type="default" id="ZAo-Xv-oBq"/>
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="top" secondItem="SUf-bq-Gs8" secondAttribute="top" type="default" id="ZcP-Ue-R21"/>
+                                            <constraint firstAttribute="trailing" secondItem="5IU-fT-ZZc" secondAttribute="trailing" constant="20" type="default" id="uK5-pu-bkq"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -353,6 +387,7 @@
                         <outlet property="txtBoxUnits" destination="LiS-Lq-bqf" id="cV2-8W-PxC"/>
                         <outlet property="txtName" destination="3dc-qY-FxA" id="DEd-pn-3Fh"/>
                         <outlet property="txtUnitsTaken" destination="3G9-KO-zQ2" id="Kg9-Wm-XkA"/>
+                        <outlet property="uiImageView" destination="5IU-fT-ZZc" id="G6k-Fm-dgx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46k-Ql-HJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,6 +455,16 @@
                                 <barButtonItem title="Refill" id="LhU-gL-etV">
                                     <connections>
                                         <action selector="btnRefill:" destination="opj-XB-eVa" id="11K-s0-XwI"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="camera" id="cpl-VQ-83W">
+                                    <connections>
+                                        <action selector="takePhoto:" destination="opj-XB-eVa" id="b0Q-lr-nHv"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem systemItem="search" id="Joe-9V-PiI">
+                                    <connections>
+                                        <action selector="selectPhoto:" destination="opj-XB-eVa" id="2J1-IG-Hjn"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -576,15 +621,23 @@
                                                         <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="IWv-eH-3R0"/>
                                                     </connections>
                                                 </textField>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-Mv-cQh">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="6i0-9T-2Jy"/>
+                                                        <constraint firstAttribute="width" constant="32" id="g6I-Bd-Zva"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="2" id="C9W-gk-2D7"/>
-                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="6" id="FG3-HF-hNb"/>
+                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="6" id="CwC-wE-fHb"/>
                                             <constraint firstItem="rKS-g2-FKu" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="24" id="PvJ-y3-1oP"/>
                                             <constraint firstItem="gfY-p6-Zeb" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="124" id="eip-5t-Oyg"/>
+                                            <constraint firstAttribute="trailing" secondItem="6SM-Mv-cQh" secondAttribute="trailing" constant="39" id="fwt-Mv-T3n"/>
                                             <constraint firstItem="rKS-g2-FKu" firstAttribute="baseline" secondItem="gfY-p6-Zeb" secondAttribute="baseline" type="default" id="p4V-jN-qtd"/>
+                                            <constraint firstItem="6SM-Mv-cQh" firstAttribute="centerY" secondItem="4zh-WG-aue" secondAttribute="centerY" type="default" id="qwb-pp-KZg"/>
+                                            <constraint firstItem="gfY-p6-Zeb" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="2" id="wKy-5P-neJ"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -725,6 +778,7 @@
                         <outlet property="txtBoxUnits" destination="LXD-Pt-O4L" id="goN-QI-i7i"/>
                         <outlet property="txtName" destination="3Pz-Il-cgJ" id="NnY-OE-QRq"/>
                         <outlet property="txtUnitsTaken" destination="gfY-p6-Zeb" id="P09-vK-d3S"/>
+                        <outlet property="uiImageView" destination="6SM-Mv-cQh" id="pnn-f3-qOh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAO-5h-3EK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -809,6 +863,62 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lgC-iG-CUG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="trash" id="Hvy-qC-jaV"/>
+                        <barButtonItem title="Dose" id="wDX-Fv-8kI">
+                            <connections>
+                                <action selector="btnDose:" destination="opj-XB-eVa" id="J9S-j5-WHf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Refill" id="JRH-1M-ea0">
+                            <connections>
+                                <action selector="btnRefill:" destination="opj-XB-eVa" id="K9T-YR-E3P"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="camera" id="4Wi-Xb-okR">
+                            <connections>
+                                <action selector="takePhoto:" destination="opj-XB-eVa" id="uKG-Zz-vuz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="search" id="LUZ-ri-Nkf">
+                            <connections>
+                                <action selector="selectPhoto:" destination="opj-XB-eVa" id="Uds-cO-Lt5"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="0.42745098040000001" green="0.39607843139999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yVW-8y-4rY">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="trash" id="63z-wS-Li7"/>
+                        <barButtonItem title="Dose" id="edt-h8-QYk">
+                            <connections>
+                                <action selector="btnDose:" destination="opj-XB-eVa" id="TkS-SL-sdf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="Refill" id="IXR-4x-ywk">
+                            <connections>
+                                <action selector="btnRefill:" destination="opj-XB-eVa" id="FpS-rM-e7J"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="camera" id="pM8-3n-gej">
+                            <connections>
+                                <action selector="takePhoto:" destination="opj-XB-eVa" id="2hF-jR-pO7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="search" id="Wtj-SK-93R">
+                            <connections>
+                                <action selector="selectPhoto:" destination="opj-XB-eVa" id="Zfi-42-mRc"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="tintColor" red="0.42745098040000001" green="0.39607843139999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="1157" y="-1105"/>
         </scene>
@@ -832,6 +942,7 @@
         <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
             <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UILabel"/>
             </relationships>
@@ -840,6 +951,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
@@ -848,6 +961,7 @@
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
@@ -856,6 +970,8 @@
                 <relationship kind="action" name="btnDose:"/>
                 <relationship kind="action" name="btnNameEditingDidEd:"/>
                 <relationship kind="action" name="btnRefill:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
@@ -866,6 +982,7 @@
                 <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
@@ -883,6 +1000,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jFQ-oY-ha3"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>

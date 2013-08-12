@@ -19,3 +19,9 @@ v Serialization
 * Add time period in text into the field Dose
 * Support for Spanish
 * Advise for app punctuation
+* Camera integration (http://www.youtube.com/watch?v=T7COfFjhXo8)
+    v Save button when image is updated
+    v Save image when apps is send to background
+    v Add picture button when is being added a prescription
+    v Move image from update screen to main prescription list
+* BUG. Cell background when there is only one cell

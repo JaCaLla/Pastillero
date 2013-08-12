@@ -18,11 +18,15 @@
 @end
 
 //Implements ModalViewDelegate bacause another view calls one of its methods
-@interface UpdatePrescriptionViewController : UITableViewController <ModalViewDelegate>{
+@interface UpdatePrescriptionViewController : UITableViewController <ModalViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+
+
     
 }
+
 @property (strong, nonatomic) IBOutlet UITableView *tbvUpdatePrescription;
 
+@property (weak, nonatomic) IBOutlet UIImageView *uiImageView;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
@@ -31,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
 @property (weak, nonatomic) IBOutlet UILabel *lblRemaining;
 @property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
+
 
 
 @property (nonatomic, strong) NSString *sName;
@@ -47,5 +52,10 @@
 
 //Returns the instance of AppDelegate, in that way the ViewController has access to this class
 +(UpdatePrescriptionViewController *) sharedViewController;
+
+//Camera and picture album:BEGIN
+-(IBAction)takePhoto:(UIButton *)sender ;
+-(IBAction)selectPhoto:(UIButton *)sender;
+//Camera and picture album:END
 
 @end

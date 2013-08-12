@@ -77,6 +77,7 @@ static ViewController *sharedInstance;
     // Add padding to the top of the table view
     UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
     self.tbvPrescriptions.contentInset = inset;
+    
 
 
 }
@@ -169,6 +170,29 @@ static ViewController *sharedInstance;
     else {
         cell.lblNextDose.textColor = [UIColor redColor];
     }
+    
+    //Image
+    if(tmrCurrent.dChosenImage==nil){
+        cell.imageView.image=nil;
+    }
+    else{
+        //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];
+        NSData *nsData=tmrCurrent.dChosenImage;
+
+        
+        cell.imageView.image =[UIImage imageWithData:nsData];
+        cell.imageView.image =[self scaled:cell.imageView.image  toSize:CGSizeMake(70, 50)];
+       // [cell.imageView sizeToFit];
+       
+    
+    }
+    
+    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageName:@"myimage.png"]];
+    //[imageView sizeToFit];
+    
+    //CGRect newFrame = imageView.frame;
+    //if (newFrame.size.width > 100) newFrame.size.width = 100;
+    //imageView.frame = newFrame;
 
     // Assign our own background image for the cell
     UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
@@ -176,8 +200,18 @@ static ViewController *sharedInstance;
     UIImageView *cellBackgroundView = [[UIImageView alloc] initWithImage:background];
     cellBackgroundView.image = background;
     cell.backgroundView = cellBackgroundView;
+    
     return cell;
     
+}
+
+- (UIImage *)scaled:(UIImage *)image toSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

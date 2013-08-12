@@ -31,11 +31,13 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize lblNextDose;
 
 
+
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
 @synthesize sDosis;
 @synthesize arrDosis;
+@synthesize uiImageView;
 
 
 
@@ -70,6 +72,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     btnSave.enabled=FALSE;
     lblDose.enabled=FALSE;
  
+
     
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -93,6 +96,20 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
+    
+    //Image
+    if(currPrescription.dChosenImage==nil){
+        self.uiImageView.image=nil;
+    }
+    else{
+        //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];
+        NSData *nsData=currPrescription.dChosenImage;
+        self.uiImageView.image =[UIImage imageWithData:nsData];
+        //self.uiImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    uiImageView.hidden=true;
+    
+
     
     // Assign our own backgroud for the view
     UIView* bview = [[UIView alloc] init];
@@ -306,7 +323,16 @@ static UpdatePrescriptionViewController *sharedInstance;
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
-        Prescription *p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue]];
+        Prescription *p1;
+        if (uiImageView.image==nil) {//There is no image
+            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue]];
+        }
+        else{
+           // UIImage *i=uiImageView.image;
+            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue] Image:uiImageView.image];
+        }
+        
+        
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -358,6 +384,57 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     
 }
+
+//Camera and picture album:BEGIN
+//http://www.appcoda.com/ios-programming-camera-iphone-app/
+-(IBAction)takePhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+}
+
+
+- (IBAction)selectPhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.uiImageView.image = chosenImage;
+    
+    //Manage save button status
+    if (!btnSave.enabled){
+        //Enable Save button if the value is different from previous one
+        btnSave.enabled=TRUE;
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+//Camera and picture album:END
+
 
 
 

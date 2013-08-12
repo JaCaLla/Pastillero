@@ -350,6 +350,8 @@ static AppDelegate *sharedInstance;
         NSLog(@"There was an error saving: %@", error);
     }
     
+
+    
     //NSArray  * myArray2 = [NSArray arrayWithObjects:@"foo",@"bar",@"baz",nil];
     //[myArray2 writeToFile:[self prescriptionsFilename] atomically:YES];
     
@@ -361,9 +363,9 @@ static AppDelegate *sharedInstance;
     
     arrPrescriptions = [[NSMutableArray alloc]init];
     //arrPrescriptions = [NSArray arrayWithContentsOfFile:[self prescriptionsFilename]];
-    
+ 
     NSLog(@"loadState:%@",[self prescriptionsFilename]);
- /*
+ 
     NSData * myData = [NSData dataWithContentsOfFile:[self prescriptionsFilename]];
     arrPrescriptions = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
     
@@ -372,8 +374,8 @@ static AppDelegate *sharedInstance;
         Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine name" BoxUnits:20 UnitsTaken:1 Dosis:11];
         [arrPrescriptions addObject:prescription];
     }
- */
-    
+ 
+ /*
     arrPrescriptions = [[NSMutableArray alloc]init];
     Prescription *p1 = [[Prescription alloc] initWithName:@"Frenadol" BoxUnits:20 UnitsTaken:1 Dosis:11];
     [arrPrescriptions addObject:p1];
@@ -381,7 +383,7 @@ static AppDelegate *sharedInstance;
     [arrPrescriptions addObject:p2];
     Prescription *p3 = [[Prescription alloc] initWithName:@"Licipaina" BoxUnits:10 UnitsTaken:3 Dosis:13];
     [arrPrescriptions addObject:p3];
-
+*/
 }
 
 @end
