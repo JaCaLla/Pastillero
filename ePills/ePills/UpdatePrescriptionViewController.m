@@ -47,13 +47,12 @@ static UpdatePrescriptionViewController *sharedInstance;
     if (self) {
         // Custom initialization
         if(sharedInstance){
-            NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
+            NSLog(@"Error: You are creating a second AppDelegate!");
         }
         
         //Initialize singleton class
         sharedInstance=self;
-        
-        
+
     }
     return self;
 }
@@ -71,8 +70,6 @@ static UpdatePrescriptionViewController *sharedInstance;
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
     lblDose.enabled=FALSE;
- 
-
     
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
@@ -109,19 +106,10 @@ static UpdatePrescriptionViewController *sharedInstance;
     }
     uiImageView.hidden=true;
     
-
-    
     // Assign our own backgroud for the view
     UIView* bview = [[UIView alloc] init];
     bview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg.png"]];
     [self.tbvUpdatePrescription setBackgroundView:bview];
-    
-    
-    //Show navigation bar
-    //[self.navigationController setToolbarHidden:NO];
-      //  tlbBottom.backgroundColor =[UIColor colorWithPatternImage:[UIImage imageNamed:@"navbar.png"]];
-    //tlbBottom.backgroundColor =[UIColor colorRed];
-
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -348,9 +336,6 @@ static UpdatePrescriptionViewController *sharedInstance;
         vc.delegate = self;
         
         //Update view fields        
-        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-        //Prescription *currPrescription = [appDelegate getCurrentPrescription];
-        //vc.tDosis=currPrescription.tDosis;
         vc.tDosis=[sDosis integerValue];
     } //Remove a prescription
     else if ([segue.identifier isEqualToString:@"backFromUpdateDelete"]){
@@ -437,74 +422,6 @@ static UpdatePrescriptionViewController *sharedInstance;
 
 
 
-
-#pragma mark - Table view data source
-/* Not necessary because is a static table
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

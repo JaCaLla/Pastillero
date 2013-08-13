@@ -195,7 +195,6 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     return strRemainingDDHHMMSS;
 }
 
-
 - (id)initWithCoder:(NSCoder *)decoder {
     if (self = [super init]) {
         self.sName =[ decoder decodeObjectForKey:@"Name"];
@@ -212,8 +211,6 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     return self;
 }
 
-
-
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.sName forKey:@"Name"];
     [encoder encodeInt32:self.iBoxUnits forKey:@"BoxUnits"];
@@ -226,7 +223,5 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     [encoder encodeBool:self.bIsNextDoseExpired forKey:@"IsNextDoseExpired"];
     [encoder encodeObject:self.dChosenImage forKey:@"Image"];
 }
-
-
 
 @end

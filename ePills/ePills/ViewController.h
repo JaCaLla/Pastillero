@@ -28,7 +28,6 @@
 
 
 //Array of timers
-//@property NSMutableArray *arrPrescriptions;
 @property NSArray *arrPrescriptions;
 
 

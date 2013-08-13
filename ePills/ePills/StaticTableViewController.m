@@ -68,10 +68,6 @@ static StaticTableViewController *sharedInstance;
     //Initialize navigation bar buttons
     btnSave.enabled=FALSE;
     
-    //Get current prescription from delegate (Model)
-    //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-    //Prescription *currPrescription = [appDelegate getCurrentPrescription];
-    
     sName=@""; //currPrescription.sName;
     sBoxUnits=@"";//[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
     sUnitsTaken=@"1";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
@@ -94,9 +90,6 @@ static StaticTableViewController *sharedInstance;
     UIView* bview = [[UIView alloc] init];
     bview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg.png"]];
     [self.tbvNewPrescription setBackgroundView:bview];
-    
-    
-    
     
     //BEGIN:Number pad removal handling
     // Define a Cancel and Apply button because it does not exists in the numeric pad for Box Units
@@ -193,10 +186,6 @@ static StaticTableViewController *sharedInstance;
         txtBoxUnits.text= sBoxUnits;
         
     }
-//    else if([txtName.text length]==0 ||
-//            [txtUnitsTaken.text length]==0){
-//        // Do not do anything there are still textboxes pending to fill
-//    }
     else{
         
         //Validate form
@@ -275,10 +264,6 @@ static StaticTableViewController *sharedInstance;
         //Recover old value
         txtUnitsTaken.text= sUnitsTaken;
     }
-//    else if([txtBoxUnits.text length]==0 ||
-//            [txtName.text length]==0){
-//        // Do not do anything there are still textboxes pending to fill
-//    }
     else{
         
         //Validate form
@@ -313,10 +298,6 @@ static StaticTableViewController *sharedInstance;
         txtName.text= sName;
         
     }
-//    else if([txtBoxUnits.text length]==0 ||
-//            [txtUnitsTaken.text length]==0){
-//        // Do not do anything there are still textboxes pending to fill
-//    }
     else{
         //Validate form
         [self validateForm];
@@ -351,12 +332,7 @@ static StaticTableViewController *sharedInstance;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"backFromAddSave"]){
-        
-        NSLog(@"prepareForSegue:backFromAddSave");
-        /*
-        //Create a new prescription object
-        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
-        */
+
         //Create a new prescription object
         Prescription *prescription;
         if (uiImageView.image==nil) {//There is no image
@@ -383,9 +359,6 @@ static StaticTableViewController *sharedInstance;
         vc.delegate = self;
         
         //Update view fields
-        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-        //Prescription *currPrescription = [appDelegate getCurrentPrescription];
-        //vc.tDosis=currPrescription.tDosis;
         vc.tDosis=[sDosis integerValue];
     }
     
@@ -445,83 +418,4 @@ static StaticTableViewController *sharedInstance;
 //Camera and picture album:END
 
 
-#pragma mark - Table view data source
-/*-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-/*-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     //[self.navigationController pushViewController:detailViewController animated:YES];
-
-}
-*/
 @end

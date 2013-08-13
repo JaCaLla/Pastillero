@@ -26,12 +26,9 @@ static AppDelegate *sharedInstance;
 
 //Application routines:Begin
 -(id) init{
-     NSLog(@"init");
-    
-
     
     if(sharedInstance){
-        NSLog(@"Error: You are creating a second AppDelegate. Bad Panda!");
+        NSLog(@"Error: You are creating a second AppDelegate!");
     }
     
     self=[super init];
@@ -43,29 +40,12 @@ static AppDelegate *sharedInstance;
     //Store prescriptions in a file
     [self loadState];
     
-    
-
-    
     return self;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-   // UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar_bg"];
-   // [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
-    
-    // Override point for customization after application launch.
-    NSLog(@"didFinishLaunchingWithOptions");
-    
-    
-    // Change the appearance of other navigation button
-    //UIImage *barButtonImage = [[UIImage imageNamed:@"button_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 6, 0, 6)];
-    //[[UIBarButtonItem appearance] setBackgroundImage:barButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
-    // Change the appearance of back button
-    //UIImage *backButtonImage = [[UIImage imageNamed:@"button_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
-    //[[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     return YES;
     
@@ -75,21 +55,19 @@ static AppDelegate *sharedInstance;
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    NSLog(@"applicationWillResignActive");
     
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    NSLog(@"applicationDidBecomeActive");
     
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    NSLog(@"applicationWillTerminate");
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -118,25 +96,7 @@ static AppDelegate *sharedInstance;
         
         
         UILocalNotification *scheduledAlert;
-        
-        /*
-         UIAlertView *alertDialog;
-         
-         
-         //todo: change message to the timer name
-         alertDialog = [[UIAlertView alloc]
-         initWithTitle: @"Alert Button Selected"
-         message:@"I need your attention NOW (and in alittle bit)!"
-         delegate: nil
-         cancelButtonTitle: @"Ok"
-         otherButtonTitles: nil];
-         
-         [alertDialog show];
-         //[alertDialog release];
-         */
-        
-        //  NSString *cellText =  [NSString stringWithFormat:@"%@ %d unit(s)",prescription.sName,prescription.iUnitsTaken];
-        //  NSString *cellText2 = [NSString stringWithFormat:@"Press prescritption for set up a new dose."];
+
         
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         scheduledAlert = [[UILocalNotification alloc] init] ;
@@ -154,10 +114,8 @@ static AppDelegate *sharedInstance;
     //Invalidate Timer
     [self stopTimer];
     
-    
     //Keep the timestamp when app went to Background
     dteEnteredInBackground=[NSDate date];
-    
     
     //Store prescriptions in a file
     [self saveState];
@@ -166,9 +124,6 @@ static AppDelegate *sharedInstance;
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    
-    //Cancel all the notifications
-    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     //Calculate new iSecsRemaining
     NSDate *dteNow=[NSDate date];
@@ -181,13 +136,9 @@ static AppDelegate *sharedInstance;
         CurrPrescription.iSecsRemainingNextDose=secondsBetween;
     }
     
-    
     //Start the timer
     [self startTimer];
-    
-    
-    
-    
+   
 }
 //Application routines:End
 
@@ -197,8 +148,7 @@ static AppDelegate *sharedInstance;
     return sharedInstance;
 }
 
--(NSArray*) allPrescriptions{
-    
+-(NSArray*) allPrescriptions{    
     return arrPrescriptions;
 }
 
@@ -210,13 +160,13 @@ static AppDelegate *sharedInstance;
 
 //Remove the current prescirption
 -(void) deleteCurrentPrescription{
+    
     //Remove old prescription
     [arrPrescriptions removeObjectAtIndex:idxPrescriptions];    
 }
 
 //Update one item of the prescription list
 -(void) updatePrescription:p_Prescription{
-    NSLog(@"updatePrescription:%d",idxPrescriptions);
     
     //Remove old prescription
     [arrPrescriptions removeObjectAtIndex:idxPrescriptions];
@@ -338,31 +288,20 @@ static AppDelegate *sharedInstance;
 - (void)saveState{
     NSError *error;
 
-
-    NSLog(@"saveState:%@",[self prescriptionsFilename]);
+    //NSLog(@"saveState:%@",[self prescriptionsFilename]);
     
     //Write array into a file
-    //[arrPrescriptions writeToFile:[self prescriptionsFilename] atomically:YES ];
-    
     NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:arrPrescriptions];
     //BOOL result = [myData writeToFile:[self prescriptionsFilename] atomically:YES];
     if (![myData writeToFile:[self prescriptionsFilename] atomically:YES]) {
         NSLog(@"There was an error saving: %@", error);
     }
-    
-
-    
-    //NSArray  * myArray2 = [NSArray arrayWithObjects:@"foo",@"bar",@"baz",nil];
-    //[myArray2 writeToFile:[self prescriptionsFilename] atomically:YES];
-    
- 
 
 }
 
 -(void) loadState{
     
     arrPrescriptions = [[NSMutableArray alloc]init];
-    //arrPrescriptions = [NSArray arrayWithContentsOfFile:[self prescriptionsFilename]];
  
     NSLog(@"loadState:%@",[self prescriptionsFilename]);
  

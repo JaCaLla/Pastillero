@@ -77,9 +77,6 @@ static ViewController *sharedInstance;
     // Add padding to the top of the table view
     UIEdgeInsets inset = UIEdgeInsetsMake(5, 0, 0, 0);
     self.tbvPrescriptions.contentInset = inset;
-    
-
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,58 +87,6 @@ static ViewController *sharedInstance;
 
 
 // BEGIN: Methods to implement for fulfill CollectionView Interface
-/*
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
-    // _data is a class member variable that contains one array per section.
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return [arrPrescriptions count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"CellPrescriptionId";
-    
-    
-    
-    PrescriptionControllerCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    cell.txtName.text = [NSString stringWithFormat:@"Section:%d, Item:%d", indexPath.section, indexPath.item];
-    
-    return cell;
-    
-}
-
-
--(IBAction)myClickEvent:(id)sender event:(id)event {
-    
-    
-    NSLog(@"myClickEvent");
-    
-}
-
-
--(void)buttonAction:(UIButton*)button {
-
-     NSLog(@"buttonUpdatePrescription");   
-    
-}
-
-
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-
-    //Set the current seleted index timer
-    idxPrescriptions=indexPath.item;
-    
-
-    
-}
- */
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -178,21 +123,11 @@ static ViewController *sharedInstance;
     else{
         //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];
         NSData *nsData=tmrCurrent.dChosenImage;
-
         
         cell.imageView.image =[UIImage imageWithData:nsData];
-        cell.imageView.image =[self scaled:cell.imageView.image  toSize:CGSizeMake(70, 50)];
-       // [cell.imageView sizeToFit];
-       
+        cell.imageView.image =[self scaled:cell.imageView.image  toSize:CGSizeMake(70, 50)];       
     
     }
-    
-    //UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageName:@"myimage.png"]];
-    //[imageView sizeToFit];
-    
-    //CGRect newFrame = imageView.frame;
-    //if (newFrame.size.width > 100) newFrame.size.width = 100;
-    //imageView.frame = newFrame;
 
     // Assign our own background image for the cell
     UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
@@ -215,17 +150,10 @@ static ViewController *sharedInstance;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    //Set the current seleted index timer
-    //idxPrescriptions=indexPath.item;
     
     //Notify the model
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     appDelegate.idxPrescriptions=indexPath.item;
-    
-    NSLog(@"Row Selected = %i",appDelegate.idxPrescriptions);
-    
-    //[self performSegueWithIdentifier:@"updatePrescription" sender:self.view];
 
     [self performSegueWithIdentifier:@"updatePrescription2" sender:self.view];
 
@@ -238,7 +166,6 @@ static ViewController *sharedInstance;
     NSInteger rowCount = [arrPrescriptions count];
     NSInteger rowIndex = indexPath.row;
     UIImage *background = nil;
-    
     
     if(rowCount==1){
         background = [UIImage imageNamed:@"cell_unique.png"];
@@ -277,37 +204,11 @@ static ViewController *sharedInstance;
         vc.sBoxUnits=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
         vc.sUnitsTaken=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
     }
-   // else if([segue.identifier isEqualToString:@"updatePrescription2"]){
- 
-        //Notify the model
-        //AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-        
-        //Get se
-        //Prescription *currPrescription =[arrPrescriptions objectAtIndex:appDelegate.idxPrescriptions];
-        
-        
-        // Get destination view
-        //UpdatePrescriptionViewController *vc = [segue destinationViewController];
-        
-        //Update view fields
-        //vc.sName= currPrescription.sName;
-        //vc.sBoxUnits2=[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
-        //vc.sUnitsTaken2=[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
 
- //   }
 }
 
 //end: Methods to implement for fulfill CollectionView Interface
 
-- (IBAction)btnUpdatePrescription:(id)sender {
-  
-    //ViewController *viewController=[ViewController sharedViewController];
-    
-    //NSIndexPath *indPath=[viewController.clvPrescriptions indexPathForCell:self];
-    
-    //NSLog(@"Cell:%d",indPath.row);
-    NSLog(@"buttonUpdatePrescription");
-}
 
 //Refresh view. Request AppDelegate for the array of prescriptions and update the view
 -(void) updateView{
@@ -323,8 +224,5 @@ static ViewController *sharedInstance;
     // Reload table data
     [self.tbvPrescriptions reloadData];
 }
-
-
-
 
 @end

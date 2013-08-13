@@ -10,11 +10,8 @@
 
 @interface PrescriptionControllerCellView : UITableViewCell
 
-
 @property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
 @property (weak, nonatomic) IBOutlet UILabel *txtName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-
 
 @end
