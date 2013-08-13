@@ -22,9 +22,9 @@ typedef enum DosisType : NSUInteger {
     OneWeek,
     TwoWeeks,
     OneMonth,
-    ThirtySecs,
     OneMin,
-    TwoMin
+    TwoMin,
+    FourMin
 } ShapeType;
 
 @property NSString *sName;
