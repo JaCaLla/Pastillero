@@ -35,7 +35,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
-@synthesize sDosis;
+@synthesize tDosis;
 @synthesize arrDosis;
 @synthesize uiImageView;
 
@@ -82,14 +82,15 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     //Initialize dosis array
     arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month",@"60",@"120",@"240", nil];
-    sDosis=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
-        
+    
+    //sDosis=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
+    tDosis=currPrescription.tDosis;
 
     //Initialize fields
     txtName.text= sName;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
-    lblDose.text=sDosis;
+    lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
@@ -145,9 +146,10 @@ static UpdatePrescriptionViewController *sharedInstance;
 //BEGIN:ModelViewDelegat callbacks
 - (void)setDosis:(int)p_iDose {
     //Check if there were changes with dosis
-    if([sDosis integerValue]!=p_iDose){//txtDosis.text){
-        lblDose.text=[NSString stringWithFormat:@"%d", p_iDose];
-        sDosis=lblDose.text;
+    if(tDosis!=p_iDose){//txtDosis.text){
+                
+        lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:p_iDose]];
+        tDosis= p_iDose;
         
         btnSave.enabled=TRUE;
     }
@@ -313,13 +315,12 @@ static UpdatePrescriptionViewController *sharedInstance;
         //Create a new prescription object
         Prescription *p1;
         if (uiImageView.image==nil) {//There is no image
-            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue]];
+            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
         }
         else{
            // UIImage *i=uiImageView.image;
-            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[lblDose.text integerValue] Image:uiImageView.image];
+            p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
         }
-        
         
         
         //Notify the model
@@ -335,8 +336,10 @@ static UpdatePrescriptionViewController *sharedInstance;
         DosisUpdateTableViewController *vc = [segue destinationViewController];
         vc.delegate = self;
         
-        //Update view fields        
-        vc.tDosis=[sDosis integerValue];
+        //Update view fields
+        
+        vc.tDosis=tDosis;
+        
     } //Remove a prescription
     else if ([segue.identifier isEqualToString:@"backFromUpdateDelete"]){
         //Notify the model

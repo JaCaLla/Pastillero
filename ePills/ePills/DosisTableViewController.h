@@ -21,7 +21,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tbvDoses;
 
 @property id<ModalViewDelegate> delegate;
-@property NSArray *arrDosis;
+@property (strong,nonatomic) NSArray *arrDosis;
 
 @property enum DosisType tDosis;
 

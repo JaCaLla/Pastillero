@@ -236,8 +236,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUn-jp-aOY">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="74" id="OyS-Sq-ZEf"/>
-                                                        <constraint firstAttribute="height" constant="40" id="pdf-tf-62J"/>
+                                                        <constraint firstAttribute="width" constant="221" id="idu-Mo-qth"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
@@ -262,6 +261,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB9-pk-fnj">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="141" id="XQ1-Y6-2cS"/>
+                                                        <constraint firstAttribute="height" constant="21" id="lnI-yt-45B"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,11 +271,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="115" id="3KI-0q-a6R"/>
-                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="baseline" secondItem="3lH-6S-bcl" secondAttribute="baseline" type="default" id="Bk4-XT-XPL"/>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="centerY" secondItem="JUn-jp-aOY" secondAttribute="centerY" type="default" id="9wl-Qe-u4b"/>
                                             <constraint firstItem="3lH-6S-bcl" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="22" id="NuF-NU-fmv"/>
-                                            <constraint firstItem="3lH-6S-bcl" firstAttribute="top" secondItem="FrC-bJ-Wa8" secondAttribute="top" constant="6" id="QTy-3P-Skg"/>
-                                            <constraint firstAttribute="trailing" secondItem="JUn-jp-aOY" secondAttribute="trailing" constant="13" id="amb-VI-uk6"/>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="top" secondItem="FrC-bJ-Wa8" secondAttribute="top" constant="11" id="hh7-NL-vA3"/>
+                                            <constraint firstItem="3lH-6S-bcl" firstAttribute="centerY" secondItem="FrC-bJ-Wa8" secondAttribute="centerY" type="default" id="jf0-sa-2tX"/>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="112" id="mPe-xB-VCP"/>
+                                            <constraint firstItem="JUn-jp-aOY" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="86" id="ne3-4o-Vcd"/>
                                             <constraint firstItem="JUn-jp-aOY" firstAttribute="bottom" secondItem="FrC-bJ-Wa8" secondAttribute="bottom" type="default" id="uDG-Hq-Brv"/>
                                         </constraints>
                                     </tableViewCell>
@@ -551,8 +552,8 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leR-jw-jaX">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="49" id="GfA-eW-4dP"/>
                                                         <constraint firstAttribute="height" constant="37" id="Ld4-Ji-U2E"/>
+                                                        <constraint firstAttribute="width" constant="231" id="Mf6-kP-SQi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal">
@@ -586,12 +587,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="1QQ-c0-7cU" firstAttribute="top" secondItem="xg6-mq-FxW" secondAttribute="top" constant="7" id="4gr-Er-Ysw"/>
                                             <constraint firstItem="Jj6-2j-56S" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="89" id="KPX-zV-Y1N"/>
-                                            <constraint firstItem="Jj6-2j-56S" firstAttribute="top" secondItem="xg6-mq-FxW" secondAttribute="top" constant="7" id="SG9-fk-Iyo"/>
+                                            <constraint firstItem="leR-jw-jaX" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="74" id="VLy-kP-KY7"/>
                                             <constraint firstItem="1QQ-c0-7cU" firstAttribute="leading" secondItem="xg6-mq-FxW" secondAttribute="leading" constant="22" id="Vh8-vQ-DWo"/>
                                             <constraint firstItem="leR-jw-jaX" firstAttribute="top" secondItem="xg6-mq-FxW" secondAttribute="top" type="default" id="VnV-zh-9Vu"/>
                                             <constraint firstItem="Jj6-2j-56S" firstAttribute="baseline" secondItem="1QQ-c0-7cU" secondAttribute="baseline" type="default" id="kFe-jM-64k"/>
-                                            <constraint firstAttribute="trailing" secondItem="leR-jw-jaX" secondAttribute="trailing" constant="15" id="qpf-BN-bKt"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="4zh-WG-aue">
@@ -967,9 +968,6 @@
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnDose:"/>
-                <relationship kind="action" name="btnNameEditingDidEd:"/>
-                <relationship kind="action" name="btnRefill:"/>
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
@@ -988,7 +986,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnUpdatePrescription:"/>
                 <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
             </relationships>
@@ -1000,6 +997,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="jFQ-oY-ha3"/>
     </inferredMetricsTieBreakers>
 </document>

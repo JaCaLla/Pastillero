@@ -35,7 +35,8 @@
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;
 @property (nonatomic, strong) NSString *sUnitsTaken;
-@property (nonatomic, strong) NSString *sDosis;
+@property enum DosisType tDosis;
+
 //@property enum DosisType tDosis;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;

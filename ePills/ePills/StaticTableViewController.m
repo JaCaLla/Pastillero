@@ -35,7 +35,7 @@ static StaticTableViewController *sharedInstance;
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
-@synthesize sDosis;
+@synthesize tDosis;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -71,7 +71,7 @@ static StaticTableViewController *sharedInstance;
     sName=@""; //currPrescription.sName;
     sBoxUnits=@"";//[NSString stringWithFormat:@"%d", currPrescription.iBoxUnits];
     sUnitsTaken=@"1";//[NSString stringWithFormat:@"%d", currPrescription.iUnitsTaken];
-    sDosis=[NSString stringWithFormat:@"%d", EightHours];
+    tDosis= EightHours;
     
 
     //Hide uiImage control
@@ -119,8 +119,10 @@ static StaticTableViewController *sharedInstance;
 //BEGIN:ModelViewDelegat callbacks
 - (void)setDosis:(int)p_iDose {
     //Check if there were changes with dosis
-    if([sDosis integerValue]!=p_iDose){//txtDosis.text){
-        sDosis=[NSString stringWithFormat:@"%d", p_iDose];
+    if(tDosis!=p_iDose){//txtDosis.text){
+        
+        lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:p_iDose]];
+        tDosis= p_iDose;
         
         //Validate form
         [self validateForm];
@@ -136,7 +138,7 @@ static StaticTableViewController *sharedInstance;
     //Update next dosis
     if([txtBoxUnits.text length]>0){
         //Update last dosis
-        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
         lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
     }
     
@@ -336,11 +338,11 @@ static StaticTableViewController *sharedInstance;
         //Create a new prescription object
         Prescription *prescription;
         if (uiImageView.image==nil) {//There is no image
-            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
+            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
         }
         else{
             // UIImage *i=uiImageView.image;
-            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue] Image:uiImageView.image];
+            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
         }
         
         
@@ -359,7 +361,7 @@ static StaticTableViewController *sharedInstance;
         vc.delegate = self;
         
         //Update view fields
-        vc.tDosis=[sDosis integerValue];
+        vc.tDosis=tDosis;
     }
     
     

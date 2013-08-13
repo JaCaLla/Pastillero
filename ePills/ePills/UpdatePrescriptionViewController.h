@@ -10,6 +10,8 @@
 #import "Prescription.h"
 
 
+
+
 //Callback method declaration
 @protocol ModalViewDelegate
  
@@ -39,8 +41,8 @@
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;
 @property (nonatomic, strong) NSString *sUnitsTaken;
-@property (nonatomic, strong) NSString *sDosis;
-@property NSArray *arrDosis;
+@property enum DosisType tDosis;
+@property (nonatomic, strong) NSArray *arrDosis;
 
 
 //@property enum DosisType tDosis;
