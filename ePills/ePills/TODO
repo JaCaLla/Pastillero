@@ -28,6 +28,7 @@ v Serialization
 v BUG. Cell background when there is only one cell
 v Create test doses with 1 minute, 2 minutes and 4 minutes
 v Add a sample prescription when the prescription list is empty
+v BUG. Add a sample prescription when the prescription list is empty. Appears alert but is not created sample.
 * Show time ellapsed per prescription when timer has gone off
 v BUG. After pressing dose in a prescription with 1 unit taken remaining decreases in two units.
 v BUG. Dosis text is not updated properly after changing dose timing on Add form

@@ -117,17 +117,11 @@ static ViewController *sharedInstance;
     }
     
     //Image
-    if(tmrCurrent.dChosenImage==nil){
-        cell.imageView.image=nil;
-    }
-    else{
-        //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];
-        NSData *nsData=tmrCurrent.dChosenImage;
+    NSData *nsData=tmrCurrent.dChosenImage;
         
-        cell.imageView.image =[UIImage imageWithData:nsData];
-        cell.imageView.image =[self scaled:cell.imageView.image  toSize:CGSizeMake(70, 50)];       
-    
-    }
+    cell.imageView.image =[UIImage imageWithData:nsData];
+    cell.imageView.image =[self scaled:cell.imageView.image  toSize:CGSizeMake(70, 50)];       
+
 
     // Assign our own background image for the cell
     UIImage *background = [self cellBackgroundForRowAtIndexPath:indexPath];
