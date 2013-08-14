@@ -12,6 +12,10 @@
 #define MIN_BOXUNITS 1
 #define MAX_BOXUNITX 100
 
+//Information messages
+#define MSG_NO_PRESCRIPTIONS1 @"Prescription list was empty."
+#define MSG_NO_PRESCRIPTIONS2 @"It has been created a sample prescription, just select it and uptdate information."
+
 // Error messages
 #define ERR_TITLE @"Error"
 #define ERR_NAME_EMPTY @"Medicine name is empty."

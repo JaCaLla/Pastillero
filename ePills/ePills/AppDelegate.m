@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Prescription.h"
 #import "ViewController.h"
+#import "Constants.h"
 
 
 // Defining this object as a singleton View controllers can call its methods
@@ -310,8 +311,20 @@ static AppDelegate *sharedInstance;
     
     //Add a sample prescription when there are not any prescription
     if([arrPrescriptions count]==0){
-        Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine name" BoxUnits:20 UnitsTaken:1 Dosis:11];
+        // Create a sample prescription
+        Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine sample name" BoxUnits:20 UnitsTaken:1 Dosis:11 Image:[UIImage imageNamed:@"SampleMedicine.png"]];
         [arrPrescriptions addObject:prescription];
+        
+        // Show an informational message
+        NSString *cellText1 =  [NSString stringWithFormat:MSG_NO_PRESCRIPTIONS1];
+        NSString *cellText2 = [NSString stringWithFormat:MSG_NO_PRESCRIPTIONS2];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
+                                                        message:cellText2
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
  
  /*
