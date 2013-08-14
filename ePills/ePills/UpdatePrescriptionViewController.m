@@ -97,7 +97,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     //Image
     if(currPrescription.dChosenImage==nil){
-        self.uiImageView.image=nil;
+        self.uiImageView.image=[UIImage imageNamed:@"SampleMedicine.png"];
     }
     else{
         //NSData *nsData=[self dataWithBase64EncodedString:currPrescription.dChosenImage];

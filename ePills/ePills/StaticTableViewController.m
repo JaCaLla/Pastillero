@@ -75,7 +75,10 @@ static StaticTableViewController *sharedInstance;
     
 
     //Hide uiImage control
+    //Image
+    self.uiImageView.image=[UIImage imageNamed:@"SampleMedicine.png"];
     uiImageView.hidden=true;
+
     
     
     //Initialize fields
@@ -337,16 +340,8 @@ static StaticTableViewController *sharedInstance;
 
         //Create a new prescription object
         Prescription *prescription;
-        if (uiImageView.image==nil) {//There is no image
-            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
-        }
-        else{
-            // UIImage *i=uiImageView.image;
-            prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
-        }
-        
-        
-        
+        prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
+       
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         [appDelegate addPrescription:prescription];

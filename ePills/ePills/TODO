@@ -27,14 +27,14 @@ v Serialization
     v Merge branch to master
 v BUG. Cell background when there is only one cell
 v Create test doses with 1 minute, 2 minutes and 4 minutes
-* BUG. Rotate picture when the picture is taken horinzontally
-* BUG. Align texts for labels and boxes.
+* Add a sample prescription when the prescription list is empty
+* Show time ellapsed per prescription when timer has gone off
 v BUG. After pressing dose in a prescription with 1 unit taken remaining decreases in two units.
 v BUG. Dosis text is not updated properly after changing dose timing on Add form
 v BUG. Dosis text is not updated properly after changing dose timing on Update form
-* BUG. If there is no picture in the prescription the text is shifted
+v BUG. If there is no picture in the prescription the text is shifted
 * BUG. Logic for save button is not worfing fine. Is disabled when you get back from dose table.
-* Add a sample prescription when the prescription list is empty
-
+* BUG When get into the app by an advice you must show the list of prescriptions
+* BUG. Align texts for labels and boxes.
 
 * Remove test doses
