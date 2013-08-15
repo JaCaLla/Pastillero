@@ -315,7 +315,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 
 -(void)  validateForm{
     
-    btnSave.enabled=([sName length]>0) && ([sBoxUnits length]>0);
+    btnSave.enabled=([txtName.text length]>0) && ([txtBoxUnits.text length]>0) && ([txtUnitsTaken .text length]>0);
     btnDose.enabled=([lblRemaining.text integerValue]>=[txtUnitsTaken.text integerValue]);
     btnRefill.enabled=([lblRemaining.text integerValue]<[txtBoxUnits.text integerValue]);
     
