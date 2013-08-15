@@ -39,13 +39,13 @@
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rux-QQ-Rmo">
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="ERc-Gj-pbJ"/>
+                                                                <constraint firstAttribute="height" constant="50" id="LRz-sC-dZp"/>
                                                                 <constraint firstAttribute="width" constant="70" id="bqB-HL-beM"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-3R-aeT">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="245" id="ax2-a6-QYV"/>
+                                                                <constraint firstAttribute="width" constant="220" id="dDj-EN-FRG"/>
                                                                 <constraint firstAttribute="height" constant="21" id="nDC-iR-L0e"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
@@ -54,9 +54,17 @@
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtNextDose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtx-mJ-lkx">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="245" id="w8A-Id-ijd"/>
+                                                                <constraint firstAttribute="height" constant="21" id="YwN-hc-Nmp"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtNeedRefill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-ZD-8Wi">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="M5N-dg-K8x"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
@@ -64,17 +72,22 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="37" id="OlG-x4-Qs1"/>
-                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="top" secondItem="bf1-3R-aeT" secondAttribute="top" type="default" id="YrO-ov-PPB"/>
+                                                    <constraint firstItem="1G5-ZD-8Wi" firstAttribute="leading" secondItem="xtx-mJ-lkx" secondAttribute="leading" type="default" id="0Kd-7z-XEa"/>
+                                                    <constraint firstItem="1G5-ZD-8Wi" firstAttribute="trailing" secondItem="xtx-mJ-lkx" secondAttribute="trailing" type="default" id="1Tc-aS-m1B"/>
+                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="7" id="CEb-4W-JvS"/>
+                                                    <constraint firstItem="1G5-ZD-8Wi" firstAttribute="top" secondItem="7qi-yR-nNt" secondAttribute="top" constant="24" id="HlX-HQ-LMB"/>
+                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="82" id="M6h-Ej-UB9"/>
+                                                    <constraint firstItem="1G5-ZD-8Wi" firstAttribute="trailing" secondItem="bf1-3R-aeT" secondAttribute="trailing" type="default" id="O0f-XB-TH5"/>
                                                     <constraint firstItem="rux-QQ-Rmo" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="10" id="ZW8-Ua-9wm"/>
-                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="centerY" secondItem="7qi-yR-nNt" secondAttribute="centerY" type="default" id="bWK-Af-aLu"/>
-                                                    <constraint firstItem="bf1-3R-aeT" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="81" id="i0p-fj-Y5w"/>
-                                                    <constraint firstItem="xtx-mJ-lkx" firstAttribute="leading" secondItem="7qi-yR-nNt" secondAttribute="leading" constant="82" id="z6D-DC-oeL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xtx-mJ-lkx" secondAttribute="bottom" constant="8" id="cOG-3S-FTo"/>
+                                                    <constraint firstItem="1G5-ZD-8Wi" firstAttribute="leading" secondItem="bf1-3R-aeT" secondAttribute="leading" type="default" id="vYf-rB-q09"/>
+                                                    <constraint firstItem="rux-QQ-Rmo" firstAttribute="centerY" secondItem="7qi-yR-nNt" secondAttribute="centerY" type="default" id="wYS-lx-O9r"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="imageView" destination="rux-QQ-Rmo" id="Ewc-1L-uKd"/>
+                                                    <outlet property="lblName" destination="bf1-3R-aeT" id="1KU-M4-rsI"/>
+                                                    <outlet property="lblNeedRefill" destination="1G5-ZD-8Wi" id="jPz-lm-E65"/>
                                                     <outlet property="lblNextDose" destination="xtx-mJ-lkx" id="fp8-rA-9Ts"/>
-                                                    <outlet property="txtName" destination="bf1-3R-aeT" id="2T6-3w-Oi2"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -450,7 +463,7 @@
                                 </barButtonItem>
                                 <barButtonItem title="Dose" id="RRc-jg-YZT">
                                     <connections>
-                                        <action selector="btnDose:" destination="opj-XB-eVa" id="U0x-l9-3mi"/>
+                                        <action selector="btnDose:" destination="opj-XB-eVa" id="4il-NQ-5kH"/>
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem title="Refill" id="LhU-gL-etV">
@@ -770,6 +783,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
+                        <outlet property="btnDose" destination="RRc-jg-YZT" id="1R6-9U-Erd"/>
+                        <outlet property="btnRefill" destination="LhU-gL-etV" id="LM3-4P-Umr"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
                         <outlet property="lblDose" destination="Jj6-2j-56S" id="DlE-Nv-PmJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
@@ -780,6 +795,7 @@
                         <outlet property="txtName" destination="3Pz-Il-cgJ" id="NnY-OE-QRq"/>
                         <outlet property="txtUnitsTaken" destination="gfY-p6-Zeb" id="P09-vK-d3S"/>
                         <outlet property="uiImageView" destination="6SM-Mv-cQh" id="pnn-f3-qOh"/>
+                        <segue destination="2" kind="modal" identifier="backFromDose" id="wOb-tc-ySU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAO-5h-3EK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -869,11 +885,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="trash" id="Hvy-qC-jaV"/>
-                        <barButtonItem title="Dose" id="wDX-Fv-8kI">
-                            <connections>
-                                <action selector="btnDose:" destination="opj-XB-eVa" id="J9S-j5-WHf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="Dose" id="wDX-Fv-8kI"/>
                         <barButtonItem title="Refill" id="JRH-1M-ea0">
                             <connections>
                                 <action selector="btnRefill:" destination="opj-XB-eVa" id="K9T-YR-E3P"/>
@@ -897,11 +909,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="trash" id="63z-wS-Li7"/>
-                        <barButtonItem title="Dose" id="edt-h8-QYk">
-                            <connections>
-                                <action selector="btnDose:" destination="opj-XB-eVa" id="TkS-SL-sdf"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem title="Dose" id="edt-h8-QYk"/>
                         <barButtonItem title="Refill" id="IXR-4x-ywk">
                             <connections>
                                 <action selector="btnRefill:" destination="opj-XB-eVa" id="FpS-rM-e7J"/>
@@ -944,14 +952,14 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNeedRefill" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnNameDidEndOnExit:"/>
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
@@ -968,9 +976,14 @@
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
             <relationships>
+                <relationship kind="action" name="btnDose:"/>
+                <relationship kind="action" name="btnNameEditingDidEd:"/>
+                <relationship kind="action" name="btnRefill:"/>
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnDose" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnRefill" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
@@ -997,6 +1010,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jFQ-oY-ha3"/>
+        <segue reference="wOb-tc-ySU"/>
     </inferredMetricsTieBreakers>
 </document>

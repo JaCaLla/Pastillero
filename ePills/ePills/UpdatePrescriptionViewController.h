@@ -46,7 +46,8 @@
 
 
 //@property enum DosisType tDosis;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDose;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnRefill;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnSave;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnDeletePrescription;
 

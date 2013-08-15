@@ -22,6 +22,8 @@ static UpdatePrescriptionViewController *sharedInstance;
 
 @synthesize btnSave;
 @synthesize btnDeletePrescription;
+@synthesize btnRefill;
+@synthesize btnDose;
 @synthesize txtName;
 @synthesize txtBoxUnits;
 @synthesize txtUnitsTaken;
@@ -71,6 +73,8 @@ static UpdatePrescriptionViewController *sharedInstance;
     btnSave.enabled=FALSE;
     lblDose.enabled=FALSE;
     
+   
+    
     //Get current prescription from delegate (Model)
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     Prescription *currPrescription = [appDelegate getCurrentPrescription];
@@ -94,6 +98,9 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     lblNextDose.text=[currPrescription getStringNextDose];
+    
+    //Initialize buttons
+    btnDose.enabled=(currPrescription.iRemaining>=currPrescription.iUnitsTaken);
     
     //Image
     if(currPrescription.dChosenImage==nil){
@@ -151,7 +158,8 @@ static UpdatePrescriptionViewController *sharedInstance;
         lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:p_iDose]];
         tDosis= p_iDose;
         
-        btnSave.enabled=TRUE;
+        //Validate form
+        [self validateForm];
     }
 }
 //END:ModelViewDelegat callbacks
@@ -199,7 +207,22 @@ static UpdatePrescriptionViewController *sharedInstance;
         txtBoxUnits.text= sBoxUnits;
         
     }
+    //Check if dosis is greater than box units
+    else if([txtUnitsTaken.text integerValue]>[txtBoxUnits.text integerValue]){
+        
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtBoxUnits.text= sBoxUnits;
+    }
     else{
+        
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtBoxUnits.text!= sBoxUnits);
@@ -260,6 +283,24 @@ static UpdatePrescriptionViewController *sharedInstance;
         txtUnitsTaken.text= sUnitsTaken;
     }
     else{
+       
+        if([lblRemaining.text integerValue]<[txtUnitsTaken.text integerValue]){
+            // Show an informational message
+            NSString *cellText1 =  [NSString stringWithFormat:MSG_NO_PILLS_FOR_DOSE1];
+            NSString *cellText2 = [NSString stringWithFormat:MSG_NO_PILLS_FOR_DOSE2];
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
+                                                            message:cellText2
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtUnitsTaken.text!= sUnitsTaken);
@@ -270,6 +311,24 @@ static UpdatePrescriptionViewController *sharedInstance;
     }
 }
 //BEGIN:Number pad removal handling
+
+-(void)  validateForm{
+    
+    btnSave.enabled=([sName length]>0) && ([sBoxUnits length]>0);
+    btnDose.enabled=([lblRemaining.text integerValue]>=[txtUnitsTaken.text integerValue]);
+    
+    //If texbox units value was changed then review units remaining
+    if([lblRemaining.text integerValue]>[txtBoxUnits.text integerValue])
+        lblRemaining.text=txtBoxUnits.text;
+    
+    //Update next dosis
+    if([txtBoxUnits.text length]>0){
+        //Update last dosis
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
+        lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+    }
+    
+}
 
 
 //BEGIN:Keyboard removal handling
@@ -287,6 +346,10 @@ static UpdatePrescriptionViewController *sharedInstance;
         
     }
     else{
+        
+        //Validate form
+        [self validateForm];
+        
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtName.text!= sName);
@@ -313,6 +376,8 @@ static UpdatePrescriptionViewController *sharedInstance;
         NSLog(@"prepareForSegue:backFromUpdateSave");
         
         //Create a new prescription object
+        
+        /*
         Prescription *p1;
         if (uiImageView.image==nil) {//There is no image
             p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
@@ -321,11 +386,13 @@ static UpdatePrescriptionViewController *sharedInstance;
            // UIImage *i=uiImageView.image;
             p1 = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
         }
+         */
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis Image:uiImageView.image];
         
         
         //Notify the model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-        [appDelegate updatePrescription:p1];
+        [appDelegate updatePrescription:prescription];
         
     }
     else if([segue.identifier isEqualToString:@"showUpdateDosisTable"]){
@@ -346,11 +413,40 @@ static UpdatePrescriptionViewController *sharedInstance;
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
         [appDelegate deleteCurrentPrescription];
     }
-    
-    
+    else if([segue.identifier isEqualToString:@"backFromDose"]){
+        
+        //Update record just in case user modified any input information
+        [self performSegueWithIdentifier:@"backFromUpdateSave" sender:nil];
+        
+        //Notify model
+        AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
+        [appDelegate doseCurrentPrescription];
+        
+        Prescription *currPrescription = [appDelegate getCurrentPrescription];
+        lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
+        
+        lblNextDose.text = [currPrescription getStringNextDose];
+        
+        //If it was the last dose
+        if(currPrescription.iRemaining<currPrescription.iUnitsTaken){
+                        // Show an informational message
+            NSString *cellText1 =  [NSString stringWithFormat:MSG_LAST_DOSE1];
+            NSString *cellText2 = [NSString stringWithFormat:MSG_LAST_DOSE2];
+        
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
+                                                        message:cellText2
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+            [alert show];
+        }
+        
+    }
 }
-
 - (IBAction)btnDose:(id)sender {
+
+ [self performSegueWithIdentifier:@"backFromDose" sender:nil];
+ /*
     //Notify model
     AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
     [appDelegate doseCurrentPrescription];
@@ -358,10 +454,22 @@ static UpdatePrescriptionViewController *sharedInstance;
     Prescription *currPrescription = [appDelegate getCurrentPrescription];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
     
-    
     lblNextDose.text = [currPrescription getStringNextDose];
+ 
+    //Initialize buttons
+    btnDose.enabled=(currPrescription.iRemaining<currPrescription.iUnitsTaken);
     
+    // Show an informational message
+    NSString *cellText1 =  [NSString stringWithFormat:MSG_LAST_DOSE1];
+    NSString *cellText2 = [NSString stringWithFormat:MSG_LAST_DOSE2];
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
+                                                    message:cellText2
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+   */
 }
 
 - (IBAction)btnRefill:(id)sender {
@@ -370,6 +478,9 @@ static UpdatePrescriptionViewController *sharedInstance;
     Prescription *currPrescription = [appDelegate getCurrentPrescription];
     [currPrescription refillBox];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
+    
+    //Validate form
+    [self validateForm];
     
 }
 

@@ -106,8 +106,20 @@ static ViewController *sharedInstance;
    
     Prescription* tmrCurrent=[arrPrescriptions objectAtIndex:[indexPath row]];
     
-    [cell.txtName setText:[NSString stringWithFormat:@"%@[%d]",tmrCurrent.sName,tmrCurrent.iBoxUnits]];
+    [cell.lblName setText:[NSString stringWithFormat:@"%@",tmrCurrent.sName]];
     
+    
+    //Need refill
+    cell.lblNeedRefill.text=[NSString stringWithFormat:@"Available:[%d/%d] Units taken:%d",tmrCurrent.iRemaining,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken];
+    if(tmrCurrent.iRemaining<tmrCurrent.iUnitsTaken){ // Run out of pills
+       cell.lblNeedRefill.textColor = [UIColor redColor];       
+    }
+    else{
+        cell.lblNeedRefill.textColor = [UIColor blackColor];
+
+    }
+ 
+    //Next dose
     [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
     if(tmrCurrent.bPrescriptionHasStarted){
         cell.lblNextDose.textColor = [UIColor blackColor];
@@ -115,6 +127,7 @@ static ViewController *sharedInstance;
     else {
         cell.lblNextDose.textColor = [UIColor redColor];
     }
+
     
     //Image
     NSData *nsData=tmrCurrent.dChosenImage;
