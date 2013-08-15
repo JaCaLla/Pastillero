@@ -134,8 +134,8 @@ static AppDelegate *sharedInstance;
     //Look for the next time that is going to expire
     for(Prescription *CurrPrescription in arrPrescriptions){
         NSTimeInterval secondsBetween = [CurrPrescription.dteNextDose timeIntervalSinceDate:dteNow];
-        if(secondsBetween<=0)
-            secondsBetween=0;
+        //if(secondsBetween<=0)
+        //    secondsBetween=0;
         CurrPrescription.iSecsRemainingNextDose=secondsBetween;
     }
     

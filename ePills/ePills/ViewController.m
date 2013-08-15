@@ -121,7 +121,7 @@ static ViewController *sharedInstance;
  
     //Next dose
     [cell.lblNextDose setText:tmrCurrent.getStringRemaining];
-    if(tmrCurrent.bPrescriptionHasStarted){
+    if(tmrCurrent.bPrescriptionHasStarted && tmrCurrent.iSecsRemainingNextDose>=0){
         cell.lblNextDose.textColor = [UIColor blackColor];
     }
     else {
