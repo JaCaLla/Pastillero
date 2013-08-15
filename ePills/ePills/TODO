@@ -47,6 +47,6 @@ v BUG. Dosis text is not updated properly after changing dose timing on Add form
 v BUG. Dosis text is not updated properly after changing dose timing on Update form
 v BUG. If there is no picture in the prescription the text is shifted
 * BUG. Logic for save button is not worfing fine. Is disabled when you get back from dose table. It happens in Add and Update form
-* BUG. Align texts for labels and boxes.
+v BUG. Align texts for labels and boxes.
 
 * Remove test doses
