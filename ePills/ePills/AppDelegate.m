@@ -25,6 +25,7 @@ static AppDelegate *sharedInstance;
 @synthesize tmr1SecTimer;
 @synthesize avAudioPlayer;
 
+//Insert new prescription
 
 
 //Application routines:Begin
@@ -80,19 +81,32 @@ static AppDelegate *sharedInstance;
     
     int iCurrTimer;
     int iMinSecsRemaining=2147483647;
-    Prescription *prescription=nil;
-    
+    //Prescription *prescription=nil;
+   
     //Look for the next time that is going to expire
     iCurrTimer=0;
     for(Prescription *currPrescription in arrPrescriptions){
-        if(currPrescription.iSecsRemainingNextDose<iMinSecsRemaining &&
-           currPrescription.iSecsRemainingNextDose>0 &&
-           currPrescription.bPrescriptionHasStarted){
+
+        if(currPrescription.bPrescriptionHasStarted){
+            UILocalNotification *scheduledAlert;
+        
             iMinSecsRemaining=currPrescription.iSecsRemainingNextDose;
-            prescription=currPrescription;
+        
+            //[[UIApplication sharedApplication] cancelAllLocalNotifications];
+            scheduledAlert = [[UILocalNotification alloc] init] ;
+            scheduledAlert.applicationIconBadgeNumber=1;
+            scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:iMinSecsRemaining];
+            scheduledAlert.timeZone = [NSTimeZone defaultTimeZone];
+            scheduledAlert.repeatInterval =  NSDayCalendarUnit;
+            scheduledAlert.soundName=@"bells.wav";
+            scheduledAlert.alertBody = [NSString stringWithFormat:@"%@ %d unit(s) at %@",currPrescription.sName,currPrescription.iUnitsTaken,[currPrescription getStringNextDose]];
+        
+        
+            [[UIApplication sharedApplication] scheduleLocalNotification:scheduledAlert];
         }
     }
-    
+  
+/*
     if(iMinSecsRemaining>0 && iMinSecsRemaining<2147483647){
         //Programe an alert for the next timer that is going to expire
         //http://www.codeproject.com/Articles/124159/Hour-21-Building-Background-Aware-Applications
@@ -113,7 +127,7 @@ static AppDelegate *sharedInstance;
         
         [[UIApplication sharedApplication] scheduleLocalNotification:scheduledAlert];
     }
-    
+*/
     //Invalidate Timer
     [self stopTimer];
     
@@ -127,6 +141,9 @@ static AppDelegate *sharedInstance;
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    //Cancel all local notifications
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     //Calculate new iSecsRemaining
     NSDate *dteNow=[NSDate date];

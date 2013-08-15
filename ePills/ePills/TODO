@@ -39,13 +39,14 @@ v Show a message in the cell when remaining pills are lower than a dose required
   t Recalculate when a new box units value is entered
 v Add Audio whena prescription has gone off
 v Show time ellapsed per prescription when timer has gone off
-* Show a message when prescription is already refilled
+V One alert per prescription
+v Throw a notification per ongoing prescription.
+* Show a message when a prescription is already refilled. Hide refilled when iRemaining=iBoxUnits
 v BUG. After pressing dose in a prescription with 1 unit taken remaining decreases in two units.
 v BUG. Dosis text is not updated properly after changing dose timing on Add form
 v BUG. Dosis text is not updated properly after changing dose timing on Update form
 v BUG. If there is no picture in the prescription the text is shifted
 * BUG. Logic for save button is not worfing fine. Is disabled when you get back from dose table. It happens in Add and Update form
-* BUG When get into the app by an advice you must show the list of prescriptions
 * BUG. Align texts for labels and boxes.
 
 * Remove test doses
