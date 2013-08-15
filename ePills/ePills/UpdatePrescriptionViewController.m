@@ -101,6 +101,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     //Initialize buttons
     btnDose.enabled=(currPrescription.iRemaining>=currPrescription.iUnitsTaken);
+    btnRefill.enabled=([lblRemaining.text integerValue]<[txtBoxUnits.text integerValue]);
     
     //Image
     if(currPrescription.dChosenImage==nil){
@@ -316,6 +317,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     
     btnSave.enabled=([sName length]>0) && ([sBoxUnits length]>0);
     btnDose.enabled=([lblRemaining.text integerValue]>=[txtUnitsTaken.text integerValue]);
+    btnRefill.enabled=([lblRemaining.text integerValue]<[txtBoxUnits.text integerValue]);
     
     //If texbox units value was changed then review units remaining
     if([lblRemaining.text integerValue]>[txtBoxUnits.text integerValue])

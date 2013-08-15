@@ -41,7 +41,7 @@ v Add Audio whena prescription has gone off
 v Show time ellapsed per prescription when timer has gone off
 V One alert per prescription
 v Throw a notification per ongoing prescription.
-* Show a message when a prescription is already refilled. Hide refilled when iRemaining=iBoxUnits
+v Disable refill button when prescription has been already refilled. 
 v BUG. After pressing dose in a prescription with 1 unit taken remaining decreases in two units.
 v BUG. Dosis text is not updated properly after changing dose timing on Add form
 v BUG. Dosis text is not updated properly after changing dose timing on Update form
