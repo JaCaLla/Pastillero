@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Prescription.h"
 #import "Database.h"
 
@@ -24,10 +25,11 @@
     
     //Timestamp when app entered in background mode
     NSDate *dteEnteredInBackground;
-    
 
-
+    AVAudioPlayer *avAudioPlayer;
 }
+
+@property (nonatomic, strong) AVAudioPlayer *avAudioPlayer;
 
 @property (strong, nonatomic) UIWindow *window;
 

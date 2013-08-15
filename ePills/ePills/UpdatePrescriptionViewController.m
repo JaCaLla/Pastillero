@@ -416,7 +416,7 @@ static UpdatePrescriptionViewController *sharedInstance;
     else if([segue.identifier isEqualToString:@"backFromDose"]){
         
         //Update record just in case user modified any input information
-        [self performSegueWithIdentifier:@"backFromUpdateSave" sender:nil];
+        //[self performSegueWithIdentifier:@"backFromUpdateSave" sender:nil];
         
         //Notify model
         AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];

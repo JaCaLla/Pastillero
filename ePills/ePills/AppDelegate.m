@@ -12,6 +12,7 @@
 #import "Constants.h"
 
 
+
 // Defining this object as a singleton View controllers can call its methods
 static AppDelegate *sharedInstance;
 
@@ -22,7 +23,8 @@ static AppDelegate *sharedInstance;
 @synthesize arrPrescriptions;
 @synthesize idxPrescriptions;
 @synthesize tmr1SecTimer;
-//@synthesize dteEnteredInBackground;
+@synthesize avAudioPlayer;
+
 
 
 //Application routines:Begin
@@ -105,7 +107,7 @@ static AppDelegate *sharedInstance;
         scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:iMinSecsRemaining];
         scheduledAlert.timeZone = [NSTimeZone defaultTimeZone];
         scheduledAlert.repeatInterval =  NSDayCalendarUnit;
-        //scheduledAlert.soundName=@"soundeffect.wav";
+        scheduledAlert.soundName=@"bells.wav";
         scheduledAlert.alertBody = [NSString stringWithFormat:@"%@ %d unit(s) at %@",prescription.sName,prescription.iUnitsTaken,[prescription getStringNextDose]];
         
         
@@ -222,7 +224,26 @@ static AppDelegate *sharedInstance;
                 }
                 else{
                     tmrCurr.bIsNextDoseExpired=true;
-                
+                /*
+                    NSURL *url=[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/bells.wav",[NSBundle mainBundle]]];
+                    
+                    NSError *error;
+                    avAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+                    avAudioPlayer.numberOfLoops=0;
+                    
+                    [avAudioPlayer play];
+                  */
+                     NSError *error;
+                    NSString *soundPath =[[NSBundle mainBundle] pathForResource:@"bells" ofType:@"wav"];
+
+                    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:soundPath] error:&error];
+                   // player.numberOfLoops=1;
+                   // [player prepareToPlay];
+                    [player play];
+                    
+                    
+                    
+                    
                     NSString *cellText =  [NSString stringWithFormat:@"%@ %d unit(s)",tmrCurr.sName,tmrCurr.iUnitsTaken];
                     NSString *cellText2 = [NSString stringWithFormat:@"Press prescritption for set up a new dose."];
               

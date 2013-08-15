@@ -11,7 +11,9 @@
 		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
 		5A455965178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
+		5A540F9F17BCE9B80098D3A9 /* bells.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5A540F9E17BCE9B80098D3A9 /* bells.wav */; };
 		5A8D107317AD5AAB00E6702E /* App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8D107217AD5AAB00E6702E /* App@2x.png */; };
+		5A9802A917BCD8980044E513 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9802A817BCD8980044E513 /* AVFoundation.framework */; };
 		5A9B47A117B950A30010BDD9 /* cell_unique.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B479F17B950A30010BDD9 /* cell_unique.png */; };
 		5A9B47A217B950A30010BDD9 /* cell_unique@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */; };
 		5AA0BFB517AE2A05002DCB95 /* cell_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */; };
@@ -65,8 +67,10 @@
 		5A45595F178B306700DADEF9 /* Prescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
 		5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionControllerCellView.h; sourceTree = "<group>"; };
 		5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionControllerCellView.m; sourceTree = "<group>"; };
+		5A540F9E17BCE9B80098D3A9 /* bells.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bells.wav; sourceTree = "<group>"; };
 		5A87E33C17A45395000CADA4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5A8D107217AD5AAB00E6702E /* App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App@2x.png"; sourceTree = "<group>"; };
+		5A9802A817BCD8980044E513 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5A9B479F17B950A30010BDD9 /* cell_unique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_unique.png; sourceTree = "<group>"; };
 		5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unique@2x.png"; sourceTree = "<group>"; };
 		5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bottom.png; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9802A917BCD8980044E513 /* AVFoundation.framework in Frameworks */,
 				5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */,
 				5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */,
 				5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */,
@@ -194,6 +199,7 @@
 		5ACC659D17889BD300ED59D1 = {
 			isa = PBXGroup;
 			children = (
+				5A9802A817BCD8980044E513 /* AVFoundation.framework */,
 				5ACC65AF17889BD300ED59D1 /* ePills */,
 				5ACC65D317889BD300ED59D1 /* ePillsTests */,
 				5ACC65A817889BD300ED59D1 /* Frameworks */,
@@ -240,6 +246,7 @@
 		5ACC65B017889BD300ED59D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5A540F9E17BCE9B80098D3A9 /* bells.wav */,
 				5AB7E61417BBF8A000A5F477 /* SampleMedicine.png */,
 				5A9B479F17B950A30010BDD9 /* cell_unique.png */,
 				5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */,
@@ -379,6 +386,7 @@
 				5A9B47A117B950A30010BDD9 /* cell_unique.png in Resources */,
 				5A9B47A217B950A30010BDD9 /* cell_unique@2x.png in Resources */,
 				5AB7E61517BBF8A000A5F477 /* SampleMedicine.png in Resources */,
+				5A540F9F17BCE9B80098D3A9 /* bells.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
