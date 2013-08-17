@@ -106,28 +106,7 @@ static AppDelegate *sharedInstance;
         }
     }
   
-/*
-    if(iMinSecsRemaining>0 && iMinSecsRemaining<2147483647){
-        //Programe an alert for the next timer that is going to expire
-        //http://www.codeproject.com/Articles/124159/Hour-21-Building-Background-Aware-Applications
-        
-        
-        UILocalNotification *scheduledAlert;
 
-        
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-        scheduledAlert = [[UILocalNotification alloc] init] ;
-        scheduledAlert.applicationIconBadgeNumber=1;
-        scheduledAlert.fireDate = [NSDate dateWithTimeIntervalSinceNow:iMinSecsRemaining];
-        scheduledAlert.timeZone = [NSTimeZone defaultTimeZone];
-        scheduledAlert.repeatInterval =  NSDayCalendarUnit;
-        scheduledAlert.soundName=@"bells.wav";
-        scheduledAlert.alertBody = [NSString stringWithFormat:@"%@ %d unit(s) at %@",prescription.sName,prescription.iUnitsTaken,[prescription getStringNextDose]];
-        
-        
-        [[UIApplication sharedApplication] scheduleLocalNotification:scheduledAlert];
-    }
-*/
     //Invalidate Timer
     [self stopTimer];
     
