@@ -334,7 +334,7 @@ static AppDelegate *sharedInstance;
         //Add a sample prescription when there are not any prescription
         if([arrPrescriptions count]==0){
             // Create a sample prescription
-            Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine sample name" BoxUnits:20 UnitsTaken:1 Dosis:11 Image:[UIImage imageNamed:@"SampleMedicine.png"]];
+            Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine sample name" BoxUnits:20 UnitsTaken:1 Dosis:3 Image:[UIImage imageNamed:@"SampleMedicine.png"]];
             [arrPrescriptions addObject:prescription];
         
             //Save state
