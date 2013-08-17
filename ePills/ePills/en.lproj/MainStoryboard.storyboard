@@ -265,7 +265,7 @@
                                                         <segue destination="TXc-lZ-7Mm" kind="push" identifier="showAddDosisTable" id="ZKn-vZ-8yr"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="69" id="NvT-oL-hRD"/>
                                                     </constraints>
@@ -348,7 +348,7 @@
                                                         <constraint firstAttribute="width" constant="108" id="Xjn-EM-XZR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5IU-fT-ZZc">
@@ -680,7 +680,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="f3n-39-t6e"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -715,7 +715,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="rcd-xI-PyV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -750,7 +750,7 @@
                                                         <constraint firstAttribute="width" constant="152" id="q9k-dG-pPe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                             </subviews>
@@ -932,84 +932,12 @@
             <point key="canvasLocation" x="1157" y="-1105"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DosisTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DosisUpdateTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisUpdateTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblNeedRefill" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StaticTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
-                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tbvNewPrescription" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnDose:"/>
-                <relationship kind="action" name="btnNameEditingDidEd:"/>
-                <relationship kind="action" name="btnRefill:"/>
-                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
-                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="btnDose" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="btnRefill" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tbvUpdatePrescription" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="wOb-tc-ySU"/>
     </inferredMetricsTieBreakers>
 </document>
