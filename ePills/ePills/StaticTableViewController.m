@@ -86,7 +86,7 @@ static StaticTableViewController *sharedInstance;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
     //Initialize dosis array
-    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month",@"1 min",@"2 min",@"4 min", nil];
+    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
     lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
     // Assign our own backgroud for the view    
@@ -134,18 +134,7 @@ static StaticTableViewController *sharedInstance;
 }
 //END:ModelViewDelegat callbacks
 
--(void)  validateForm{
-    
-    btnSave.enabled=([txtName.text length]>0) && ([txtBoxUnits.text length]>0) && ([txtUnitsTaken .text length]>0);
-    
-    //Update next dosis
-    if([txtBoxUnits.text length]>0){
-        //Update last dosis
-        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
-        lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
-    }
-    
-}
+
 
 
 
@@ -206,6 +195,12 @@ static StaticTableViewController *sharedInstance;
         sBoxUnits=txtBoxUnits.text;
     }
     
+}
+
+- (IBAction)txtBoxUnitsEditingDidEnd:(id)sender {
+    
+    if(txtBoxUnits.text!= sBoxUnits)
+        [self doneWithBoxUnits];
 }
 
 -(void)cancelUnitsTaken{
@@ -286,11 +281,15 @@ static StaticTableViewController *sharedInstance;
     
 
 }
+- (IBAction)txtUnitsTakenEditingDidEnd:(id)sender {
+    if(txtUnitsTaken.text!= sUnitsTaken)
+        [self doneWithUnitsTaken];
+}
 //BEGIN:Number pad removal handling
 
 
 //BEGIN:Keyboard removal handling
-- (IBAction)btnNameDidEndOnExit:(id)sender {
+-(void) validateTxtName{
     //Check if medicine name is not emty
     if([txtName.text length]==0){
         // Show messagebox
@@ -304,30 +303,52 @@ static StaticTableViewController *sharedInstance;
         
     }
     else{
+        
         //Validate form
         [self validateForm];
         
         if (!btnSave.enabled){
             //Enable Save button if the value is different from previous one
             btnSave.enabled=(txtName.text!= sName);
-            /* TO EWMOCW
-            //Update last dosis
-            if(btnSave.enabled){
-                Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:[sDosis integerValue]];
-                //lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
-            }
-             */
         }
         // Store the value for future recover
         sName=txtName.text;
     }
+}
+
+- (IBAction)btnNameDidEndOnExit:(id)sender {
+    
+    if(sName!=txtName.text)
+        [self validateTxtName];
     
     // Hide keyboard
     [sender resignFirstResponder];
 }
+
+- (IBAction)txtNameValueChanged:(id)sender {
+    if(sName!=txtName.text)
+        [self validateTxtName];
+    
+    // Hide keyboard
+    [sender resignFirstResponder];
+    
+}
+
+
 //END:Keyboard removal handling
 
-
+-(void)  validateForm{
+    
+    btnSave.enabled=([txtName.text length]>0) && ([txtBoxUnits.text length]>0) && ([txtUnitsTaken .text length]>0);
+    
+    //Update next dosis
+    if([txtBoxUnits.text length]>0){
+        //Update last dosis
+        Prescription *prescription = [[Prescription alloc] initWithName:txtName.text BoxUnits:[txtBoxUnits.text integerValue] UnitsTaken:[txtUnitsTaken.text integerValue] Dosis:tDosis];
+        lblLastDosis.text = [prescription getStringLastDosisTaken:nil];
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

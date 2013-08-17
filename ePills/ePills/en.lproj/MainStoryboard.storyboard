@@ -191,6 +191,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="btnNameDidEndOnExit:" destination="0j9-Ez-7Vn" eventType="editingDidEndOnExit" id="bRB-bt-nGJ"/>
+                                                        <action selector="txtNameValueChanged:" destination="0j9-Ez-7Vn" eventType="valueChanged" id="rg9-eD-A2s"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -226,6 +227,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="txtBoxUnitsEditingDidEnd:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="YEJ-Db-oMV"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -315,6 +319,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="txtUnitsTakenEditingDidEnd:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="Bei-Jq-2qL"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -509,6 +516,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="btnNameEditingDidEd:" destination="opj-XB-eVa" eventType="editingDidEndOnExit" id="ZQE-cO-pOL"/>
+                                                        <action selector="txtNameValueChanged:" destination="opj-XB-eVa" eventType="editingDidEnd" id="tQC-g2-Pv6"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -545,6 +553,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="txtBoxUnitsEditingDidEnd:" destination="opj-XB-eVa" eventType="editingDidEnd" id="eMZ-Bf-4QF"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -633,6 +644,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <connections>
                                                         <action selector="textFieldReturn:" destination="0j9-Ez-7Vn" eventType="editingDidEnd" id="IWv-eH-3R0"/>
+                                                        <action selector="txtUnitsTakenEditingDidEnd:" destination="opj-XB-eVa" eventType="editingDidEnd" id="tEy-dI-s2D"/>
                                                     </connections>
                                                 </textField>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6SM-Mv-cQh">
@@ -932,12 +944,90 @@
             <point key="canvasLocation" x="1157" y="-1105"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DosisTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DosisUpdateTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisUpdateTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNeedRefill" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StaticTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnNameDidEndOnExit:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="txtBoxUnitsEditingDidEnd:"/>
+                <relationship kind="action" name="txtUnitsTakenEditingDidEnd:"/>
+                <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tbvNewPrescription" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnDose:"/>
+                <relationship kind="action" name="btnNameEditingDidEd:"/>
+                <relationship kind="action" name="btnRefill:"/>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="txtBoxUnitsEditingDidEnd:"/>
+                <relationship kind="action" name="txtNameValueChanged:"/>
+                <relationship kind="action" name="txtUnitsTakenEditingDidEnd:"/>
+                <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnDose" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnRefill" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tbvUpdatePrescription" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wOb-tc-ySU"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>

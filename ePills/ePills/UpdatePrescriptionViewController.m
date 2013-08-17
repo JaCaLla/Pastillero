@@ -177,6 +177,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 }
 
 -(void)doneWithBoxUnits{
+    
     // Hide keyboard
     [txtBoxUnits resignFirstResponder];
     
@@ -232,6 +233,11 @@ static UpdatePrescriptionViewController *sharedInstance;
         sBoxUnits=txtBoxUnits.text;
     }
     
+}
+- (IBAction)txtBoxUnitsEditingDidEnd:(id)sender {
+
+    if(txtBoxUnits.text!= sBoxUnits)
+        [self doneWithBoxUnits];
 }
 
 -(void)cancelUnitsTaken{
@@ -311,7 +317,59 @@ static UpdatePrescriptionViewController *sharedInstance;
         
     }
 }
+- (IBAction)txtUnitsTakenEditingDidEnd:(id)sender {
+    if(txtUnitsTaken.text!= sUnitsTaken)
+        [self doneWithUnitsTaken];
+}
+
+
 //BEGIN:Number pad removal handling
+
+//BEGIN:Keyboard removal handling
+-(void) validateTxtName{
+    //Check if medicine name is not emty
+    if([txtName.text length]==0){
+        // Show messagebox
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
+                                                         message:ERR_NAME_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [msgAlert show];
+        
+        //Recover old value
+        txtName.text= sName;
+        
+    }
+    else{
+        
+        //Validate form
+        [self validateForm];
+        
+        if (!btnSave.enabled){
+            //Enable Save button if the value is different from previous one
+            btnSave.enabled=(txtName.text!= sName);
+        }
+        // Store the value for future recover
+        sName=txtName.text;
+    }
+}
+- (IBAction)btnNameEditingDidEd:(id)sender {
+    
+    if(sName!=txtName.text)
+        [self validateTxtName];
+    
+    // Hide keyboard
+    [sender resignFirstResponder];
+}
+
+- (IBAction)txtNameValueChanged:(id)sender {
+    if(sName!=txtName.text)
+        [self validateTxtName];
+    
+    // Hide keyboard
+    [sender resignFirstResponder];
+    
+}
+//END:Keyboard removal handling
 
 -(void)  validateForm{
     
@@ -332,38 +390,6 @@ static UpdatePrescriptionViewController *sharedInstance;
     
 }
 
-
-//BEGIN:Keyboard removal handling
-- (IBAction)btnNameEditingDidEd:(id)sender {
-    //Check if medicine name is not emty
-    if([txtName.text length]==0){
-        // Show messagebox
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                    message:ERR_NAME_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        
-        [msgAlert show];
-        
-        //Recover old value
-        txtName.text= sName;
-        
-    }
-    else{
-        
-        //Validate form
-        [self validateForm];
-        
-        if (!btnSave.enabled){
-            //Enable Save button if the value is different from previous one
-            btnSave.enabled=(txtName.text!= sName);
-        }
-        // Store the value for future recover
-        sName=txtName.text;
-    }
-    
-    // Hide keyboard
-    [sender resignFirstResponder];
-}
-//END:Keyboard removal handling
 
 - (void)didReceiveMemoryWarning
 {
@@ -448,30 +474,7 @@ static UpdatePrescriptionViewController *sharedInstance;
 - (IBAction)btnDose:(id)sender {
 
  [self performSegueWithIdentifier:@"backFromDose" sender:nil];
- /*
-    //Notify model
-    AppDelegate *appDelegate = [AppDelegate sharedAppDelegate];
-    [appDelegate doseCurrentPrescription];
-    
-    Prescription *currPrescription = [appDelegate getCurrentPrescription];
-    lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
-    
-    lblNextDose.text = [currPrescription getStringNextDose];
- 
-    //Initialize buttons
-    btnDose.enabled=(currPrescription.iRemaining<currPrescription.iUnitsTaken);
-    
-    // Show an informational message
-    NSString *cellText1 =  [NSString stringWithFormat:MSG_LAST_DOSE1];
-    NSString *cellText2 = [NSString stringWithFormat:MSG_LAST_DOSE2];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
-                                                    message:cellText2
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-   */
+
 }
 
 - (IBAction)btnRefill:(id)sender {

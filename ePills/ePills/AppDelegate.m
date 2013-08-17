@@ -172,6 +172,7 @@ static AppDelegate *sharedInstance;
     prescription.iBoxUnits=p_Prescription.iBoxUnits;
     prescription.iUnitsTaken=p_Prescription.iUnitsTaken;
     prescription.dChosenImage=p_Prescription.dChosenImage;
+    prescription.tDosis=p_Prescription.tDosis;
     
  }
 
