@@ -27,16 +27,16 @@ typedef enum DosisType : NSUInteger {
     FourMin
 } ShapeType;
 
-@property NSString *sName;
-@property int iBoxUnits;
-@property int iUnitsTaken;
-@property enum DosisType tDosis;
-@property int iRemaining;
-@property NSDate *dteNextDose;
-@property bool bPrescriptionHasStarted;
+@property (strong,nonatomic) NSString *sName;
+@property (nonatomic) int iBoxUnits;
+@property (nonatomic) int iUnitsTaken;
+@property (nonatomic) enum DosisType tDosis;
+@property (nonatomic) int iRemaining;
+@property (strong,nonatomic) NSDate *dteNextDose;
+@property (nonatomic) bool bPrescriptionHasStarted;
 @property (atomic) int  iSecsRemainingNextDose;
 @property (atomic) bool bIsNextDoseExpired;
-@property NSData *dChosenImage;
+@property (nonatomic) NSData *dChosenImage;
 
 
 -(id)initWithName:(NSString*)p_strName BoxUnits:(int)p_iBoxUnits UnitsTaken:(int)p_iUnitsTaken;

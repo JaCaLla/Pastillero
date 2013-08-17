@@ -186,14 +186,15 @@ static AppDelegate *sharedInstance;
 }
 
 //Update one item of the prescription list
--(void) updatePrescription:p_Prescription{
+-(void) updatePrescription:(Prescription*)p_Prescription{
+
+    Prescription *prescription=[arrPrescriptions objectAtIndex:idxPrescriptions];
+    prescription.sName=p_Prescription.sName;
+    prescription.iBoxUnits=p_Prescription.iBoxUnits;
+    prescription.iUnitsTaken=p_Prescription.iUnitsTaken;
+    prescription.dChosenImage=p_Prescription.dChosenImage;
     
-    //Remove old prescription
-    [arrPrescriptions removeObjectAtIndex:idxPrescriptions];
-    //Insert new prescription
-    [arrPrescriptions insertObject:p_Prescription atIndex:idxPrescriptions];
-    
-}
+ }
 
 //Take a dose
 -(int) doseCurrentPrescription{

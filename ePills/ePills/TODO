@@ -49,7 +49,6 @@ v BUG. If there is no picture in the prescription the text is shifted
 v BUG. Logic for save button is not worfing fine. Is disabled when you get back from dose table. It happens in Add and Update form
 v BUG. Change color in the labels that contains values.
 * BUG. Save button is not disabled after updating the name field
-* BUG. Do not cancel timer after update
-* BUG. Replace dose text by repetition
+v BUG. Do not cancel timer after update
 
 * Remove test doses

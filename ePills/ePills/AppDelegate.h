@@ -54,10 +54,10 @@
 -(void) deleteCurrentPrescription;
 
 //Update one item of the prescription list
--(void) updatePrescription:p_Prescription;
+-(void) updatePrescription:(Prescription*)p_Prescription;
 
 //Update one item of the prescription list
--(void) addPrescription:p_Prescription;
+-(void) addPrescription:(Prescription*)p_Prescription;
 
 //Take a dose
 -(int) doseCurrentPrescription;
