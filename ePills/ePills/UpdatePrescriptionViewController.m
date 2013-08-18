@@ -97,7 +97,12 @@ static UpdatePrescriptionViewController *sharedInstance;
     lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
     lblLastDosis.text = [currPrescription getStringLastDosisTaken:nil];
     lblRemaining.text = [NSString stringWithFormat:@"%d", currPrescription.iRemaining];
-    lblNextDose.text=[currPrescription getStringNextDose];
+    if(currPrescription.bIsNextDoseExpired){
+        lblNextDose.text=@"Not set, press dose.";
+    }
+    else {
+        lblNextDose.text=[currPrescription getStringNextDose];
+    }
     
     //Initialize buttons
     btnDose.enabled=(currPrescription.iRemaining>=currPrescription.iUnitsTaken);

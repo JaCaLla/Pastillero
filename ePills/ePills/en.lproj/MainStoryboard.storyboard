@@ -734,9 +734,9 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="4If-EY-cnI" firstAttribute="top" secondItem="uDH-vh-xmJ" secondAttribute="top" constant="7" id="0ge-0t-MVK"/>
                                             <constraint firstItem="4If-EY-cnI" firstAttribute="leading" secondItem="uDH-vh-xmJ" secondAttribute="leading" constant="24" id="74x-xY-85m"/>
-                                            <constraint firstItem="W6s-Os-gLW" firstAttribute="top" secondItem="uDH-vh-xmJ" secondAttribute="top" constant="3" id="Gbb-fx-YxX"/>
-                                            <constraint firstItem="4If-EY-cnI" firstAttribute="top" secondItem="uDH-vh-xmJ" secondAttribute="top" constant="7" id="ZLE-Zo-ZT9"/>
+                                            <constraint firstItem="W6s-Os-gLW" firstAttribute="top" secondItem="uDH-vh-xmJ" secondAttribute="top" constant="5" id="BOG-QT-aBT"/>
                                             <constraint firstItem="W6s-Os-gLW" firstAttribute="leading" secondItem="uDH-vh-xmJ" secondAttribute="leading" constant="123" id="u7x-9s-e5N"/>
                                         </constraints>
                                     </tableViewCell>
@@ -759,7 +759,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1h-XR-JIt">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="fWo-bz-XL0"/>
-                                                        <constraint firstAttribute="width" constant="152" id="q9k-dG-pPe"/>
+                                                        <constraint firstAttribute="width" constant="192" id="zI1-Zy-Wnk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -770,9 +770,9 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="qBE-Pg-yK9" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="24" id="2zr-ZW-vF6"/>
-                                            <constraint firstItem="qBE-Pg-yK9" firstAttribute="top" secondItem="w5A-ds-axB" secondAttribute="top" constant="7" id="dT7-ec-Nik"/>
-                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="top" secondItem="w5A-ds-axB" secondAttribute="top" constant="3" id="nL5-0Z-HcF"/>
-                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="123" id="nxI-eq-eUZ"/>
+                                            <constraint firstItem="qBE-Pg-yK9" firstAttribute="top" secondItem="w5A-ds-axB" secondAttribute="top" constant="7" id="Etb-mL-rFl"/>
+                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="top" secondItem="w5A-ds-axB" secondAttribute="top" constant="5" id="LvR-8T-7V6"/>
+                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="110" id="ioB-Sf-qNC"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -976,6 +976,7 @@
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="txtBoxUnitsEditingDidEnd:"/>
+                <relationship kind="action" name="txtNameValueChanged:"/>
                 <relationship kind="action" name="txtUnitsTakenEditingDidEnd:"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
@@ -1028,6 +1029,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="wOb-tc-ySU"/>
     </inferredMetricsTieBreakers>
 </document>
