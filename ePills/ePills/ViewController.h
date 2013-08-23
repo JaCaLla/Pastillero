@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PrescriptionControllerCellView.h"
 #import "Prescription.h"
+#import "GAITrackedViewController.h"
 
 
-@interface ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>{
+@interface ViewController : GAITrackedViewController <UITableViewDataSource,UITableViewDelegate>{
     
 
    // NSMutableArray *arrPrescriptions;

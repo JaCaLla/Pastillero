@@ -50,6 +50,9 @@
 		5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65D617889BD300ED59D1 /* InfoPlist.strings */; };
 		5ACC65DB17889BD300ED59D1 /* ePillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACC65DA17889BD300ED59D1 /* ePillsTests.m */; };
 		5ACC65E517889C0200ED59D1 /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5ACC65E417889C0200ED59D1 /* TODO */; };
+		5AE1B5BF17C7BB610075647D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5BE17C7BB610075647D /* CoreData.framework */; };
+		5AE1B5C117C7BB7B0075647D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */; };
+		5AE1B5C917C7CCDE0075647D /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5C817C7CCDE0075647D /* libGoogleAnalyticsServices.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,15 @@
 		5ACC65D917889BD300ED59D1 /* ePillsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ePillsTests.h; sourceTree = "<group>"; };
 		5ACC65DA17889BD300ED59D1 /* ePillsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ePillsTests.m; sourceTree = "<group>"; };
 		5ACC65E417889C0200ED59D1 /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		5AE1B5BE17C7BB610075647D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5AE1B5C217C7C7C00075647D /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		5AE1B5C317C7C7C00075647D /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		5AE1B5C417C7C7C00075647D /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		5AE1B5C517C7C7C00075647D /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		5AE1B5C617C7C7C00075647D /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		5AE1B5C717C7C7C00075647D /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		5AE1B5C817C7CCDE0075647D /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +137,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE1B5C117C7BB7B0075647D /* SystemConfiguration.framework in Frameworks */,
+				5AE1B5BF17C7BB610075647D /* CoreData.framework in Frameworks */,
 				5A9802A917BCD8980044E513 /* AVFoundation.framework in Frameworks */,
 				5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */,
 				5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */,
 				5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */,
+				5AE1B5C917C7CCDE0075647D /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +214,8 @@
 		5ACC659D17889BD300ED59D1 = {
 			isa = PBXGroup;
 			children = (
+				5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */,
+				5AE1B5BE17C7BB610075647D /* CoreData.framework */,
 				5ACC65AF17889BD300ED59D1 /* ePills */,
 				5ACC65D317889BD300ED59D1 /* ePillsTests */,
 				5ACC65A817889BD300ED59D1 /* Frameworks */,
@@ -230,6 +247,7 @@
 		5ACC65AF17889BD300ED59D1 /* ePills */ = {
 			isa = PBXGroup;
 			children = (
+				5AE1B5B517C7B9470075647D /* Google Analytics */,
 				5A45595D178B302B00DADEF9 /* Model */,
 				5A45595C178B2CCF00DADEF9 /* ViewControllers */,
 				5AAC5C6117897D9500328E3D /* GraphicalResources */,
@@ -292,6 +310,20 @@
 				5ACC65D617889BD300ED59D1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5AE1B5B517C7B9470075647D /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				5AE1B5C217C7C7C00075647D /* GAI.h */,
+				5AE1B5C317C7C7C00075647D /* GAIDictionaryBuilder.h */,
+				5AE1B5C417C7C7C00075647D /* GAIFields.h */,
+				5AE1B5C517C7C7C00075647D /* GAILogger.h */,
+				5AE1B5C617C7C7C00075647D /* GAITrackedViewController.h */,
+				5AE1B5C717C7C7C00075647D /* GAITracker.h */,
+				5AE1B5C817C7CCDE0075647D /* libGoogleAnalyticsServices.a */,
+			);
+			name = "Google Analytics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +578,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
 				INFOPLIST_FILE = "ePills/ePills-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ePills\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DF51960E-DCF6-41E7-8BE5-31C89719B2C5";
 				WRAPPER_EXTENSION = app;
@@ -558,6 +594,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ePills/ePills-Prefix.pch";
 				INFOPLIST_FILE = "ePills/ePills-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ePills\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

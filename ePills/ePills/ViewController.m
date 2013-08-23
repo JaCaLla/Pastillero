@@ -11,6 +11,9 @@
 #import "PrescriptionControllerCellView.h"
 #import "UpdatePrescriptionViewController.h"
 
+
+
+
 static ViewController *sharedInstance;
 
 @interface ViewController ()
@@ -51,6 +54,11 @@ static ViewController *sharedInstance;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //Google Analytics:BEGIN
+    // Set screen name.
+    self.screenName = @"Prescription list view";
+    //Google Analytics:END
+    
     //Hide Segue update button
     [self.btnSegueUpdate setHidden:YES];
     
@@ -84,6 +92,8 @@ static ViewController *sharedInstance;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 
 // BEGIN: Methods to implement for fulfill CollectionView Interface

@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Prescription.h"
 #import "Database.h"
+#import "GAI.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
@@ -30,7 +31,7 @@
 }
 
 @property (nonatomic, strong) AVAudioPlayer *avAudioPlayer;
-
+@property(nonatomic, strong) id<GAITracker> tracker;
 @property (strong, nonatomic) UIWindow *window;
 
 @property int idxPrescriptions;
