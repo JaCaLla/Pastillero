@@ -86,7 +86,7 @@ static StaticTableViewController *sharedInstance;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
     //Initialize dosis array
-    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
+    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", @"60",@"120",@"240",nil];
     lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
     // Assign our own backgroud for the view    
