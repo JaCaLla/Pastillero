@@ -214,8 +214,6 @@
 		5ACC659D17889BD300ED59D1 = {
 			isa = PBXGroup;
 			children = (
-				5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */,
-				5AE1B5BE17C7BB610075647D /* CoreData.framework */,
 				5ACC65AF17889BD300ED59D1 /* ePills */,
 				5ACC65D317889BD300ED59D1 /* ePillsTests */,
 				5ACC65A817889BD300ED59D1 /* Frameworks */,
@@ -235,6 +233,8 @@
 		5ACC65A817889BD300ED59D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */,
+				5AE1B5BE17C7BB610075647D /* CoreData.framework */,
 				5A9802A817BCD8980044E513 /* AVFoundation.framework */,
 				5ACC65A917889BD300ED59D1 /* UIKit.framework */,
 				5ACC65AB17889BD300ED59D1 /* Foundation.framework */,
