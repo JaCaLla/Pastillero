@@ -524,7 +524,22 @@ static UpdatePrescriptionViewController *sharedInstance;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.uiImageView.image = chosenImage;
+    
+    //Rotate image always up
+    UIImage *imageToDisplay =
+    [UIImage imageWithCGImage:[chosenImage CGImage]
+                        scale:1.0
+                  orientation: UIImageOrientationUp];
+    
+    self.uiImageView.image = imageToDisplay;
+    
+    
+    
+  
+    
+
+    
+    
     
     //Manage save button status
     if (!btnSave.enabled){
