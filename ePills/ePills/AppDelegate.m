@@ -140,6 +140,10 @@ static AppDelegate *sharedInstance;
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    //Remove notifications from the icon
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     
     //Update prescription remaining secs for next dose
     [self updatePrescriptionTimers];
