@@ -1,0 +1,23 @@
+/* 
+  Localization.strings
+  ePills
+
+  Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
+  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
+*/
+
+
+"1_HOUR" = "1 Hora";
+"2_HOURS" = "2 Horas";
+"4_HOURS" = "4 Horas";
+"8_HOURS" = "8 Horas";
+"12_HOURS" = "12 Horas";
+"1_DAY" = "1 Día";
+"2_DAYS" = "2 Días";
+"4_DAYS" = "4 Días";
+"1_WEEK" = "1 Semana";
+"2_WEEKS" = "2 Semanas";
+"1_MONTH" = "1 Mes";
+"1_MINUTE" = "Un minuto";
+"2_MINUTES" = "Dos minutos";
+"4_MINUTES" = "Cuatro minutos";
