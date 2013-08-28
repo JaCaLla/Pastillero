@@ -6,9 +6,36 @@
   Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
 */
 
-"AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] Gastadas:%d";
+"AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] Tomadas:%d";
 "NEXT_DOSE_NOT_SET"="¡La siguiente toma no se ha fijado!.";
+"EVERY"="Cada %@";
+"NOT_SET_PRESS_DOSE"="Pulse botón Toma.";
+"OK"="Continuar";
+"UNITS_AT"="%@ %d unidad(es) a las %@";
+"MEDICINE_SAMPLE_NAME"="Nombre del medicamento";
+"UNITS"="Tome: %@ %d unidad(es)";
+"PRESS_PRESCRIPTION"="Pulse cualquier prescripción para programarla.";
+"APPLY"="Aplicar";
+"CANCEL"="Cancelar";
+"NEXT_DOSE"="Siguiente toma";
+"TIME_ELAPSED"="Tiempo transcurrido";
 
+
+"MSG_NO_PRESCRIPTIONS1"="Lista de prescripciones vacias.";
+"MSG_NO_PRESCRIPTIONS2"="Se ha creado una prescripción a modo de ejemplo, personalizela a sus necesidades.";
+"MSG_LAST_DOSE1"="Tomó la última unidad.";
+"MSG_LAST_DOSE2"="Acabó la prescripción o necesita una caja nueva de medicamento.";
+"MSG_NO_PILLS_FOR_DOSE1"="No hay suficientes unidades.";
+"MSG_NO_PILLS_FOR_DOSE2"="Por favor, pulse rellenar.";
+
+
+"ERR_TITLE"="Error";
+"ERR_NAME_EMPTY"="Nombre de medicamento vacío.";
+"ERR_BOXUNITS_EMPTY"="Unidades en la caja vacío.";
+"ERR_BOUXUNITS_OUTOFRANGE"="Las unidades deben de estar entre %d y %d.";
+"ERR_UNITSTAKEN_EMPTY"="Dosis vacia.";
+"ERR_UNITSTAKEN_ZERO"="Dosis ha de ser mayor que 0.";
+"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS"="Dosis ha de ser menor (o igual) al numero de unidades de una caja.";
 
 
 "1_HOUR" = "1 Hora";

@@ -139,11 +139,6 @@
         //Refresh whole table
         [self.tableView reloadData];
         
-        //Notify UpdatePrescriptionViewController
-        // UpdatePrescriptionViewController *vc = [UpdatePrescriptionViewController sharedViewController];
-        // vc.sDosis=[NSString stringWithFormat:@"%d", indexPath.item];
-        
-        NSLog(@"Row Selected = %i",indexPath.item);
     }
 
     
