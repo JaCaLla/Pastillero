@@ -1,0 +1,75 @@
+/* 
+  Localization.strings
+  ePills
+
+  Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
+  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
+
+ 
+ 
+ 
+ http://www.lwxted.com/blog/2012/localization-ios-development/
+ 
+ How to extract text from story board
+ $ cd en.lproj
+ $ ibtool --generate-strings-file MainStoryboard.strings MainStoryboard.storyboard
+ 
+ 
+ How to replace text into another story board
+ 
+ $ cd es.lproj
+ $ cp en.lproj/MainStoryboard.strings .
+ $ ibtool --strings-file ./MainStoryboard.strings --write MainStoryboard.storyboard MainStoryboard.storyboard
+ 
+ */
+
+"AVAILABLE_UNITS_TAKEN"="Disponibles:[%d/%d] Unitats preses:%d";
+"NEXT_DOSE_NOT_SET"="Propera presa no fixada!.";
+"EVERY"="Cada %@";
+"NOT_SET_PRESS_DOSE"="No fixada, prengui pren.";
+"OK"="Ok";
+"UNITS_AT"="Toma: %@ %d unitat(s) a les %@";
+"MEDICINE_SAMPLE_NAME"="Nom medicament exemple";
+"UNITS"="%@ %d unitat(s)";
+"PRESS_PRESCRIPTION"="Pren la prescripció per fixar la nova presa.";
+"APPLY"="Aplicar";
+"CANCEL"="Cancel·lar";
+"NEXT_DOSE"="Seguent presa";
+"TIME_ELAPSED"="Temps transcorregut";
+
+
+
+"MSG_NO_PRESCRIPTIONS1"="La llista de prescripcions ès buida.";
+"MSG_NO_PRESCRIPTIONS2"="S'ha creat una prescripció d'exemple, seleccionala per actualitzar la informació.";
+"MSG_LAST_DOSE1"="Has fet servir la derrera dosi.";
+"MSG_LAST_DOSE2"="Has acabat la prescripció o necessites una nova capsa.";
+"MSG_NO_PILLS_FOR_DOSE1"="No hi han prou unitats.";
+"MSG_NO_PILLS_FOR_DOSE2"="Siusplau, ompli la prescripció.";
+
+
+"ERR_TITLE"="Error";
+"ERR_NAME_EMPTY"="El nom del medicament es buit.";
+"ERR_BOXUNITS_EMPTY"="El número d'unitats per una capsa es buit.";
+"ERR_BOUXUNITS_OUTOFRANGE"="El nombre d'unitats d'una capsa ha d'estar entre %d i %d.";
+"ERR_UNITSTAKEN_EMPTY"="La dosi es buida.";
+"ERR_UNITSTAKEN_ZERO"="La dosi ha de ser diferent de zero.";
+"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS"="La dose no pot ser més gran que el número d'unitats en una capsa.";
+
+
+"1_HOUR" = "1 Hora";
+"2_HOURS" = "2 Hores";
+"4_HOURS" = "4 Hores";
+"8_HOURS" = "8 Hores";
+"12_HOURS" = "12 Hores";
+"1_DAY" = "1 Dia";
+"2_DAYS" = "2 Dies";
+"4_DAYS" = "4 Dies";
+"1_WEEK" = "1 Setmana";
+"2_WEEKS" = "2 Setmanes";
+"1_MONTH" = "1 Mes";
+"1_MINUTE" = "One minute";
+"2_MINUTES" = "Two minutes";
+"4_MINUTES" = "Four minutes";
+
+"PRESCRIPTION_LIST"="Prescripcions";
+
