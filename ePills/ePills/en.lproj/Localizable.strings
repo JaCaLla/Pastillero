@@ -4,7 +4,27 @@
 
   Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
   Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
-*/
+
+ 
+ 
+ 
+ http://www.lwxted.com/blog/2012/localization-ios-development/
+ 
+ How to extract text from story board
+ $ cd en.lproj
+ $ ibtool --generate-strings-file MainStoryboard.strings MainStoryboard.storyboard
+ 
+ 
+ How to replace text into another story board
+ 
+ $ cd es.lproj
+ $ cp en.lproj/MainStoryboard.strings .
+ $ ibtool --strings-file ./MainStoryboard.strings --write MainStoryboard.storyboard MainStoryboard.storyboard
+ 
+ */
+
+"AVAILABLE_UNITS_TAKEN"="Available:[%d/%d] Units taken:%d";
+"NEXT_DOSE_NOT_SET"="Next dose not set!.";
 
 
 "1_HOUR" = "1 Hour";
@@ -21,4 +41,6 @@
 "1_MINUTE" = "One minute";
 "2_MINUTES" = "Two minutes";
 "4_MINUTES" = "Four minutes";
+
+"PRESCRIPTION_LIST"="Prescription list";
 

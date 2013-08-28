@@ -80,6 +80,7 @@
 		5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unique@2x.png"; sourceTree = "<group>"; };
 		5A9B9AA717CE464600953ABE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A9B9AAA17CE498E00953ABE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9B9AAD17CE593C00953ABE /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bottom.png; sourceTree = "<group>"; };
 		5AA0BFB017AE2A05002DCB95 /* cell_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bottom@2x.png"; sourceTree = "<group>"; };
 		5AA0BFB117AE2A05002DCB95 /* cell_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_middle.png; sourceTree = "<group>"; };
@@ -516,6 +517,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5ACC65C217889BD300ED59D1 /* en */,
+				5A9B9AAD17CE593C00953ABE /* es */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

@@ -6,6 +6,10 @@
   Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
 */
 
+"AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] Gastadas:%d";
+"NEXT_DOSE_NOT_SET"="¡La siguiente toma no se ha fijado!.";
+
+
 
 "1_HOUR" = "1 Hora";
 "2_HOURS" = "2 Horas";
@@ -21,3 +25,5 @@
 "1_MINUTE" = "Un minuto";
 "2_MINUTES" = "Dos minutos";
 "4_MINUTES" = "Cuatro minutos";
+
+"PRESCRIPTION_LIST"="Prescripciones en curso";

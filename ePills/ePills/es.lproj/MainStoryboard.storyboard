@@ -108,7 +108,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4v-dd-LNi">
                                 <color key="tintColor" red="0.42745098039215684" green="0.396078431372549" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <navigationItem title="Prescription list" id="UvO-9Y-UZe">
+                                    <navigationItem title="Prescripciones en curso" id="UvO-9Y-UZe">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yXg-gh-QzA">
                                             <connections>
                                                 <segue destination="71o-5W-8u7" kind="modal" identifier="addPrescription" id="wfb-I0-Rpz"/>
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="221" y="-520"/>
         </scene>
-        <!--Static Table View Controller - New prescription-->
+        <!--Static Table View Controller - Nueva prescripción-->
         <scene sceneID="4BZ-PO-LOE">
             <objects>
                 <tableViewController id="0j9-Ez-7Vn" customClass="StaticTableViewController" sceneMemberID="viewController">
@@ -164,7 +164,7 @@
                             <color key="tintColor" red="0.42745098039215684" green="0.396078431372549" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                         </toolbar>
                         <sections>
-                            <tableViewSection headerTitle="Medicine" id="e1c-PB-3By">
+                            <tableViewSection headerTitle="Medicamento" id="e1c-PB-3By">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="GZl-Uu-x8v">
                                         <rect key="frame" x="0.0" y="46" width="320" height="41"/>
@@ -173,7 +173,7 @@
                                             <rect key="frame" x="10" y="1" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18y-Qt-g73">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nombre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18y-Qt-g73">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="C12-3w-h5q"/>
                                                         <constraint firstAttribute="height" constant="20" id="brD-Qd-zRi"/>
@@ -212,7 +212,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Box units:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJy-Wm-CUJ">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unidades caja:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJy-Wm-CUJ">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="ZUn-QZ-Z5R"/>
                                                         <constraint firstAttribute="height" constant="19" id="sJk-Cm-lKa"/>
@@ -243,7 +243,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Administration" id="C2J-ta-fds">
+                            <tableViewSection headerTitle="Administración" id="C2J-ta-fds">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="FrC-bJ-Wa8">
                                         <rect key="frame" x="0.0" y="174" width="320" height="41"/>
@@ -269,7 +269,7 @@
                                                         <segue destination="TXc-lZ-7Mm" kind="push" identifier="showAddDosisTable" id="ZKn-vZ-8yr"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lH-6S-bcl">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="69" id="NvT-oL-hRD"/>
                                                     </constraints>
@@ -304,7 +304,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Units taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-vK-unb">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unidades tomadas:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtZ-vK-unb">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="8NI-4i-3LG"/>
                                                         <constraint firstAttribute="width" constant="98" id="xqk-km-Pgv"/>
@@ -340,7 +340,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-Tj-HI1">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Última toma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMc-Tj-HI1">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="6TJ-Rl-eKv"/>
                                                         <constraint firstAttribute="width" constant="98" id="AeQ-ov-1XP"/>
@@ -384,8 +384,8 @@
                             <outlet property="delegate" destination="0j9-Ez-7Vn" id="4XT-AJ-j9d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New prescription" id="JzH-7n-gul">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="0HL-ce-enI"/>
+                    <navigationItem key="navigationItem" title="Nueva prescripción" id="JzH-7n-gul">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="0HL-ce-enI"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="oyY-vB-0bs">
                             <connections>
                                 <segue destination="2" kind="modal" identifier="backFromAddCancel" id="Xst-jK-h2M"/>
@@ -439,7 +439,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dosis" id="umN-Co-1nP">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Dj6-Zx-iJK"/>
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="Dj6-Zx-iJK"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tbvDoses" destination="1kL-Rg-8YF" id="VaA-X3-Kwg"/>
@@ -449,7 +449,7 @@
             </objects>
             <point key="canvasLocation" x="2158" y="-1089"/>
         </scene>
-        <!--Update Prescription View Controller - Update -->
+        <!--Update Prescription View Controller - Actualizar -->
         <scene sceneID="KTe-9I-5hs">
             <objects>
                 <tableViewController id="opj-XB-eVa" customClass="UpdatePrescriptionViewController" sceneMemberID="viewController">
@@ -466,12 +466,12 @@
                                         <segue destination="2" kind="modal" identifier="backFromUpdateDelete" id="jFQ-oY-ha3"/>
                                     </connections>
                                 </barButtonItem>
-                                <barButtonItem title="Dose" id="RRc-jg-YZT">
+                                <barButtonItem title="Dosis" id="RRc-jg-YZT">
                                     <connections>
                                         <action selector="btnDose:" destination="opj-XB-eVa" id="4il-NQ-5kH"/>
                                     </connections>
                                 </barButtonItem>
-                                <barButtonItem title="Refill" id="LhU-gL-etV">
+                                <barButtonItem title="Rellenar" id="LhU-gL-etV">
                                     <connections>
                                         <action selector="btnRefill:" destination="opj-XB-eVa" id="11K-s0-XwI"/>
                                     </connections>
@@ -490,7 +490,7 @@
                             <color key="tintColor" red="0.42745098039215684" green="0.396078431372549" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                         </toolbar>
                         <sections>
-                            <tableViewSection headerTitle="Medicine" id="crI-fT-lDD">
+                            <tableViewSection headerTitle="Medicamento" id="crI-fT-lDD">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="39" id="X8q-Q2-jrD">
                                         <rect key="frame" x="0.0" y="46" width="320" height="40"/>
@@ -499,7 +499,7 @@
                                             <rect key="frame" x="10" y="1" width="300" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho9-fe-tTe">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nombre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho9-fe-tTe">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Njo-dl-P7h"/>
                                                         <constraint firstAttribute="width" constant="58" id="Xxx-P6-Npf"/>
@@ -537,7 +537,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Box units:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDm-hN-iO9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unidades caja:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDm-hN-iO9">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="MQy-Fx-Oht"/>
                                                         <constraint firstAttribute="width" constant="82" id="PCS-vf-F9y"/>
@@ -599,7 +599,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Every X...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj6-2j-56S">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Cada X...." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj6-2j-56S">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="169" id="11W-Sv-0Ft"/>
                                                     </constraints>
@@ -627,7 +627,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Units taken:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKS-g2-FKu">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unidades toma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKS-g2-FKu">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="SqT-2U-Y8l"/>
                                                         <constraint firstAttribute="width" constant="98" id="ffR-3S-TKS"/>
@@ -658,7 +658,6 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="gfY-p6-Zeb" firstAttribute="top" secondItem="4zh-WG-aue" secondAttribute="top" constant="4" id="1FK-QH-TJg"/>
-                                            <constraint firstItem="rKS-g2-FKu" firstAttribute="centerY" secondItem="gfY-p6-Zeb" secondAttribute="centerY" type="default" id="O9Z-ca-vIj"/>
                                             <constraint firstItem="rKS-g2-FKu" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="24" id="PvJ-y3-1oP"/>
                                             <constraint firstItem="gfY-p6-Zeb" firstAttribute="leading" secondItem="4zh-WG-aue" secondAttribute="leading" constant="124" id="eip-5t-Oyg"/>
                                             <constraint firstAttribute="trailing" secondItem="6SM-Mv-cQh" secondAttribute="trailing" constant="39" id="fwt-Mv-T3n"/>
@@ -668,7 +667,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Administration" id="Ffz-aD-VN7">
+                            <tableViewSection headerTitle="Administración" id="Ffz-aD-VN7">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="vVC-qb-BLW">
                                         <rect key="frame" x="0.0" y="253" width="320" height="41"/>
@@ -677,10 +676,9 @@
                                             <rect key="frame" x="10" y="1" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last dose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-MO-AZ2">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Ultima dosis:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-MO-AZ2">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="Za2-6e-tZz"/>
-                                                        <constraint firstAttribute="width" constant="98" id="ccy-7k-Qf3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -712,7 +710,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Remaining:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4If-EY-cnI">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pendiente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4If-EY-cnI">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="hxt-FP-wWS"/>
                                                         <constraint firstAttribute="width" constant="98" id="uaV-d1-eeG"/>
@@ -747,7 +745,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Next dose:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBE-Pg-yK9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Próxima toma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBE-Pg-yK9">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="ehb-lm-MF0"/>
                                                         <constraint firstAttribute="width" constant="98" id="ka0-pi-Oqo"/>
@@ -780,8 +778,8 @@
                         </sections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Update " id="qwS-bX-lR7">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="0I5-0H-5oD">
+                    <navigationItem key="navigationItem" title="Actualizar " id="qwS-bX-lR7">
+                        <barButtonItem key="leftBarButtonItem" title="Volver" id="0I5-0H-5oD">
                             <connections>
                                 <segue destination="2" kind="modal" identifier="backFromUpdateCancel" id="e5H-GR-NAq"/>
                             </connections>
@@ -897,8 +895,8 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="trash" id="Hvy-qC-jaV"/>
-                        <barButtonItem title="Dose" id="wDX-Fv-8kI"/>
-                        <barButtonItem title="Refill" id="JRH-1M-ea0">
+                        <barButtonItem title="¡Tomar!" id="wDX-Fv-8kI"/>
+                        <barButtonItem title="Rellenar" id="JRH-1M-ea0">
                             <connections>
                                 <action selector="btnRefill:" destination="opj-XB-eVa" id="K9T-YR-E3P"/>
                             </connections>
@@ -921,8 +919,8 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
                         <barButtonItem systemItem="trash" id="63z-wS-Li7"/>
-                        <barButtonItem title="Dose" id="edt-h8-QYk"/>
-                        <barButtonItem title="Refill" id="IXR-4x-ywk">
+                        <barButtonItem title="Dosis" id="edt-h8-QYk"/>
+                        <barButtonItem title="Rellenar" id="IXR-4x-ywk">
                             <connections>
                                 <action selector="btnRefill:" destination="opj-XB-eVa" id="FpS-rM-e7J"/>
                             </connections>
