@@ -292,8 +292,8 @@
                                             <constraint firstItem="cB9-pk-fnj" firstAttribute="baseline" secondItem="3lH-6S-bcl" secondAttribute="baseline" type="default" id="AKR-6r-9TG"/>
                                             <constraint firstItem="3lH-6S-bcl" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="22" id="NuF-NU-fmv"/>
                                             <constraint firstItem="cB9-pk-fnj" firstAttribute="centerY" secondItem="FrC-bJ-Wa8" secondAttribute="centerY" type="default" id="PtU-Hd-Y43"/>
-                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="112" id="mPe-xB-VCP"/>
-                                            <constraint firstItem="JUn-jp-aOY" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="86" id="ne3-4o-Vcd"/>
+                                            <constraint firstItem="cB9-pk-fnj" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="85" id="UAL-FC-FOV"/>
+                                            <constraint firstItem="JUn-jp-aOY" firstAttribute="leading" secondItem="FrC-bJ-Wa8" secondAttribute="leading" constant="86" id="fem-sH-Ixi"/>
                                             <constraint firstItem="JUn-jp-aOY" firstAttribute="bottom" secondItem="FrC-bJ-Wa8" secondAttribute="bottom" type="default" id="uDG-Hq-Brv"/>
                                         </constraints>
                                     </tableViewCell>
@@ -369,10 +369,10 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="RMc-Tj-HI1" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="24" id="4U5-Jv-XLI"/>
-                                            <constraint firstItem="RMc-Tj-HI1" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="7" id="A5L-8k-kVk"/>
-                                            <constraint firstItem="SUf-bq-Gs8" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="3" id="H7h-dn-wqL"/>
+                                            <constraint firstItem="SUf-bq-Gs8" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="4" id="591-fj-Jfm"/>
+                                            <constraint firstItem="SUf-bq-Gs8" firstAttribute="leading" secondItem="TpG-mf-zng" secondAttribute="leading" constant="133" id="Rzk-qI-Plg"/>
+                                            <constraint firstItem="SUf-bq-Gs8" firstAttribute="centerY" secondItem="RMc-Tj-HI1" secondAttribute="centerY" type="default" id="fVx-oE-WAh"/>
                                             <constraint firstItem="5IU-fT-ZZc" firstAttribute="top" secondItem="TpG-mf-zng" secondAttribute="top" constant="5" id="mFH-j9-3IJ"/>
-                                            <constraint firstItem="SUf-bq-Gs8" firstAttribute="leading" secondItem="RMc-Tj-HI1" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="rdl-k3-j8n"/>
                                             <constraint firstAttribute="trailing" secondItem="5IU-fT-ZZc" secondAttribute="trailing" constant="20" type="default" id="uK5-pu-bkq"/>
                                         </constraints>
                                     </tableViewCell>
@@ -948,6 +948,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wOb-tc-ySU"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>
