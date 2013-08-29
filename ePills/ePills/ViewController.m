@@ -120,7 +120,7 @@ static ViewController *sharedInstance;
     
     
     //Need refill
-    cell.lblNeedRefill.text=[NSString stringWithFormat:@"Available:[%d/%d] Units taken:%d",tmrCurrent.iRemaining,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken];
+    cell.lblNeedRefill.text=[NSString stringWithFormat:NSLocalizedString(@"AVAILABLE_UNITS_TAKEN", nil),tmrCurrent.iRemaining,tmrCurrent.iBoxUnits,tmrCurrent.iUnitsTaken];
     if(tmrCurrent.iRemaining<tmrCurrent.iUnitsTaken){ // Run out of pills
        cell.lblNeedRefill.textColor = [UIColor redColor];       
     }

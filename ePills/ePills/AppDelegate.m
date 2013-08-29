@@ -119,7 +119,7 @@ static AppDelegate *sharedInstance;
             scheduledAlert.timeZone = [NSTimeZone defaultTimeZone];
             scheduledAlert.repeatInterval =  NSDayCalendarUnit;
             scheduledAlert.soundName=@"bells.wav";
-            scheduledAlert.alertBody = [NSString stringWithFormat:@"%@ %d unit(s) at %@",currPrescription.sName,currPrescription.iUnitsTaken,[currPrescription getStringNextDose]];
+            scheduledAlert.alertBody = [NSString stringWithFormat:NSLocalizedString(@"UNITS_AT", nil),currPrescription.sName,currPrescription.iUnitsTaken,[currPrescription getStringNextDose]];
         
         
             [[UIApplication sharedApplication] scheduleLocalNotification:scheduledAlert];
@@ -272,13 +272,13 @@ static AppDelegate *sharedInstance;
                     
                     
                     
-                    NSString *cellText =  [NSString stringWithFormat:@"%@ %d unit(s)",tmrCurr.sName,tmrCurr.iUnitsTaken];
-                    NSString *cellText2 = [NSString stringWithFormat:@"Press prescritption for set up a new dose."];
+                    NSString *cellText =  [NSString stringWithFormat:NSLocalizedString(@"UNITS", nil),tmrCurr.sName,tmrCurr.iUnitsTaken];
+                    NSString *cellText2 = [NSString stringWithFormat:NSLocalizedString(@"PRESS_PRESCRIPTION", nil)];
               
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText
                                                                 message:cellText2
                                                                delegate:nil
-                                                      cancelButtonTitle:@"OK"
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                       otherButtonTitles:nil];
                     [alert show];
                 }
@@ -364,7 +364,7 @@ static AppDelegate *sharedInstance;
         //Add a sample prescription when there are not any prescription
         if([arrPrescriptions count]==0){
             // Create a sample prescription
-            Prescription *prescription = [[Prescription alloc] initWithName:@"Medicine sample name" BoxUnits:20 UnitsTaken:1 Dosis:3 Image:[UIImage imageNamed:@"SampleMedicine.png"]];
+            Prescription *prescription = [[Prescription alloc] initWithName:NSLocalizedString(@"MEDICINE_SAMPLE_NAME", nil) BoxUnits:20 UnitsTaken:1 Dosis:3 Image:[UIImage imageNamed:@"SampleMedicine.png"]];
             [arrPrescriptions addObject:prescription];
         
             //Save state
@@ -374,27 +374,19 @@ static AppDelegate *sharedInstance;
             arrPrescriptions = [NSKeyedUnarchiver unarchiveObjectWithData:myData];
         
             // Show an informational message
-            NSString *cellText1 =  [NSString stringWithFormat:MSG_NO_PRESCRIPTIONS1];
-            NSString *cellText2 = [NSString stringWithFormat:MSG_NO_PRESCRIPTIONS2];
+            NSString *cellText1 =  [NSString stringWithFormat:NSLocalizedString(@"MSG_NO_PRESCRIPTIONS1", nil)];
+            NSString *cellText2 = [NSString stringWithFormat:NSLocalizedString(@"MSG_NO_PRESCRIPTIONS2", nil)];
         
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cellText1
                                                         message:cellText2
                                                        delegate:nil
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                               otherButtonTitles:nil];
             [alert show];        
         }
     }
  
- /*
-    arrPrescriptions = [[NSMutableArray alloc]init];
-    Prescription *p1 = [[Prescription alloc] initWithName:@"Frenadol" BoxUnits:20 UnitsTaken:1 Dosis:11];
-    [arrPrescriptions addObject:p1];
-    Prescription *p2 = [[Prescription alloc] initWithName:@"Culdina" BoxUnits:30 UnitsTaken:2 Dosis:12];
-    [arrPrescriptions addObject:p2];
-    Prescription *p3 = [[Prescription alloc] initWithName:@"Licipaina" BoxUnits:10 UnitsTaken:3 Dosis:13];
-    [arrPrescriptions addObject:p3];
-*/
+
 }
 
 @end

@@ -16,6 +16,8 @@
 		5A9802A917BCD8980044E513 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9802A817BCD8980044E513 /* AVFoundation.framework */; };
 		5A9B47A117B950A30010BDD9 /* cell_unique.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B479F17B950A30010BDD9 /* cell_unique.png */; };
 		5A9B47A217B950A30010BDD9 /* cell_unique@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */; };
+		5A9B9AA917CE471B00953ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B9AA817CE464600953ABE /* Localizable.strings */; };
+		5A9B9AAB17CE4A5600953ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B9AA817CE464600953ABE /* Localizable.strings */; };
 		5AA0BFB517AE2A05002DCB95 /* cell_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */; };
 		5AA0BFB617AE2A05002DCB95 /* cell_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFB017AE2A05002DCB95 /* cell_bottom@2x.png */; };
 		5AA0BFB717AE2A05002DCB95 /* cell_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFB117AE2A05002DCB95 /* cell_middle.png */; };
@@ -76,6 +78,9 @@
 		5A9802A817BCD8980044E513 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5A9B479F17B950A30010BDD9 /* cell_unique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_unique.png; sourceTree = "<group>"; };
 		5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unique@2x.png"; sourceTree = "<group>"; };
+		5A9B9AA717CE464600953ABE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9B9AAA17CE498E00953ABE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9B9AAD17CE593C00953ABE /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bottom.png; sourceTree = "<group>"; };
 		5AA0BFB017AE2A05002DCB95 /* cell_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bottom@2x.png"; sourceTree = "<group>"; };
 		5AA0BFB117AE2A05002DCB95 /* cell_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_middle.png; sourceTree = "<group>"; };
@@ -89,6 +94,8 @@
 		5AA48C6B17B2CA3B0005AE9F /* App@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App@x2.png"; path = "../App@x2.png"; sourceTree = "<group>"; };
 		5AA48C6D17B2CA960005AE9F /* App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App.png; path = ../App.png; sourceTree = "<group>"; };
 		5AA48C6F17B2CC490005AE9F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		5AA6E8CF17CEA66300109EBB /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ca; path = ca.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5AA6E8D017CEA66300109EBB /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA9384F17A80C04003212FC /* testPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPrescription.h; sourceTree = "<group>"; };
 		5AA9385017A80C04003212FC /* testPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPrescription.m; sourceTree = "<group>"; };
 		5AB041F217B00D500027A6BF /* cell_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_top@2x.png"; sourceTree = "<group>"; };
@@ -287,6 +294,7 @@
 				5AA48C6F17B2CC490005AE9F /* Default-568h@2x.png */,
 				5AA48C6D17B2CA960005AE9F /* App.png */,
 				5AA48C6B17B2CA3B0005AE9F /* App@x2.png */,
+				5A9B9AA817CE464600953ABE /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -380,6 +388,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				ca,
 			);
 			mainGroup = 5ACC659D17889BD300ED59D1;
 			productRefGroup = 5ACC65A717889BD300ED59D1 /* Products */;
@@ -397,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9B9AAB17CE4A5600953ABE /* Localizable.strings in Resources */,
 				5ACC65B417889BD300ED59D1 /* InfoPlist.strings in Resources */,
 				5ACC65BC17889BD300ED59D1 /* Default.png in Resources */,
 				5ACC65BE17889BD300ED59D1 /* Default@2x.png in Resources */,
@@ -426,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9B9AA917CE471B00953ABE /* Localizable.strings in Resources */,
 				5ACC65D817889BD300ED59D1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +499,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5A9B9AA817CE464600953ABE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A9B9AA717CE464600953ABE /* en */,
+				5A9B9AAA17CE498E00953ABE /* es */,
+				5AA6E8D017CEA66300109EBB /* ca */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5ACC65B217889BD300ED59D1 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -499,6 +521,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				5ACC65C217889BD300ED59D1 /* en */,
+				5A9B9AAD17CE593C00953ABE /* es */,
+				5AA6E8CF17CEA66300109EBB /* ca */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";

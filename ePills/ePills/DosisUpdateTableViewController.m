@@ -38,7 +38,18 @@
     [super viewDidLoad];
     
     //Initialize dosis array
-    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", nil];
+    arrDosis = [NSArray arrayWithObjects:NSLocalizedString(@"1_HOUR", nil),
+                NSLocalizedString(@"2_HOURS", nil),
+                NSLocalizedString(@"4_HOURS", nil),
+                NSLocalizedString(@"8_HOURS", nil),
+                NSLocalizedString(@"12_HOURS", nil),
+                NSLocalizedString(@"1_DAY", nil),
+                NSLocalizedString(@"2_DAYS", nil),
+                NSLocalizedString(@"4_DAYS", nil),
+                NSLocalizedString(@"1_WEEK", nil),
+                NSLocalizedString(@"2_WEEKS", nil),
+                NSLocalizedString(@"1_MONTH", nil),
+                nil];
     
     // Assign our own backgroud for the view
     UIView* bview = [[UIView alloc] init];

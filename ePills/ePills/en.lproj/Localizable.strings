@@ -1,0 +1,75 @@
+/* 
+  Localization.strings
+  ePills
+
+  Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
+  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
+
+ 
+ 
+ 
+ http://www.lwxted.com/blog/2012/localization-ios-development/
+ 
+ How to extract text from story board
+ $ cd en.lproj
+ $ ibtool --generate-strings-file MainStoryboard.strings MainStoryboard.storyboard
+ 
+ 
+ How to replace text into another story board
+ 
+ $ cd es.lproj
+ $ cp en.lproj/MainStoryboard.strings .
+ $ ibtool --strings-file ./MainStoryboard.strings --write MainStoryboard.storyboard MainStoryboard.storyboard
+ 
+ */
+
+"AVAILABLE_UNITS_TAKEN"="Available:[%d/%d] Units taken:%d";
+"NEXT_DOSE_NOT_SET"="Next dose not set!.";
+"EVERY"="Every %@";
+"NOT_SET_PRESS_DOSE"="Not set, press dose.";
+"OK"="Ok";
+"UNITS_AT"="Take: %@ %d unit(s) at %@";
+"MEDICINE_SAMPLE_NAME"="Medicine sample name";
+"UNITS"="%@ %d unit(s)";
+"PRESS_PRESCRIPTION"="Press prescritption for set up a new dose.";
+"APPLY"="Apply";
+"CANCEL"="Cancelar";
+"NEXT_DOSE"="Next dose";
+"TIME_ELAPSED"="Time elapsed";
+
+
+
+"MSG_NO_PRESCRIPTIONS1"="Prescription list was empty.";
+"MSG_NO_PRESCRIPTIONS2"="It has been created a sample prescription, just select it and uptdate information.";
+"MSG_LAST_DOSE1"="You spent last dose.";
+"MSG_LAST_DOSE2"="You finished the prescription or you will need to get a new medicine.";
+"MSG_NO_PILLS_FOR_DOSE1"="Not enough units.";
+"MSG_NO_PILLS_FOR_DOSE2"="Please, refill prescription.";
+
+
+"ERR_TITLE"="Error";
+"ERR_NAME_EMPTY"="Medicine name is empty.";
+"ERR_BOXUNITS_EMPTY"="Box units is empty.";
+"ERR_BOUXUNITS_OUTOFRANGE"="Box units must be between %d and %d.";
+"ERR_UNITSTAKEN_EMPTY"="Dosis is empty.";
+"ERR_UNITSTAKEN_ZERO"="Dosis must be different from zero.";
+"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS"="Dosis cannot be greater box units.";
+
+
+"1_HOUR" = "1 Hour";
+"2_HOURS" = "2 Hours";
+"4_HOURS" = "4 Hours";
+"8_HOURS" = "8 Hours";
+"12_HOURS" = "12 Hours";
+"1_DAY" = "1 Day";
+"2_DAYS" = "2 Days";
+"4_DAYS" = "4 Days";
+"1_WEEK" = "1 Week";
+"2_WEEKS" = "2 Weeks";
+"1_MONTH" = "1 Month";
+"1_MINUTE" = "One minute";
+"2_MINUTES" = "Two minutes";
+"4_MINUTES" = "Four minutes";
+
+"PRESCRIPTION_LIST"="Prescription list";
+

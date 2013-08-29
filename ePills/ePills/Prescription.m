@@ -170,7 +170,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
     
     int iDays,iHours,iMins,iSecs;
     int iModulus;
-    NSString *strRemainingDDHHMMSS=@"Next dose not set.";
+    NSString *strRemainingDDHHMMSS=NSLocalizedString(@"NEXT_DOSE_NOT_SET", nil);
     
     if(!bPrescriptionHasStarted)
         return strRemainingDDHHMMSS;
@@ -186,13 +186,13 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 
     
         if(iDays>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %d Day(s) %02dh:%02dm:%02ds",iDays,iHours,iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %d Day(s) %02dh:%02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iDays,iHours,iMins,iSecs ];
         else if(iHours>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %02dh:%02dm:%02ds",iHours,iMins,iSecs];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %02dh:%02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iHours,iMins,iSecs];
         else if(iMins>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: %02dm:%02ds",iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iMins,iSecs ];
         else
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Next dose: 00m:%02ds",iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: 00m:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iSecs ];
     }
     else{
         //iSecsRemainingNextDose*=-1;
@@ -205,13 +205,13 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 
         
         if(iDays>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Time elapsed: -%d Day(s) %02dh:%02dm:%02ds",iDays,iHours,iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%d Day(s) %02dh:%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iDays,iHours,iMins,iSecs ];
         else if(iHours>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Time elapsed: -%02dh:%02dm:%02ds",iHours,iMins,iSecs];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%02dh:%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iHours,iMins,iSecs];
         else if(iMins>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Time elapsed: -%02dm:%02ds",iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iMins,iSecs ];
         else
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"Time elapsed: -00m:%02ds",iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -00m:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iSecs ];
         
     }
         

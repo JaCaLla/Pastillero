@@ -86,7 +86,18 @@ static StaticTableViewController *sharedInstance;
     txtBoxUnits.text=sBoxUnits;
     txtUnitsTaken.text=sUnitsTaken;
     //Initialize dosis array
-    arrDosis = [NSArray arrayWithObjects:@"1 hour", @"2 hours", @"4 hours", @"8 hours", @"12 hours", @"1 day", @"2 days", @"4 days", @"1 week", @"2 weeks", @"1 month", @"60",@"120",@"240",nil];
+    arrDosis = [NSArray arrayWithObjects:NSLocalizedString(@"1_HOUR", nil),
+                NSLocalizedString(@"2_HOURS", nil),
+                NSLocalizedString(@"4_HOURS", nil),
+                NSLocalizedString(@"8_HOURS", nil),
+                NSLocalizedString(@"12_HOURS", nil),
+                NSLocalizedString(@"1_DAY", nil),
+                NSLocalizedString(@"2_DAYS", nil),
+                NSLocalizedString(@"4_DAYS", nil),
+                NSLocalizedString(@"1_WEEK", nil),
+                NSLocalizedString(@"2_WEEKS", nil),
+                NSLocalizedString(@"1_MONTH", nil),
+                @"60",@"120",@"240",nil];
     lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
     // Assign our own backgroud for the view    
@@ -99,9 +110,9 @@ static StaticTableViewController *sharedInstance;
     UIToolbar* numberToolbarBoxUnits = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbarBoxUnits.barStyle = UIBarStyleBlackTranslucent;
     numberToolbarBoxUnits.items = [NSArray arrayWithObjects:
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelBoxUnits)],
+                                   [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL", nil) style:UIBarButtonItemStyleBordered target:self action:@selector(cancelBoxUnits)],
                                    [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                   [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithBoxUnits)],
+                                   [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"APPLY", nil) style:UIBarButtonItemStyleDone target:self action:@selector(doneWithBoxUnits)],
                                    nil];
     [numberToolbarBoxUnits sizeToFit];
     txtBoxUnits.inputAccessoryView = numberToolbarBoxUnits;
@@ -110,9 +121,9 @@ static StaticTableViewController *sharedInstance;
     UIToolbar* numberToolbarDosis = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbarDosis.barStyle = UIBarStyleBlackTranslucent;
     numberToolbarDosis.items = [NSArray arrayWithObjects:
-                                [[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
+                                [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"CANCEL", nil) style:UIBarButtonItemStyleBordered target:self action:@selector(cancelUnitsTaken)],
                                 [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
+                                [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"APPLY", nil) style:UIBarButtonItemStyleDone target:self action:@selector(doneWithUnitsTaken)],
                                 nil];
     [numberToolbarDosis sizeToFit];
     txtUnitsTaken.inputAccessoryView = numberToolbarDosis;
@@ -124,7 +135,7 @@ static StaticTableViewController *sharedInstance;
     //Check if there were changes with dosis
     if(tDosis!=p_iDose){//txtDosis.text){
         
-        lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:p_iDose]];
+        lblDose.text=[NSString stringWithFormat:NSLocalizedString(@"EVERY", nil), [arrDosis objectAtIndex:p_iDose]];
         tDosis= p_iDose;
         
         //Validate form
@@ -155,8 +166,8 @@ static StaticTableViewController *sharedInstance;
     //Check if Box units is empty
     if([txtBoxUnits.text length]==0){
         // Show messagebox
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_BOXUNITS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_BOXUNITS_EMPTY", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -170,9 +181,9 @@ static StaticTableViewController *sharedInstance;
     else if([txtBoxUnits.text integerValue]<MIN_BOXUNITS
             || [txtBoxUnits.text integerValue]>MAX_BOXUNITX){
         
-        NSString *sErrMessage = [NSString stringWithFormat:ERR_BOUXUNITS_OUTOFRANGE,MIN_BOXUNITS,MAX_BOXUNITX];
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:sErrMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        NSString *sErrMessage = [NSString stringWithFormat:NSLocalizedString(@"ERR_BOUXUNITS_OUTOFRANGE", nil),MIN_BOXUNITS,MAX_BOXUNITX];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:sErrMessage delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -218,8 +229,8 @@ static StaticTableViewController *sharedInstance;
     //Check if Box units is empty
     if([txtUnitsTaken.text length]==0){
         // Show messagebox
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_UNITSTAKEN_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_UNITSTAKEN_EMPTY", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -232,8 +243,8 @@ static StaticTableViewController *sharedInstance;
     //Check if Box units value is 0
     else if([txtUnitsTaken.text integerValue]==0){
         
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_UNITSTAKEN_ZERO delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_UNITSTAKEN_ZERO", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -244,8 +255,8 @@ static StaticTableViewController *sharedInstance;
     //Check Box units text field is filled
     else if([txtBoxUnits.text integerValue]==0){
         
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_BOXUNITS_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_BOXUNITS_EMPTY", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -256,8 +267,8 @@ static StaticTableViewController *sharedInstance;
     //Check if dosis is greater than box units
     else if([txtUnitsTaken.text integerValue]>[txtBoxUnits.text integerValue]){
         
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
@@ -293,8 +304,8 @@ static StaticTableViewController *sharedInstance;
     //Check if medicine name is not emty
     if([txtName.text length]==0){
         // Show messagebox
-        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:ERR_TITLE
-                                                         message:ERR_NAME_EMPTY delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        UIAlertView* msgAlert=[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERR_TITLE", nil)
+                                                         message:NSLocalizedString(@"ERR_NAME_EMPTY", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
         
         [msgAlert show];
         
