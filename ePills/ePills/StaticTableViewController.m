@@ -98,7 +98,7 @@ static StaticTableViewController *sharedInstance;
                 NSLocalizedString(@"2_WEEKS", nil),
                 NSLocalizedString(@"1_MONTH", nil),
                 @"60",@"120",@"240",nil];
-    lblDose.text=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
+    lblDose.text=[NSString stringWithFormat:NSLocalizedString(@"EVERY", nil), [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
     // Assign our own backgroud for the view    
     UIView* bview = [[UIView alloc] init];

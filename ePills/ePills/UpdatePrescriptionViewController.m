@@ -98,7 +98,6 @@ static UpdatePrescriptionViewController *sharedInstance;
                 NSLocalizedString(@"1_MONTH", nil),
                 @"60",@"120",@"240",nil];
     
-    //sDosis=[NSString stringWithFormat:@"Every %@", [arrDosis objectAtIndex:currPrescription.tDosis]];
     tDosis=currPrescription.tDosis;
 
     //Initialize fields

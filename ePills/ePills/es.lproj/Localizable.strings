@@ -9,7 +9,7 @@
 "AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] Tomadas:%d";
 "NEXT_DOSE_NOT_SET"="¡La siguiente toma no se ha fijado!.";
 "EVERY"="Cada %@";
-"NOT_SET_PRESS_DOSE"="Pulse botón Toma.";
+"NOT_SET_PRESS_DOSE"="Pulse Toma.";
 "OK"="Continuar";
 "UNITS_AT"="%@ %d unidad(es) a las %@";
 "MEDICINE_SAMPLE_NAME"="Nombre del medicamento";

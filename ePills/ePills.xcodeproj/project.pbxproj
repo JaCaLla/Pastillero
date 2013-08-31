@@ -18,6 +18,15 @@
 		5A9B47A217B950A30010BDD9 /* cell_unique@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */; };
 		5A9B9AA917CE471B00953ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B9AA817CE464600953ABE /* Localizable.strings */; };
 		5A9B9AAB17CE4A5600953ABE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A9B9AA817CE464600953ABE /* Localizable.strings */; };
+		5A9FF93D17D20DB00005BE3F /* Dose-ca.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93717D20DB00005BE3F /* Dose-ca.png */; };
+		5A9FF93E17D20DB00005BE3F /* Dose-en.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93817D20DB00005BE3F /* Dose-en.png */; };
+		5A9FF93F17D20DB00005BE3F /* Dose-es.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93917D20DB00005BE3F /* Dose-es.png */; };
+		5A9FF94017D20DB00005BE3F /* Prescriptions-ca.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */; };
+		5A9FF94117D20DB00005BE3F /* Prescriptions-en.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */; };
+		5A9FF94217D20DB00005BE3F /* Prescriptions-es.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */; };
+		5A9FF94617D2108B0005BE3F /* New-ca.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF94317D2108B0005BE3F /* New-ca.png */; };
+		5A9FF94717D2108B0005BE3F /* New-en.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF94417D2108B0005BE3F /* New-en.png */; };
+		5A9FF94817D2108B0005BE3F /* New-es.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9FF94517D2108B0005BE3F /* New-es.png */; };
 		5AA0BFB517AE2A05002DCB95 /* cell_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */; };
 		5AA0BFB617AE2A05002DCB95 /* cell_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFB017AE2A05002DCB95 /* cell_bottom@2x.png */; };
 		5AA0BFB717AE2A05002DCB95 /* cell_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA0BFB117AE2A05002DCB95 /* cell_middle.png */; };
@@ -31,9 +40,6 @@
 		5AA48C6E17B2CA960005AE9F /* App.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA48C6D17B2CA960005AE9F /* App.png */; };
 		5AA48C7017B2CC490005AE9F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA48C6F17B2CC490005AE9F /* Default-568h@2x.png */; };
 		5AA9385117A80C04003212FC /* testPrescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA9385017A80C04003212FC /* testPrescription.m */; };
-		5AAACEAE17D1BCCA00C9B322 /* List.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAACEAB17D1BCCA00C9B322 /* List.png */; };
-		5AAACEAF17D1BCCA00C9B322 /* New.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAACEAC17D1BCCA00C9B322 /* New.png */; };
-		5AAACEB017D1BCCA00C9B322 /* Update.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AAACEAD17D1BCCA00C9B322 /* Update.png */; };
 		5AB041F317B00D500027A6BF /* cell_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AB041F217B00D500027A6BF /* cell_top@2x.png */; };
 		5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */; };
 		5AB55C5217D10BA00064262A /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB55C5117D10BA00064262A /* HelpViewController.m */; };
@@ -84,6 +90,17 @@
 		5A9B47A017B950A30010BDD9 /* cell_unique@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_unique@2x.png"; sourceTree = "<group>"; };
 		5A9B9AA717CE464600953ABE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5A9B9AAA17CE498E00953ABE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A9FF92F17D2039A0005BE3F /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ca; path = ca.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5A9FF93717D20DB00005BE3F /* Dose-ca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-ca.png"; sourceTree = "<group>"; };
+		5A9FF93817D20DB00005BE3F /* Dose-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-en.png"; sourceTree = "<group>"; };
+		5A9FF93917D20DB00005BE3F /* Dose-es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-es.png"; sourceTree = "<group>"; };
+		5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-ca.png"; sourceTree = "<group>"; };
+		5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-en.png"; sourceTree = "<group>"; };
+		5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-es.png"; sourceTree = "<group>"; };
+		5A9FF94317D2108B0005BE3F /* New-ca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-ca.png"; sourceTree = "<group>"; };
+		5A9FF94417D2108B0005BE3F /* New-en.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-en.png"; sourceTree = "<group>"; };
+		5A9FF94517D2108B0005BE3F /* New-es.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-es.png"; sourceTree = "<group>"; };
+		5A9FF94917D216950005BE3F /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5AA0BFAF17AE2A05002DCB95 /* cell_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bottom.png; sourceTree = "<group>"; };
 		5AA0BFB017AE2A05002DCB95 /* cell_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bottom@2x.png"; sourceTree = "<group>"; };
 		5AA0BFB117AE2A05002DCB95 /* cell_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_middle.png; sourceTree = "<group>"; };
@@ -100,9 +117,6 @@
 		5AA6E8D017CEA66300109EBB /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AA9384F17A80C04003212FC /* testPrescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testPrescription.h; sourceTree = "<group>"; };
 		5AA9385017A80C04003212FC /* testPrescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testPrescription.m; sourceTree = "<group>"; };
-		5AAACEAB17D1BCCA00C9B322 /* List.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = List.png; sourceTree = "<group>"; };
-		5AAACEAC17D1BCCA00C9B322 /* New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New.png; sourceTree = "<group>"; };
-		5AAACEAD17D1BCCA00C9B322 /* Update.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Update.png; sourceTree = "<group>"; };
 		5AB041F217B00D500027A6BF /* cell_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_top@2x.png"; sourceTree = "<group>"; };
 		5AB2B78E178C6B36000BA2FA /* UpdatePrescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePrescriptionViewController.h; sourceTree = "<group>"; };
 		5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePrescriptionViewController.m; sourceTree = "<group>"; };
@@ -238,9 +252,15 @@
 		5AB7F81517CFA80700074539 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
-				5AAACEAB17D1BCCA00C9B322 /* List.png */,
-				5AAACEAC17D1BCCA00C9B322 /* New.png */,
-				5AAACEAD17D1BCCA00C9B322 /* Update.png */,
+				5A9FF94317D2108B0005BE3F /* New-ca.png */,
+				5A9FF94417D2108B0005BE3F /* New-en.png */,
+				5A9FF94517D2108B0005BE3F /* New-es.png */,
+				5A9FF93717D20DB00005BE3F /* Dose-ca.png */,
+				5A9FF93817D20DB00005BE3F /* Dose-en.png */,
+				5A9FF93917D20DB00005BE3F /* Dose-es.png */,
+				5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */,
+				5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */,
+				5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */,
 			);
 			name = Assistant;
 			sourceTree = "<group>";
@@ -458,9 +478,15 @@
 				5A9B47A217B950A30010BDD9 /* cell_unique@2x.png in Resources */,
 				5AB7E61517BBF8A000A5F477 /* SampleMedicine.png in Resources */,
 				5A540F9F17BCE9B80098D3A9 /* bells.wav in Resources */,
-				5AAACEAE17D1BCCA00C9B322 /* List.png in Resources */,
-				5AAACEAF17D1BCCA00C9B322 /* New.png in Resources */,
-				5AAACEB017D1BCCA00C9B322 /* Update.png in Resources */,
+				5A9FF93D17D20DB00005BE3F /* Dose-ca.png in Resources */,
+				5A9FF93E17D20DB00005BE3F /* Dose-en.png in Resources */,
+				5A9FF93F17D20DB00005BE3F /* Dose-es.png in Resources */,
+				5A9FF94017D20DB00005BE3F /* Prescriptions-ca.png in Resources */,
+				5A9FF94117D20DB00005BE3F /* Prescriptions-en.png in Resources */,
+				5A9FF94217D20DB00005BE3F /* Prescriptions-es.png in Resources */,
+				5A9FF94617D2108B0005BE3F /* New-ca.png in Resources */,
+				5A9FF94717D2108B0005BE3F /* New-en.png in Resources */,
+				5A9FF94817D2108B0005BE3F /* New-es.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +579,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				5ACC65C217889BD300ED59D1 /* en */,
+				5A9FF92F17D2039A0005BE3F /* ca */,
+				5A9FF94917D216950005BE3F /* es */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
