@@ -23,11 +23,11 @@
  
  */
 
-"AVAILABLE_UNITS_TAKEN"="Disponibles:[%d/%d] Unitats preses:%d";
+"AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] U. preses:%d";
 "NEXT_DOSE_NOT_SET"="Propera presa no fixada!.";
 "EVERY"="Cada %@";
-"NOT_SET_PRESS_DOSE"="No fixada, prengui pren.";
-"OK"="Ok";
+"NOT_SET_PRESS_DOSE"="No fixada, polsi presa.";
+"OK"="Continuar";
 "UNITS_AT"="Toma: %@ %d unitat(s) a les %@";
 "MEDICINE_SAMPLE_NAME"="Nom medicament exemple";
 "UNITS"="%@ %d unitat(s)";
@@ -40,7 +40,7 @@
 
 
 "MSG_NO_PRESCRIPTIONS1"="La llista de prescripcions ès buida.";
-"MSG_NO_PRESCRIPTIONS2"="S'ha creat una prescripció d'exemple, seleccionala per actualitzar la informació.";
+"MSG_NO_PRESCRIPTIONS2"="S'ha creat una prescripció d'exemple, selecciona-la per actualitzar la informació.";
 "MSG_LAST_DOSE1"="Has fet servir la derrera dosi.";
 "MSG_LAST_DOSE2"="Has acabat la prescripció o necessites una nova capsa.";
 "MSG_NO_PILLS_FOR_DOSE1"="No hi han prou unitats.";
@@ -67,9 +67,9 @@
 "1_WEEK" = "1 Setmana";
 "2_WEEKS" = "2 Setmanes";
 "1_MONTH" = "1 Mes";
-"1_MINUTE" = "One minute";
-"2_MINUTES" = "Two minutes";
-"4_MINUTES" = "Four minutes";
+"1_MINUTE" = "Un minut";
+"2_MINUTES" = "Dos minuts";
+"4_MINUTES" = "Quatre minuts";
 
 "PRESCRIPTION_LIST"="Prescripcions";
 

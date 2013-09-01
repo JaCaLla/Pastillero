@@ -789,7 +789,7 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Siguiente toma:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBE-Pg-yK9">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Siguiente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBE-Pg-yK9">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="0F2-wW-hcl"/>
                                                         <constraint firstAttribute="width" constant="125" id="IjA-Eh-l9w"/>
@@ -800,8 +800,7 @@
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1h-XR-JIt">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="136" id="O9R-mG-tib"/>
-                                                        <constraint firstAttribute="height" constant="25" id="fWo-bz-XL0"/>
+                                                        <constraint firstAttribute="width" constant="183" id="BPh-yq-oDI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -812,9 +811,10 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="qBE-Pg-yK9" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="24" id="2zr-ZW-vF6"/>
-                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="147" id="QuR-Hf-smP"/>
                                             <constraint firstItem="qBE-Pg-yK9" firstAttribute="centerY" secondItem="S1h-XR-JIt" secondAttribute="centerY" type="default" id="RlA-IC-NnG"/>
+                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="baseline" secondItem="qBE-Pg-yK9" secondAttribute="baseline" type="default" id="T9b-2a-D1h"/>
                                             <constraint firstItem="S1h-XR-JIt" firstAttribute="top" secondItem="w5A-ds-axB" secondAttribute="top" constant="6" id="p8Z-49-hVN"/>
+                                            <constraint firstItem="S1h-XR-JIt" firstAttribute="leading" secondItem="w5A-ds-axB" secondAttribute="leading" constant="107" id="sSS-dk-1Yj"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1215,6 +1215,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="wOb-tc-ySU"/>
     </inferredMetricsTieBreakers>
 </document>

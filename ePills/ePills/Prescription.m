@@ -157,7 +157,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
         return @"--/---/-- --:--";
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
-    [dateFormat setDateFormat:@"dd/MMM/yyyy hh:mm"];
+    [dateFormat setDateFormat:@"hh:mm dd/MMM/yyyy"];
     return[dateFormat stringFromDate:dteNextDose];
 }
 
