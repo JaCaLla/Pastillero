@@ -18,7 +18,8 @@
 "APPLY"="Aplicar";
 "CANCEL"="Cancelar";
 "NEXT_DOSE"="Siguiente toma";
-"TIME_ELAPSED"="Tiempo transcurrido";
+"TIME_ELAPSED"="Transcurrido";
+"DAYS"="Día(s)";
 
 
 "MSG_NO_PRESCRIPTIONS1"="Lista de prescripciones vacias.";

@@ -186,7 +186,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 
     
         if(iDays>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %d Day(s) %02dh:%02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iDays,iHours,iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %d %@ %02dh:%02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iDays,NSLocalizedString(@"DAYS", nil),iHours,iMins,iSecs ];
         else if(iHours>0)
             strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: %02dh:%02dm:%02ds",NSLocalizedString(@"NEXT_DOSE", nil),iHours,iMins,iSecs];
         else if(iMins>0)
@@ -205,7 +205,7 @@ unsigned int arrSecs[] = {3600*1, 3600*2, 3600*4, 3600*8, 3600*12,3600*24,3600*2
 
         
         if(iDays>0)
-            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%d Day(s) %02dh:%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iDays,iHours,iMins,iSecs ];
+            strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%d %@ %02dh:%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iDays,NSLocalizedString(@"DAYS", nil),iHours,iMins,iSecs ];
         else if(iHours>0)
             strRemainingDDHHMMSS=[NSString stringWithFormat:@"%@: -%02dh:%02dm:%02ds",NSLocalizedString(@"TIME_ELAPSED", nil),iHours,iMins,iSecs];
         else if(iMins>0)
