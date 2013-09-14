@@ -1,0 +1,76 @@
+/* 
+  Localization.strings
+  ePills
+
+  Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
+  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
+
+ 
+ 
+ 
+ http://www.lwxted.com/blog/2012/localization-ios-development/
+ 
+ How to extract text from story board
+ $ cd en.lproj
+ $ ibtool --generate-strings-file MainStoryboard.strings MainStoryboard.storyboard
+ 
+ 
+ How to replace text into another story board
+ 
+ $ cd es.lproj
+ $ cp en.lproj/MainStoryboard.strings .
+ $ ibtool --strings-file ./MainStoryboard.strings --write MainStoryboard.storyboard MainStoryboard.storyboard
+ 
+ */
+
+"AVAILABLE_UNITS_TAKEN"="Dispoñibles: [%d/%d] Unidades tomadas:%d";
+"NEXT_DOSE_NOT_SET"="Próxima dose non foi establecida!";
+"EVERY"="Cada %@";
+"NOT_SET_PRESS_DOSE"="Non definida, preme dose.";
+"OK"="Ok";
+"UNITS_AT"="Tomar:%@ %d unidade(s) en %@";
+"MEDICINE_SAMPLE_NAME"="Nome da mostra Medicina";
+"UNITS"="%@ %d unidade(s)";
+"PRESS_PRESCRIPTION"="Prema prescritption para crear unha nova dose.";
+"APPLY"="Aplicar";
+"CANCEL"="Cancelar";
+"NEXT_DOSE"="Siguinte dose";
+"TIME_ELAPSED"="Transcorrido";
+"DAYS"="Día(s)";
+
+
+
+"MSG_NO_PRESCRIPTIONS1"="Lista de prescrición estaba baleiro.";
+"MSG_NO_PRESCRIPTIONS2"="Foi creado para mostra prescrición, pode selecciona-lo e uptdate información.";
+"MSG_LAST_DOSE1"="Gastou a última dose.";
+"MSG_LAST_DOSE2"="Vostede rematou a prescrición ou vai ter que ter un novo medicamento.";
+"MSG_NO_PILLS_FOR_DOSE1"="Non basta unidades.";
+"MSG_NO_PILLS_FOR_DOSE2"="Por favor, enche prescrición.";
+
+
+"ERR_TITLE"="Erro";
+"ERR_NAME_EMPTY"="Nome do medicamento está baleira.";
+"ERR_BOXUNITS_EMPTY"="Unidades de caixa está baleira.";
+"ERR_BOUXUNITS_OUTOFRANGE"="Unidades de caixa debe estar entre %d e %d.";
+"ERR_UNITSTAKEN_EMPTY"="Dosis está baleiro.";
+"ERR_UNITSTAKEN_ZERO"="As doses de propofol debe ser diferente de cero.";
+"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS"="As doses de propofol non poden ser grandes unidades de caixa.";
+
+
+"1_HOUR" = "1 Hora";
+"2_HOURS" = "2 Horas";
+"4_HOURS" = "4 Horas";
+"8_HOURS" = "8 Horas";
+"12_HOURS" = "12 Horas";
+"1_DAY" = "1 Día";
+"2_DAYS" = "2 Días";
+"4_DAYS" = "4 Días";
+"1_WEEK" = "1 Semana";
+"2_WEEKS" = "2 Semanas";
+"1_MONTH" = "1 Mes";
+"1_MINUTE" = "1 minuto";
+"2_MINUTES" = "2 minutos";
+"4_MINUTES" = "3 minutos";
+
+"PRESCRIPTION_LIST"="Lista de prescrición";
+

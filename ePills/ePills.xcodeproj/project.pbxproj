@@ -49,6 +49,9 @@
 		5AC66A6D17E4AF79001EC3D2 /* Dose-de.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A6C17E4AF79001EC3D2 /* Dose-de.png */; };
 		5AC66A6F17E4AF8F001EC3D2 /* New-de.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A6E17E4AF8F001EC3D2 /* New-de.png */; };
 		5AC66A7117E4AF9D001EC3D2 /* Prescriptions-de.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A7017E4AF9D001EC3D2 /* Prescriptions-de.png */; };
+		5AC66A7D17E4C2B7001EC3D2 /* Dose-gl.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A7A17E4C2B7001EC3D2 /* Dose-gl.png */; };
+		5AC66A7E17E4C2B7001EC3D2 /* New-gl.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A7B17E4C2B7001EC3D2 /* New-gl.png */; };
+		5AC66A7F17E4C2B7001EC3D2 /* Prescriptions-gl.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AC66A7C17E4C2B7001EC3D2 /* Prescriptions-gl.png */; };
 		5ACC65AA17889BD300ED59D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65A917889BD300ED59D1 /* UIKit.framework */; };
 		5ACC65AC17889BD300ED59D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AB17889BD300ED59D1 /* Foundation.framework */; };
 		5ACC65AE17889BD300ED59D1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACC65AD17889BD300ED59D1 /* CoreGraphics.framework */; };
@@ -137,6 +140,13 @@
 		5AC66A6C17E4AF79001EC3D2 /* Dose-de.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-de.png"; sourceTree = "<group>"; };
 		5AC66A6E17E4AF8F001EC3D2 /* New-de.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-de.png"; sourceTree = "<group>"; };
 		5AC66A7017E4AF9D001EC3D2 /* Prescriptions-de.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-de.png"; sourceTree = "<group>"; };
+		5AC66A7617E4B951001EC3D2 /* gl */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = gl; path = gl.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5AC66A7717E4B951001EC3D2 /* gl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gl; path = gl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AC66A7817E4B951001EC3D2 /* gl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gl; path = gl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AC66A7917E4B951001EC3D2 /* gl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = gl; path = gl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AC66A7A17E4C2B7001EC3D2 /* Dose-gl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-gl.png"; sourceTree = "<group>"; };
+		5AC66A7B17E4C2B7001EC3D2 /* New-gl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-gl.png"; sourceTree = "<group>"; };
+		5AC66A7C17E4C2B7001EC3D2 /* Prescriptions-gl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-gl.png"; sourceTree = "<group>"; };
 		5ACC65A617889BD300ED59D1 /* ePills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ePills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ACC65A917889BD300ED59D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ACC65AB17889BD300ED59D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -266,14 +276,17 @@
 				5A9FF94417D2108B0005BE3F /* New-en.png */,
 				5A9FF94517D2108B0005BE3F /* New-es.png */,
 				5AC66A6E17E4AF8F001EC3D2 /* New-de.png */,
+				5AC66A7B17E4C2B7001EC3D2 /* New-gl.png */,
 				5A9FF93717D20DB00005BE3F /* Dose-ca.png */,
 				5A9FF93817D20DB00005BE3F /* Dose-en.png */,
 				5A9FF93917D20DB00005BE3F /* Dose-es.png */,
 				5AC66A6C17E4AF79001EC3D2 /* Dose-de.png */,
+				5AC66A7A17E4C2B7001EC3D2 /* Dose-gl.png */,
 				5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */,
 				5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */,
 				5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */,
 				5AC66A7017E4AF9D001EC3D2 /* Prescriptions-de.png */,
+				5AC66A7C17E4C2B7001EC3D2 /* Prescriptions-gl.png */,
 			);
 			name = Assistant;
 			sourceTree = "<group>";
@@ -452,6 +465,8 @@
 				es,
 				ca,
 				de,
+				"gl-ES",
+				gl,
 			);
 			mainGroup = 5ACC659D17889BD300ED59D1;
 			productRefGroup = 5ACC65A717889BD300ED59D1 /* Products */;
@@ -504,6 +519,9 @@
 				5AC66A6D17E4AF79001EC3D2 /* Dose-de.png in Resources */,
 				5AC66A6F17E4AF8F001EC3D2 /* New-de.png in Resources */,
 				5AC66A7117E4AF9D001EC3D2 /* Prescriptions-de.png in Resources */,
+				5AC66A7D17E4C2B7001EC3D2 /* Dose-gl.png in Resources */,
+				5AC66A7E17E4C2B7001EC3D2 /* New-gl.png in Resources */,
+				5AC66A7F17E4C2B7001EC3D2 /* Prescriptions-gl.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +599,7 @@
 				5A9B9AAA17CE498E00953ABE /* es */,
 				5AA6E8D017CEA66300109EBB /* ca */,
 				5AC66A6A17E4A261001EC3D2 /* de */,
+				5AC66A7817E4B951001EC3D2 /* gl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -590,6 +609,7 @@
 			children = (
 				5ACC65B317889BD300ED59D1 /* en */,
 				5AC66A6917E4A261001EC3D2 /* de */,
+				5AC66A7717E4B951001EC3D2 /* gl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -601,6 +621,7 @@
 				5A9FF92F17D2039A0005BE3F /* ca */,
 				5A9FF94917D216950005BE3F /* es */,
 				5AC66A6817E4A261001EC3D2 /* de */,
+				5AC66A7617E4B951001EC3D2 /* gl */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -610,6 +631,7 @@
 			children = (
 				5ACC65D717889BD300ED59D1 /* en */,
 				5AC66A6B17E4A261001EC3D2 /* de */,
+				5AC66A7917E4B951001EC3D2 /* gl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
