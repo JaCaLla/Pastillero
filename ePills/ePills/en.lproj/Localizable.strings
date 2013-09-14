@@ -33,7 +33,7 @@
 "UNITS"="%@ %d unit(s)";
 "PRESS_PRESCRIPTION"="Press prescritption for set up a new dose.";
 "APPLY"="Apply";
-"CANCEL"="Cancelar";
+"CANCEL"="Cancel";
 "NEXT_DOSE"="Next dose";
 "TIME_ELAPSED"="Time elapsed";
 "DAYS"="Day(s)";
