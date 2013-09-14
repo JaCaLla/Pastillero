@@ -1,0 +1,76 @@
+/* 
+  Localization.strings
+  ePills
+
+  Created by JAVIER CALATRAVA LLAVERIA on 28/08/13.
+  Copyright (c) 2013 JAVIER CALATRAVA LLAVERIA. All rights reserved.
+
+ 
+ 
+ 
+ http://www.lwxted.com/blog/2012/localization-ios-development/
+ 
+ How to extract text from story board
+ $ cd en.lproj
+ $ ibtool --generate-strings-file MainStoryboard.strings MainStoryboard.storyboard
+ 
+ 
+ How to replace text into another story board
+ 
+ $ cd es.lproj
+ $ cp en.lproj/MainStoryboard.strings .
+ $ ibtool --strings-file ./MainStoryboard.strings --write MainStoryboard.storyboard MainStoryboard.storyboard
+ 
+ */
+
+"AVAILABLE_UNITS_TAKEN"="Verfügbar:[%d/%d] Einheiten:%d";
+"NEXT_DOSE_NOT_SET"="Weiter Dosis nicht gesetzt!.";
+"EVERY"="Jeder %@";
+"NOT_SET_PRESS_DOSE"="Nicht einzustellen, drücken 'Dose'.";
+"OK"="Ok";
+"UNITS_AT"="%@ %d einheit(en) %@";
+"MEDICINE_SAMPLE_NAME"="Medizin Probe Namen";
+"UNITS"="%@ %d einheit(en)";
+"PRESS_PRESCRIPTION"="Drücken prescritption für die Einrichtung eines neuen Dosis.";
+"APPLY"="Anwenden";
+"CANCEL"="Stornieren";
+"NEXT_DOSE"="Weiter dosis";
+"TIME_ELAPSED"="Vergehen";
+"DAYS"="Tag(e)";
+
+
+
+"MSG_NO_PRESCRIPTIONS1"="Prescription Liste war leer.";
+"MSG_NO_PRESCRIPTIONS2"="Es wurde eine Probe Rezept erstellt, wählen Sie sie einfach und uptdate Informationen.";
+"MSG_LAST_DOSE1"="Sie verbrachte die letzte Dosis.";
+"MSG_LAST_DOSE2"="Du hast die Verschreibung oder brauchen Sie ein neues Medikament zu bekommen.";
+"MSG_NO_PILLS_FOR_DOSE1"="Nicht genug Einheiten.";
+"MSG_NO_PILLS_FOR_DOSE2"="Bitte füllen Rezept.";
+
+
+"ERR_TITLE"="Fehler";
+"ERR_NAME_EMPTY"="Medicine Name ist leer.";
+"ERR_BOXUNITS_EMPTY"="Box Einheiten ist leer.";
+"ERR_BOUXUNITS_OUTOFRANGE"="Box Einheiten muss zwischen %d und %d sein.";
+"ERR_UNITSTAKEN_EMPTY"="Dosis ist leer.";
+"ERR_UNITSTAKEN_ZERO"="Dosis muss von Null verschieden sein.";
+"ERR_UNITSTAKEN_GREATERTHAN_BOXUNITS"="Dosis kann nicht größer Box Einheiten.";
+
+
+"1_HOUR" = "1 Stunde";
+"2_HOURS" = "2 Stunden";
+"4_HOURS" = "4 Stunden";
+"8_HOURS" = "8 Stunden";
+"12_HOURS" = "12 Stunden";
+"1_DAY" = "1 Tag";
+"2_DAYS" = "2 Tage";
+"4_DAYS" = "4 Tage";
+"1_WEEK" = "1 Woche";
+"2_WEEKS" = "2 Wochen";
+"1_MONTH" = "1 Monat";
+"1_MINUTE" = "Eins minute";
+"2_MINUTES" = "Zwei minutes";
+"4_MINUTES" = "Vier minutes";
+
+"PRESCRIPTION_LIST"="Prescription Liste";
+
