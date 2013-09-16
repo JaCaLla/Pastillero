@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0A850517E77AB600B03E85 /* Dose-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850417E77AB600B03E85 /* Dose-it.png */; };
+		5A0A850817E77AC600B03E85 /* New-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850617E77AC600B03E85 /* New-it.png */; };
+		5A0A850917E77AC600B03E85 /* Prescriptions-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850717E77AC600B03E85 /* Prescriptions-it.png */; };
 		5A455960178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455964178B3D5500DADEF9 /* PrescriptionControllerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A455963178B3D5500DADEF9 /* PrescriptionControllerCellView.m */; };
@@ -84,6 +87,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A0A850017E771E300B03E85 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = it; path = it.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5A0A850117E771E300B03E85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5A0A850217E771E300B03E85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5A0A850317E771E300B03E85 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5A0A850417E77AB600B03E85 /* Dose-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-it.png"; sourceTree = "<group>"; };
+		5A0A850617E77AC600B03E85 /* New-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-it.png"; sourceTree = "<group>"; };
+		5A0A850717E77AC600B03E85 /* Prescriptions-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-it.png"; sourceTree = "<group>"; };
 		5A45595E178B306700DADEF9 /* Prescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prescription.h; sourceTree = "<group>"; };
 		5A45595F178B306700DADEF9 /* Prescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
 		5A455962178B3D5500DADEF9 /* PrescriptionControllerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionControllerCellView.h; sourceTree = "<group>"; };
@@ -277,16 +287,19 @@
 				5A9FF94517D2108B0005BE3F /* New-es.png */,
 				5AC66A6E17E4AF8F001EC3D2 /* New-de.png */,
 				5AC66A7B17E4C2B7001EC3D2 /* New-gl.png */,
+				5A0A850617E77AC600B03E85 /* New-it.png */,
 				5A9FF93717D20DB00005BE3F /* Dose-ca.png */,
 				5A9FF93817D20DB00005BE3F /* Dose-en.png */,
 				5A9FF93917D20DB00005BE3F /* Dose-es.png */,
 				5AC66A6C17E4AF79001EC3D2 /* Dose-de.png */,
 				5AC66A7A17E4C2B7001EC3D2 /* Dose-gl.png */,
+				5A0A850417E77AB600B03E85 /* Dose-it.png */,
 				5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */,
 				5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */,
 				5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */,
 				5AC66A7017E4AF9D001EC3D2 /* Prescriptions-de.png */,
 				5AC66A7C17E4C2B7001EC3D2 /* Prescriptions-gl.png */,
+				5A0A850717E77AC600B03E85 /* Prescriptions-it.png */,
 			);
 			name = Assistant;
 			sourceTree = "<group>";
@@ -467,6 +480,7 @@
 				de,
 				"gl-ES",
 				gl,
+				it,
 			);
 			mainGroup = 5ACC659D17889BD300ED59D1;
 			productRefGroup = 5ACC65A717889BD300ED59D1 /* Products */;
@@ -522,6 +536,9 @@
 				5AC66A7D17E4C2B7001EC3D2 /* Dose-gl.png in Resources */,
 				5AC66A7E17E4C2B7001EC3D2 /* New-gl.png in Resources */,
 				5AC66A7F17E4C2B7001EC3D2 /* Prescriptions-gl.png in Resources */,
+				5A0A850517E77AB600B03E85 /* Dose-it.png in Resources */,
+				5A0A850817E77AC600B03E85 /* New-it.png in Resources */,
+				5A0A850917E77AC600B03E85 /* Prescriptions-it.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +617,7 @@
 				5AA6E8D017CEA66300109EBB /* ca */,
 				5AC66A6A17E4A261001EC3D2 /* de */,
 				5AC66A7817E4B951001EC3D2 /* gl */,
+				5A0A850217E771E300B03E85 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -610,6 +628,7 @@
 				5ACC65B317889BD300ED59D1 /* en */,
 				5AC66A6917E4A261001EC3D2 /* de */,
 				5AC66A7717E4B951001EC3D2 /* gl */,
+				5A0A850117E771E300B03E85 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -622,6 +641,7 @@
 				5A9FF94917D216950005BE3F /* es */,
 				5AC66A6817E4A261001EC3D2 /* de */,
 				5AC66A7617E4B951001EC3D2 /* gl */,
+				5A0A850017E771E300B03E85 /* it */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -632,6 +652,7 @@
 				5ACC65D717889BD300ED59D1 /* en */,
 				5AC66A6B17E4A261001EC3D2 /* de */,
 				5AC66A7917E4B951001EC3D2 /* gl */,
+				5A0A850317E771E300B03E85 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
