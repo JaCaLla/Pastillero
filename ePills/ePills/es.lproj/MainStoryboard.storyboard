@@ -229,7 +229,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-qY-FxA">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="203" id="gvm-VI-W60"/>
+                                                        <constraint firstAttribute="width" constant="160" id="ZlR-qm-dnz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -238,14 +238,33 @@
                                                         <action selector="txtNameValueChanged:" destination="0j9-Ez-7Vn" eventType="valueChanged" id="rg9-eD-A2s"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-nX-ERe">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="31" id="55x-6w-9sD"/>
+                                                        <constraint firstAttribute="height" constant="33" id="xHB-E6-Dla"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="tl5-YY-QgA" kind="push" id="cm9-cG-0Zk"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="3dc-qY-FxA" firstAttribute="leading" secondItem="GZl-Uu-x8v" secondAttribute="leading" constant="95" id="OcX-15-dQP"/>
-                                            <constraint firstItem="18y-Qt-g73" firstAttribute="centerY" secondItem="GZl-Uu-x8v" secondAttribute="centerY" type="default" id="ape-6w-oBI"/>
                                             <constraint firstItem="18y-Qt-g73" firstAttribute="leading" secondItem="GZl-Uu-x8v" secondAttribute="leading" constant="21" id="bf6-fU-lWF"/>
                                             <constraint firstItem="18y-Qt-g73" firstAttribute="baseline" secondItem="3dc-qY-FxA" secondAttribute="baseline" type="default" id="cKU-q4-giS"/>
+                                            <constraint firstAttribute="trailing" secondItem="405-nX-ERe" secondAttribute="trailing" constant="19" id="h2J-nN-gEq"/>
+                                            <constraint firstItem="405-nX-ERe" firstAttribute="centerY" secondItem="GZl-Uu-x8v" secondAttribute="centerY" type="default" id="jwu-dY-ZOT"/>
+                                            <constraint firstItem="405-nX-ERe" firstAttribute="baseline" secondItem="3dc-qY-FxA" secondAttribute="baseline" type="default" id="zpt-Zp-OU0"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="W27-UU-IUQ">
@@ -457,6 +476,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46k-Ql-HJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1671" y="-1089"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KoU-Db-ZNH">
+            <objects>
+                <viewController id="tl5-YY-QgA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y4z-H6-C5x">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FH1-G8-HXy">
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="txH-uv-F0O">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="504" id="HIS-CL-l6u"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellPrescriptionId" rowHeight="70" id="CBd-nU-9Tp" customClass="PrescriptionControllerCellView">
+                                                <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFh-QF-hiN">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="EaA-cR-VlN"/>
+                                                                <constraint firstAttribute="height" constant="50" id="Efn-rw-yAr"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyn-BP-A4j">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="6Ph-AY-zWY"/>
+                                                                <constraint firstAttribute="width" constant="220" id="id8-aF-vcF"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="gyn-BP-A4j" firstAttribute="centerY" secondItem="qFh-QF-hiN" secondAttribute="centerY" type="default" id="45R-l9-HKs"/>
+                                                    <constraint firstItem="gyn-BP-A4j" firstAttribute="centerY" secondItem="CBd-nU-9Tp" secondAttribute="centerY" type="default" id="I2D-gb-SvT"/>
+                                                    <constraint firstItem="gyn-BP-A4j" firstAttribute="leading" secondItem="CBd-nU-9Tp" secondAttribute="leading" constant="90" id="UPL-Un-c1b"/>
+                                                    <constraint firstItem="qFh-QF-hiN" firstAttribute="leading" secondItem="CBd-nU-9Tp" secondAttribute="leading" constant="10" id="ngL-AX-G8Y"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="imageView" destination="qFh-QF-hiN" id="eWA-G2-xma"/>
+                                                    <outlet property="lblName" destination="gyn-BP-A4j" id="j5E-b4-Bwi"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="txH-uv-F0O" secondAttribute="bottom" constant="-44" id="0Qg-eo-QXA"/>
+                                    <constraint firstItem="txH-uv-F0O" firstAttribute="trailing" secondItem="FH1-G8-HXy" secondAttribute="trailing" type="default" id="N3V-bh-OzC"/>
+                                    <constraint firstItem="txH-uv-F0O" firstAttribute="centerX" secondItem="FH1-G8-HXy" secondAttribute="centerX" type="default" id="Nv1-q3-LAx"/>
+                                    <constraint firstItem="txH-uv-F0O" firstAttribute="leading" secondItem="FH1-G8-HXy" secondAttribute="leading" type="default" id="fik-RG-67E"/>
+                                    <constraint firstItem="txH-uv-F0O" firstAttribute="top" secondItem="FH1-G8-HXy" secondAttribute="top" type="default" id="t4Q-4D-cPt"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FH1-G8-HXy" firstAttribute="top" secondItem="y4z-H6-C5x" secondAttribute="top" type="default" id="Gzc-Ez-Jyj"/>
+                            <constraint firstAttribute="bottom" secondItem="FH1-G8-HXy" secondAttribute="bottom" constant="44" id="VIU-Sk-35v"/>
+                            <constraint firstItem="FH1-G8-HXy" firstAttribute="trailing" secondItem="y4z-H6-C5x" secondAttribute="trailing" type="default" id="osQ-cd-BoO"/>
+                            <constraint firstItem="FH1-G8-HXy" firstAttribute="leading" secondItem="y4z-H6-C5x" secondAttribute="leading" type="default" id="uiH-R1-DZU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ePD-lJ-WHd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="int-hy-1uI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2038" y="-1611"/>
         </scene>
         <!--Dosis Table View Controller - Toma-->
         <scene sceneID="8eA-qE-Nls">
@@ -1120,6 +1217,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfN-8b-kvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Toma" id="ZOZ-r0-j9T">
+                    <barButtonItem key="backBarButtonItem" title="Back" id="pXu-57-oOu"/>
+                </navigationItem>
             </objects>
             <point key="canvasLocation" x="767" y="-1667"/>
         </scene>
@@ -1129,12 +1229,92 @@
         <image name="New-es.png" width="640" height="960"/>
         <image name="Prescriptions-es.png" width="640" height="960"/>
     </resources>
+    <classes>
+        <class className="DosisTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="DosisUpdateTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DosisUpdateTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tbvDoses" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="GAITrackedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GAITrackedViewController.h"/>
+        </class>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="svwAdd" candidateClass="UIView"/>
+                <relationship kind="outlet" name="svwList" candidateClass="UIView"/>
+                <relationship kind="outlet" name="svwUpdate" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PrescriptionControllerCellView" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrescriptionControllerCellView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="lblName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNeedRefill" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StaticTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tbvNewPrescription" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnDose" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnRefill" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblLastDosis" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblNextDose" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblRemaining" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tbvUpdatePrescription" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="txtBoxUnits" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="txtUnitsTaken" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="uiImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="GAITrackedViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="btnSegueUpdate" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tbvPrescriptions" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wOb-tc-ySU"/>
+        <segue reference="Xst-jK-h2M"/>
     </inferredMetricsTieBreakers>
 </document>

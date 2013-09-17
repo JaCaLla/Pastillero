@@ -53,6 +53,9 @@ v BUG. If dose has expired next dose has the value "Not set, press dose."
 v BUG. Do not cancel timer after update
 * BUG. Last dose not updated after changing dose.
 * BUG. After expiring timer with notification, timers are not updated
+* Select a medidine from a predefined list of most common medicines.
+    * Create a new view with the sample predefined medicines with picture
+    * Select and item and update name and pictue
 
 
 
