@@ -74,6 +74,9 @@
 		5AE1B5BF17C7BB610075647D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5BE17C7BB610075647D /* CoreData.framework */; };
 		5AE1B5C117C7BB7B0075647D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5C017C7BB7B0075647D /* SystemConfiguration.framework */; };
 		5AE1B5C917C7CCDE0075647D /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1B5C817C7CCDE0075647D /* libGoogleAnalyticsServices.a */; };
+		5AF539B917E8B7F700B6DD24 /* Dose-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B617E8B7F700B6DD24 /* Dose-fr.png */; };
+		5AF539BA17E8B7F700B6DD24 /* New-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B717E8B7F700B6DD24 /* New-fr.png */; };
+		5AF539BB17E8B7F700B6DD24 /* Prescriptions-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B817E8B7F700B6DD24 /* Prescriptions-fr.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +191,13 @@
 		5AE1B5C617C7C7C00075647D /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		5AE1B5C717C7C7C00075647D /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
 		5AE1B5C817C7CCDE0075647D /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		5AF539B217E8AE9D00B6DD24 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5AF539B317E8AE9D00B6DD24 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AF539B417E8AE9D00B6DD24 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AF539B517E8AE9E00B6DD24 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5AF539B617E8B7F700B6DD24 /* Dose-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-fr.png"; sourceTree = "<group>"; };
+		5AF539B717E8B7F700B6DD24 /* New-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-fr.png"; sourceTree = "<group>"; };
+		5AF539B817E8B7F700B6DD24 /* Prescriptions-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-fr.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,18 +298,21 @@
 				5AC66A6E17E4AF8F001EC3D2 /* New-de.png */,
 				5AC66A7B17E4C2B7001EC3D2 /* New-gl.png */,
 				5A0A850617E77AC600B03E85 /* New-it.png */,
+				5AF539B717E8B7F700B6DD24 /* New-fr.png */,
 				5A9FF93717D20DB00005BE3F /* Dose-ca.png */,
 				5A9FF93817D20DB00005BE3F /* Dose-en.png */,
 				5A9FF93917D20DB00005BE3F /* Dose-es.png */,
 				5AC66A6C17E4AF79001EC3D2 /* Dose-de.png */,
 				5AC66A7A17E4C2B7001EC3D2 /* Dose-gl.png */,
 				5A0A850417E77AB600B03E85 /* Dose-it.png */,
+				5AF539B617E8B7F700B6DD24 /* Dose-fr.png */,
 				5A9FF93A17D20DB00005BE3F /* Prescriptions-ca.png */,
 				5A9FF93B17D20DB00005BE3F /* Prescriptions-en.png */,
 				5A9FF93C17D20DB00005BE3F /* Prescriptions-es.png */,
 				5AC66A7017E4AF9D001EC3D2 /* Prescriptions-de.png */,
 				5AC66A7C17E4C2B7001EC3D2 /* Prescriptions-gl.png */,
 				5A0A850717E77AC600B03E85 /* Prescriptions-it.png */,
+				5AF539B817E8B7F700B6DD24 /* Prescriptions-fr.png */,
 			);
 			name = Assistant;
 			sourceTree = "<group>";
@@ -481,6 +494,7 @@
 				"gl-ES",
 				gl,
 				it,
+				fr,
 			);
 			mainGroup = 5ACC659D17889BD300ED59D1;
 			productRefGroup = 5ACC65A717889BD300ED59D1 /* Products */;
@@ -539,6 +553,9 @@
 				5A0A850517E77AB600B03E85 /* Dose-it.png in Resources */,
 				5A0A850817E77AC600B03E85 /* New-it.png in Resources */,
 				5A0A850917E77AC600B03E85 /* Prescriptions-it.png in Resources */,
+				5AF539B917E8B7F700B6DD24 /* Dose-fr.png in Resources */,
+				5AF539BA17E8B7F700B6DD24 /* New-fr.png in Resources */,
+				5AF539BB17E8B7F700B6DD24 /* Prescriptions-fr.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +635,7 @@
 				5AC66A6A17E4A261001EC3D2 /* de */,
 				5AC66A7817E4B951001EC3D2 /* gl */,
 				5A0A850217E771E300B03E85 /* it */,
+				5AF539B417E8AE9D00B6DD24 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -629,6 +647,7 @@
 				5AC66A6917E4A261001EC3D2 /* de */,
 				5AC66A7717E4B951001EC3D2 /* gl */,
 				5A0A850117E771E300B03E85 /* it */,
+				5AF539B317E8AE9D00B6DD24 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -642,6 +661,7 @@
 				5AC66A6817E4A261001EC3D2 /* de */,
 				5AC66A7617E4B951001EC3D2 /* gl */,
 				5A0A850017E771E300B03E85 /* it */,
+				5AF539B217E8AE9D00B6DD24 /* fr */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -653,6 +673,7 @@
 				5AC66A6B17E4A261001EC3D2 /* de */,
 				5AC66A7917E4B951001EC3D2 /* gl */,
 				5A0A850317E771E300B03E85 /* it */,
+				5AF539B517E8AE9E00B6DD24 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

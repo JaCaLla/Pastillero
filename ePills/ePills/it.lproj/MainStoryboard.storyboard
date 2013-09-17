@@ -1169,12 +1169,8 @@
         <class className="StaticTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StaticTableViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnNameDidEndOnExit:"/>
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
-                <relationship kind="action" name="txtBoxUnitsEditingDidEnd:"/>
-                <relationship kind="action" name="txtNameValueChanged:"/>
-                <relationship kind="action" name="txtUnitsTakenEditingDidEnd:"/>
                 <relationship kind="outlet" name="btnDisclosure" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnSave" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="lblDose" candidateClass="UILabel"/>
@@ -1189,14 +1185,8 @@
         <class className="UpdatePrescriptionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UpdatePrescriptionViewController.h"/>
             <relationships>
-                <relationship kind="action" name="btnDose:"/>
-                <relationship kind="action" name="btnNameEditingDidEd:"/>
-                <relationship kind="action" name="btnRefill:"/>
                 <relationship kind="action" name="selectPhoto:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
-                <relationship kind="action" name="txtBoxUnitsEditingDidEnd:"/>
-                <relationship kind="action" name="txtNameValueChanged:"/>
-                <relationship kind="action" name="txtUnitsTakenEditingDidEnd:"/>
                 <relationship kind="outlet" name="btnDeletePrescription" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnDose" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btnRefill" candidateClass="UIBarButtonItem"/>
