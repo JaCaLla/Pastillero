@@ -14,6 +14,7 @@
 @protocol ModalViewDelegate
 
 - (void)setDosis:(int)p_iDose;
+- (void)setName:(NSString*)p_sName;
 
 @end
 
@@ -31,11 +32,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
 @property (weak, nonatomic) IBOutlet UILabel *lblDose;
 @property NSArray *arrDosis;
+@property NSArray *arrSampleMedicines;
 
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;
 @property (nonatomic, strong) NSString *sUnitsTaken;
 @property enum DosisType tDosis;
+@property NSString *sNameMedicine;
 
 //@property enum DosisType tDosis;
 

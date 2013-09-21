@@ -56,6 +56,7 @@ v BUG. Do not cancel timer after update
 * Select a medidine from a predefined list of most common medicines.
     * Create a new view with the sample predefined medicines with picture
     * Select and item and update name and pictue
+    * Do a selection depending on the country selected
 
 
 

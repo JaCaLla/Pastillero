@@ -77,6 +77,8 @@
 		5AF539B917E8B7F700B6DD24 /* Dose-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B617E8B7F700B6DD24 /* Dose-fr.png */; };
 		5AF539BA17E8B7F700B6DD24 /* New-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B717E8B7F700B6DD24 /* New-fr.png */; };
 		5AF539BB17E8B7F700B6DD24 /* Prescriptions-fr.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF539B817E8B7F700B6DD24 /* Prescriptions-fr.png */; };
+		5AF539C117E8C8EB00B6DD24 /* AddMedicineSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF539C017E8C8EB00B6DD24 /* AddMedicineSampleViewController.m */; };
+		5AF539C417E8C99000B6DD24 /* AddMedicineSampleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF539C317E8C99000B6DD24 /* AddMedicineSampleViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +200,10 @@
 		5AF539B617E8B7F700B6DD24 /* Dose-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-fr.png"; sourceTree = "<group>"; };
 		5AF539B717E8B7F700B6DD24 /* New-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-fr.png"; sourceTree = "<group>"; };
 		5AF539B817E8B7F700B6DD24 /* Prescriptions-fr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-fr.png"; sourceTree = "<group>"; };
+		5AF539BF17E8C8EB00B6DD24 /* AddMedicineSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicineSampleViewController.h; sourceTree = "<group>"; };
+		5AF539C017E8C8EB00B6DD24 /* AddMedicineSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicineSampleViewController.m; sourceTree = "<group>"; };
+		5AF539C217E8C99000B6DD24 /* AddMedicineSampleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicineSampleViewCell.h; sourceTree = "<group>"; };
+		5AF539C317E8C99000B6DD24 /* AddMedicineSampleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicineSampleViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +275,10 @@
 				5ABD057A178931DC008BFF19 /* StaticTableViewController.m */,
 				5ABD057C17895C25008BFF19 /* DosisTableViewController.h */,
 				5ABD057D17895C25008BFF19 /* DosisTableViewController.m */,
+				5AF539BF17E8C8EB00B6DD24 /* AddMedicineSampleViewController.h */,
+				5AF539C017E8C8EB00B6DD24 /* AddMedicineSampleViewController.m */,
+				5AF539C217E8C99000B6DD24 /* AddMedicineSampleViewCell.h */,
+				5AF539C317E8C99000B6DD24 /* AddMedicineSampleViewCell.m */,
 			);
 			name = Add;
 			sourceTree = "<group>";
@@ -601,6 +611,8 @@
 				5AB2B790178C6B36000BA2FA /* UpdatePrescriptionViewController.m in Sources */,
 				5AA3F5BF17A2D052001717EB /* DosisUpdateTableViewController.m in Sources */,
 				5AB55C5217D10BA00064262A /* HelpViewController.m in Sources */,
+				5AF539C117E8C8EB00B6DD24 /* AddMedicineSampleViewController.m in Sources */,
+				5AF539C417E8C99000B6DD24 /* AddMedicineSampleViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
