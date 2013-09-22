@@ -1,0 +1,9 @@
+@"Nolotil",
+@"Nolotil",@"Efferalgan",
+@"Nolotil",@"Efferalgan",@"Gelocatil",
+@"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",
+@"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",@"Augmentine",
+@"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",@"Augmentine",@"Orfidal Wyeth",
+@"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",@"Augmentine",@"Orfidal Wyeth",@"Neobrufen",
+@"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",@"Augmentine",@"Orfidal Wyeth",@"Neobrufen",@"Dianben",
+

@@ -12,6 +12,8 @@
 #define MIN_BOXUNITS 1
 #define MAX_BOXUNITX 100
 
+#define SPANISH_MEDICINES @"Nolotil",@"Efferalgan",@"Gelocatil",@"Adiro 100",@"Augmentine",@"Orfidal Wyeth",@"Neobrufen",@"Dianben",@"Termalgin"
+
 //Information messages
 //#define MSG_NO_PRESCRIPTIONS1 @"Prescription list was empty."
 //#define MSG_NO_PRESCRIPTIONS2 @"It has been created a sample prescription, just select it and uptdate information."

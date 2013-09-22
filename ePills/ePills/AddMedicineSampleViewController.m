@@ -9,6 +9,7 @@
 #import "AddMedicineSampleViewController.h"
 #import "AddMedicineSampleViewCell.h"
 #import "StaticTableViewController.h"
+#import "Constants.h"
 
 @interface AddMedicineSampleViewController (){
     
@@ -41,7 +42,21 @@
     [self.tbvSampleMedicines setDelegate:self];
 	
     //Initialize medicine array
-    arrSampleMedicines = [NSArray arrayWithObjects:@"MNA",@"MNB",@"MNC",nil];
+    // Detect country
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
+    
+    //NSString *countryName = [locale displayNameForKey: NSLocaleCountryCode value: countryCode];
+    
+    if([countryCode isEqualToString:@"ES"])
+    {
+        arrSampleMedicines = [NSArray arrayWithObjects:SPANISH_MEDICINES,nil];
+    }
+    else{
+        arrSampleMedicines = [NSArray arrayWithObjects:nil];
+    }
+    
+    
     
     // Assign our own backgroud for the view
     UIView* bview = [[UIView alloc] init];

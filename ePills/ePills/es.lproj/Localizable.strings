@@ -7,7 +7,7 @@
 */
 
 "AVAILABLE_UNITS_TAKEN"="Disponible:[%d/%d] Tomadas:%d";
-"NEXT_DOSE_NOT_SET"="¡La siguiente toma no se ha fijado!.";
+"NEXT_DOSE_NOT_SET"="¡Siguiente toma no fijada!.";
 "EVERY"="Cada %@";
 "NOT_SET_PRESS_DOSE"="Pulse Toma.";
 "OK"="Continuar";
