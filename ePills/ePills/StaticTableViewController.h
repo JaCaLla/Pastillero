@@ -15,6 +15,7 @@
 
 - (void)setDosis:(int)p_iDose;
 - (void)setName:(NSString*)p_sName;
+- (void)setNamePng:(NSString*)p_sNamePng;
 
 @end
 
@@ -33,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDose;
 @property NSArray *arrDosis;
 @property NSArray *arrSampleMedicines;
+@property NSArray *arrSampleMedicinesPng;
 
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;

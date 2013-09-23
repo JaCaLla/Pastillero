@@ -23,6 +23,7 @@
 
 @synthesize delegate;
 @synthesize sMedicineName;
+@synthesize sMedicineNamePng;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,9 +52,12 @@
     if([countryCode isEqualToString:@"ES"])
     {
         arrSampleMedicines = [NSArray arrayWithObjects:SPANISH_MEDICINES,nil];
+        arrSampleMedicinesPng = [NSArray arrayWithObjects:SPANISH_MEDICINES_PNG,nil];
+        
     }
     else{
         arrSampleMedicines = [NSArray arrayWithObjects:nil];
+        arrSampleMedicinesPng = [NSArray arrayWithObjects:nil];
     }
     
     
@@ -95,6 +99,18 @@
     cell.lblNameMedicine.hidden=FALSE;
     [cell.lblNameMedicine setText:[arrSampleMedicines objectAtIndex:indexPath.row]];
     
+    cell.imageViewMedicine.image = [UIImage imageNamed:[arrSampleMedicinesPng objectAtIndex:indexPath.row]];
+     
+     
+     
+     /*
+      
+      .image = [UIImage imageNamed:@"firstPicure.png"];
+      UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+      self.uiImageView.image = chosenImage;
+      
+      */
+    
     return cell;
     
 }
@@ -128,6 +144,8 @@
         
     // Get the medicine name
     sMedicineName=[arrSampleMedicines objectAtIndex:indexPath.row];
+    sMedicineNamePng=[arrSampleMedicinesPng objectAtIndex:indexPath.row];
+    
     
     //Force to close view (-> -(void) viewWillDisappear:(BOOL)animated)
     [self.navigationController popViewControllerAnimated:YES];
@@ -145,6 +163,7 @@
     
     //Provive dosis to delegated view (UpdatePrescriptionViewController)
     [delegate setName:sMedicineName];
+    [delegate setNamePng:sMedicineNamePng];
     
     
     [super viewWillDisappear:YES];

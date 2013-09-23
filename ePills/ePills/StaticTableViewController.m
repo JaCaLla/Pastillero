@@ -31,7 +31,7 @@ static StaticTableViewController *sharedInstance;
 @synthesize uiImageView;
 @synthesize arrDosis;
 @synthesize arrSampleMedicines;
-
+@synthesize arrSampleMedicinesPng;
 
 @synthesize sName;
 @synthesize sBoxUnits;
@@ -153,6 +153,15 @@ static StaticTableViewController *sharedInstance;
 
 
     [txtName setText:p_sName];
+    
+    //Validate form
+    [self validateForm];
+    
+}
+
+- (void)setNamePng:(NSString*)p_sNamePng {
+    
+    self.uiImageView.image = [UIImage imageNamed:p_sNamePng];
     
     //Validate form
     [self validateForm];

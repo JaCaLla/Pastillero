@@ -16,6 +16,7 @@
     
     
     NSArray *arrSampleMedicines;
+    NSArray *arrSampleMedicinesPng;
     
     
 }
@@ -25,5 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tbvSampleMedicines;
 
 @property NSString *sMedicineName;
+@property NSString *sMedicineNamePng;
+
 
 @end
