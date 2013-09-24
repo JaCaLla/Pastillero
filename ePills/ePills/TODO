@@ -48,11 +48,15 @@ v BUG. Dosis text is not updated properly after changing dose timing on Update f
 v BUG. If there is no picture in the prescription the text is shifted
 v BUG. Logic for save button is not worfing fine. Is disabled when you get back from dose table. It happens in Add and Update form
 v BUG. Change color in the labels that contains values.
-* BUG. Save button is not disabled after updating the name field
+* BUG. Timer not updated when is presed back from update screen or add prescription
 v BUG. If dose has expired next dose has the value "Not set, press dose."
 v BUG. Do not cancel timer after update
 * BUG. Last dose not updated after changing dose.
 * BUG. After expiring timer with notification, timers are not updated
+* Select a medidine from a predefined list of most common medicines.
+    * Create a new view with the sample predefined medicines with picture
+    * Select and item and update name and pictue
+    * Do a selection depending on the country selected
 
 
 

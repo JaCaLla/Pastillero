@@ -14,6 +14,8 @@
 @protocol ModalViewDelegate
 
 - (void)setDosis:(int)p_iDose;
+- (void)setName:(NSString*)p_sName;
+- (void)setNamePng:(NSString*)p_sNamePng;
 
 @end
 
@@ -24,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tbvNewPrescription;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisclosure;
 @property (weak, nonatomic) IBOutlet UIImageView *uiImageView;
+@property (weak, nonatomic) IBOutlet UIButton *btnSampleMedicines;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
@@ -31,11 +34,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
 @property (weak, nonatomic) IBOutlet UILabel *lblDose;
 @property NSArray *arrDosis;
+@property NSArray *arrSampleMedicines;
+@property NSArray *arrSampleMedicinesPng;
 
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;
 @property (nonatomic, strong) NSString *sUnitsTaken;
 @property enum DosisType tDosis;
+@property NSString *sNameMedicine;
 
 //@property enum DosisType tDosis;
 

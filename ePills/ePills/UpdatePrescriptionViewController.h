@@ -15,7 +15,9 @@
 //Callback method declaration
 @protocol ModalViewDelegate
  
- - (void)setDosis:(int)p_iDose;
+- (void)setDosis:(int)p_iDose;
+- (void)setName:(NSString*)p_sName;
+- (void)setNamePng:(NSString*)p_sNamePng;
  
 @end
 
@@ -37,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblLastDosis;
 @property (weak, nonatomic) IBOutlet UILabel *lblRemaining;
 @property (weak, nonatomic) IBOutlet UILabel *lblNextDose;
+@property (weak, nonatomic) IBOutlet UIButton *btnSampleMedicines;
 
 @property (nonatomic, strong) NSString *sName;
 @property (nonatomic, strong) NSString *sBoxUnits;

@@ -29,13 +29,16 @@ static StaticTableViewController *sharedInstance;
 @synthesize lblLastDosis;
 @synthesize lblDose;
 @synthesize uiImageView;
+@synthesize btnSampleMedicines;
 @synthesize arrDosis;
-
+@synthesize arrSampleMedicines;
+@synthesize arrSampleMedicinesPng;
 
 @synthesize sName;
 @synthesize sBoxUnits;
 @synthesize sUnitsTaken;
 @synthesize tDosis;
+@synthesize sNameMedicine;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -100,6 +103,16 @@ static StaticTableViewController *sharedInstance;
                 @"60",@"120",@"240",nil];
     lblDose.text=[NSString stringWithFormat:NSLocalizedString(@"EVERY", nil), [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
+    //Initialize medicine array
+    //arrSampleMedicines = [NSArray arrayWithObjects:@"MNA",@"MNB",@"MNC",nil];
+    
+    
+
+    // Detect country
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
+    btnSampleMedicines.enabled=([countryCode isEqualToString:@"ES"]);
+    
     // Assign our own backgroud for the view    
     UIView* bview = [[UIView alloc] init];
     bview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_bg.png"]];
@@ -143,6 +156,27 @@ static StaticTableViewController *sharedInstance;
 
     }
 }
+
+- (void)setName:(NSString*)p_sName {
+
+
+    [txtName setText:p_sName];
+    
+    //Validate form
+    [self validateForm];
+    
+}
+
+- (void)setNamePng:(NSString*)p_sNamePng {
+    
+    self.uiImageView.image = [UIImage imageNamed:p_sNamePng];
+    
+    //Validate form
+    [self validateForm];
+    
+}
+
+
 //END:ModelViewDelegat callbacks
 
 
@@ -390,6 +424,19 @@ static StaticTableViewController *sharedInstance;
         //Update view fields
         vc.tDosis=tDosis;
     }
+    else if([segue.identifier isEqualToString:@"showSampleMedicines"]){
+        
+        NSLog(@"prepareForSegue:showSampleMedicines");
+        
+        // Get destination view
+        DosisUpdateTableViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        
+        //Update view fields
+        //vc.tDosis=tDosis;
+    }
+    
+    
     
     
 }

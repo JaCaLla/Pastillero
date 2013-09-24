@@ -23,7 +23,7 @@
  
  */
 
-"AVAILABLE_UNITS_TAKEN"="Disponibles:[%d/%d] Unités prises:%d";
+"AVAILABLE_UNITS_TAKEN"="Disponibles:[%d/%d] U. prises:%d";
 "NEXT_DOSE_NOT_SET"="Prochaine dose fixe pas!.";
 "EVERY"="Tous %@";
 "NOT_SET_PRESS_DOSE"="Appuyez sur la dose.";
