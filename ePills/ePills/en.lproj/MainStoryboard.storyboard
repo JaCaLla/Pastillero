@@ -211,7 +211,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-qY-FxA">
-                                                    <rect key="frame" x="87" y="6" width="211" height="30"/>
+                                                    <rect key="frame" x="87" y="6" width="182" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -219,6 +219,16 @@
                                                         <action selector="txtNameValueChanged:" destination="0j9-Ez-7Vn" eventType="valueChanged" id="rg9-eD-A2s"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKs-CW-Uhr">
+                                                    <rect key="frame" x="272" y="4" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="...">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="MTP-NG-Ubb" kind="push" identifier="showSampleMedicines" id="9qr-SM-eDH"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -424,6 +434,57 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-1089"/>
         </scene>
+        <!--Add Medicine Sample View Controller-->
+        <scene sceneID="Hkn-xb-DeP">
+            <objects>
+                <viewController id="MTP-NG-Ubb" customClass="AddMedicineSampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xgA-YZ-RkU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ads-FR-G09"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="J9y-Qa-6Uz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qyU-tY-1tC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellSampleMedicineId" rowHeight="57" id="D7m-kH-WZn" customClass="AddMedicineSampleViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7m-kH-WZn" id="zTy-So-uxM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="SampleMedicine.png" translatesAutoresizingMaskIntoConstraints="NO" id="APh-ix-TKp">
+                                                    <rect key="frame" x="10" y="0.0" width="70" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4N9-x7-ZeR">
+                                                    <rect key="frame" x="88" y="14" width="220" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewMedicine" destination="APh-ix-TKp" id="rU0-JF-Pva"/>
+                                            <outlet property="lblNameMedicine" destination="4N9-x7-ZeR" id="NpC-g6-sLi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="bmf-iT-ogn"/>
+                    <connections>
+                        <outlet property="tbvSampleMedicines" destination="qyU-tY-1tC" id="9cB-2F-OSE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BzD-PL-FHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1970" y="-1667"/>
+        </scene>
         <!--Dosis Table View Controller - Dosis-->
         <scene sceneID="8eA-qE-Nls">
             <objects>
@@ -516,7 +577,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-Il-cgJ">
-                                                    <rect key="frame" x="87" y="4" width="211" height="30"/>
+                                                    <rect key="frame" x="87" y="4" width="185" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -524,6 +585,16 @@
                                                         <action selector="txtNameValueChanged:" destination="opj-XB-eVa" eventType="editingDidEnd" id="tQC-g2-Pv6"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XN-kv-b9y">
+                                                    <rect key="frame" x="274" y="4" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="...">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="8nE-6J-34N" kind="push" identifier="showUpdateSampleMedicines" id="PVH-Uf-DLz"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -799,6 +870,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAO-5h-3EK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1675" y="-227"/>
+        </scene>
+        <!--Update Medicine Sample View Controller-->
+        <scene sceneID="IjA-27-jTn">
+            <objects>
+                <viewController id="8nE-6J-34N" customClass="UpdateMedicineSampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nOY-Gx-LJV"/>
+                        <viewControllerLayoutGuide type="bottom" id="QkR-Y7-n7p"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="P8s-53-K58">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gRi-X1-WXj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellUpdateSampleMedicineId" rowHeight="57" id="v0A-0k-F09" customClass="UpdateMedicineSampleViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v0A-0k-F09" id="W6Y-Mh-LSZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="SampleMedicine.png" translatesAutoresizingMaskIntoConstraints="NO" id="xei-AJ-f9i">
+                                                    <rect key="frame" x="10" y="0.0" width="70" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HC-ev-JAj">
+                                                    <rect key="frame" x="88" y="14" width="220" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewMedicine" destination="xei-AJ-f9i" id="GmQ-4e-3u0"/>
+                                            <outlet property="lblNameMedicine" destination="8HC-ev-JAj" id="z9S-aH-1Y1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="bnh-v2-yzQ"/>
+                    <connections>
+                        <outlet property="tbvSampleMedicines" destination="gRi-X1-WXj" id="2bY-Bl-yTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1VZ-Wd-Plo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="496"/>
         </scene>
         <!--Dosis Update Table View Controller-->
         <scene sceneID="drv-hL-asa">
@@ -1088,6 +1210,8 @@
         <image name="Dose-en.png" width="640" height="960"/>
         <image name="New-en.png" width="640" height="960"/>
         <image name="Prescriptions-en.png" width="640" height="960"/>
+        <image name="SampleMedicine.png" width="640" height="480"/>
+        <image name="SampleMedicine.png" width="640" height="480"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
