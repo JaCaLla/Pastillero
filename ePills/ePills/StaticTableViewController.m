@@ -29,6 +29,7 @@ static StaticTableViewController *sharedInstance;
 @synthesize lblLastDosis;
 @synthesize lblDose;
 @synthesize uiImageView;
+@synthesize btnSampleMedicines;
 @synthesize arrDosis;
 @synthesize arrSampleMedicines;
 @synthesize arrSampleMedicinesPng;
@@ -103,7 +104,14 @@ static StaticTableViewController *sharedInstance;
     lblDose.text=[NSString stringWithFormat:NSLocalizedString(@"EVERY", nil), [arrDosis objectAtIndex:3]];;//By default 8 hours, idx=3
     
     //Initialize medicine array
-    arrSampleMedicines = [NSArray arrayWithObjects:@"MNA",@"MNB",@"MNC",nil];
+    //arrSampleMedicines = [NSArray arrayWithObjects:@"MNA",@"MNB",@"MNC",nil];
+    
+    
+
+    // Detect country
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
+    btnSampleMedicines.enabled=([countryCode isEqualToString:@"ES"]);
     
     // Assign our own backgroud for the view    
     UIView* bview = [[UIView alloc] init];

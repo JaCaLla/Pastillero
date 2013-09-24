@@ -211,7 +211,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-qY-FxA">
-                                                    <rect key="frame" x="95" y="5" width="160" height="30"/>
+                                                    <rect key="frame" x="95" y="5" width="175" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -219,13 +219,9 @@
                                                         <action selector="txtNameValueChanged:" destination="0j9-Ez-7Vn" eventType="valueChanged" id="rg9-eD-A2s"/>
                                                     </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-nX-ERe">
-                                                    <rect key="frame" x="270" y="3" width="31" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="31" id="55x-6w-9sD"/>
-                                                        <constraint firstAttribute="height" constant="33" id="xHB-E6-Dla"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="405-nX-ERe">
+                                                    <rect key="frame" x="271" y="3" width="41" height="33"/>
+                                                    <state key="normal" title="...">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -234,10 +230,6 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="405-nX-ERe" secondAttribute="trailing" constant="19" id="NCg-ZB-h0q"/>
-                                            <constraint firstItem="405-nX-ERe" firstAttribute="centerY" secondItem="GZl-Uu-x8v" secondAttribute="centerY" id="oHZ-ok-k89"/>
-                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="40" id="W27-UU-IUQ">
                                         <rect key="frame" x="0.0" y="159" width="320" height="40"/>
@@ -423,6 +415,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnDisclosure" destination="JUn-jp-aOY" id="1fH-Dh-71d"/>
+                        <outlet property="btnSampleMedicines" destination="405-nX-ERe" id="hzO-7w-lSl"/>
                         <outlet property="btnSave" destination="kFM-Ro-NHP" id="PCY-ew-hQp"/>
                         <outlet property="lblDose" destination="cB9-pk-fnj" id="sEz-XR-IwG"/>
                         <outlet property="lblLastDosis" destination="SUf-bq-Gs8" id="5uC-Y6-2hM"/>
@@ -449,11 +442,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FH1-G8-HXy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FH1-G8-HXy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="txH-uv-F0O">
-                                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellSampleMedicineId" rowHeight="57" id="CBd-nU-9Tp" customClass="AddMedicineSampleViewCell">
@@ -485,12 +478,6 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FH1-G8-HXy" firstAttribute="top" secondItem="y4z-H6-C5x" secondAttribute="top" id="Gzc-Ez-Jyj"/>
-                            <constraint firstAttribute="bottom" secondItem="FH1-G8-HXy" secondAttribute="bottom" constant="44" id="VIU-Sk-35v"/>
-                            <constraint firstItem="FH1-G8-HXy" firstAttribute="trailing" secondItem="y4z-H6-C5x" secondAttribute="trailing" id="osQ-cd-BoO"/>
-                            <constraint firstItem="FH1-G8-HXy" firstAttribute="leading" secondItem="y4z-H6-C5x" secondAttribute="leading" id="uiH-R1-DZU"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Medicamentos comunes" id="ePD-lJ-WHd"/>
                     <connections>
@@ -499,7 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="int-hy-1uI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="-1611"/>
+            <point key="canvasLocation" x="2164" y="-1725"/>
         </scene>
         <!--Dosis Table View Controller - Toma-->
         <scene sceneID="8eA-qE-Nls">
@@ -593,7 +580,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-Il-cgJ">
-                                                    <rect key="frame" x="104" y="4" width="194" height="30"/>
+                                                    <rect key="frame" x="104" y="4" width="171" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -601,6 +588,16 @@
                                                         <action selector="txtNameValueChanged:" destination="opj-XB-eVa" eventType="editingDidEnd" id="tQC-g2-Pv6"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wv-hU-tVa">
+                                                    <rect key="frame" x="274" y="5" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="...">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="JZI-Rt-YIl" kind="push" identifier="showUpdateSampleMedicines" id="aMp-qA-2gW"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -871,6 +868,7 @@
                         <outlet property="btnDeletePrescription" destination="uaD-KL-bqz" id="zHe-xC-SGs"/>
                         <outlet property="btnDose" destination="RRc-jg-YZT" id="1R6-9U-Erd"/>
                         <outlet property="btnRefill" destination="LhU-gL-etV" id="LM3-4P-Umr"/>
+                        <outlet property="btnSampleMedicines" destination="1wv-hU-tVa" id="dP7-Jr-MRW"/>
                         <outlet property="btnSave" destination="hAN-gv-6nt" id="wTz-Oy-kZJ"/>
                         <outlet property="lblDose" destination="Jj6-2j-56S" id="DlE-Nv-PmJ"/>
                         <outlet property="lblLastDosis" destination="P5i-gT-n7H" id="38n-eA-qqD"/>
@@ -919,6 +917,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u60-Ep-yCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2198" y="-251"/>
+        </scene>
+        <!--Update Medicine Sample View Controller-->
+        <scene sceneID="YQ1-Xf-uOG">
+            <objects>
+                <viewController id="JZI-Rt-YIl" customClass="UpdateMedicineSampleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJl-8C-ZS2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ej3-p1-Feo"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="iK4-9A-5uE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0Rx-DF-thG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellUpdateSampleMedicineId" rowHeight="57" id="gh8-da-Jlk" customClass="UpdateMedicineSampleViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gh8-da-Jlk" id="gKY-F0-qwQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="SampleMedicine.png" translatesAutoresizingMaskIntoConstraints="NO" id="yO5-Yx-uqK">
+                                                    <rect key="frame" x="10" y="0.0" width="70" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="txtName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gC-eO-Geh">
+                                                    <rect key="frame" x="88" y="14" width="220" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewMedicine" destination="yO5-Yx-uqK" id="I5s-kU-YqH"/>
+                                            <outlet property="lblNameMedicine" destination="3gC-eO-Geh" id="dl1-xA-VMl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="eWH-8p-yJG"/>
+                    <connections>
+                        <outlet property="tbvSampleMedicines" destination="0Rx-DF-thG" id="khR-0h-rot"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ToR-s0-IKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2043" y="440"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zD3-MI-2pI">
@@ -1187,6 +1236,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Xst-jK-h2M"/>
+        <segue reference="wOb-tc-ySU"/>
     </inferredMetricsTieBreakers>
 </document>

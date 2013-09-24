@@ -10,6 +10,8 @@
 		5A0A850517E77AB600B03E85 /* Dose-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850417E77AB600B03E85 /* Dose-it.png */; };
 		5A0A850817E77AC600B03E85 /* New-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850617E77AC600B03E85 /* New-it.png */; };
 		5A0A850917E77AC600B03E85 /* Prescriptions-it.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A0A850717E77AC600B03E85 /* Prescriptions-it.png */; };
+		5A2F36FB17F1E7F600D20004 /* UpdateMedicineSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F36FA17F1E7F600D20004 /* UpdateMedicineSampleViewController.m */; };
+		5A2F36FE17F1E83E00D20004 /* UpdateMedicineSampleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F36FD17F1E83E00D20004 /* UpdateMedicineSampleViewCell.m */; };
 		5A4271A417EF03AE0061A97D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4271A317EF03AD0061A97D /* Images.xcassets */; };
 		5A455960178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
 		5A455961178B306700DADEF9 /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A45595F178B306700DADEF9 /* Prescription.m */; };
@@ -187,6 +189,10 @@
 		5A0A850417E77AB600B03E85 /* Dose-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dose-it.png"; sourceTree = "<group>"; };
 		5A0A850617E77AC600B03E85 /* New-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "New-it.png"; sourceTree = "<group>"; };
 		5A0A850717E77AC600B03E85 /* Prescriptions-it.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prescriptions-it.png"; sourceTree = "<group>"; };
+		5A2F36F917F1E7F600D20004 /* UpdateMedicineSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMedicineSampleViewController.h; sourceTree = "<group>"; };
+		5A2F36FA17F1E7F600D20004 /* UpdateMedicineSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMedicineSampleViewController.m; sourceTree = "<group>"; };
+		5A2F36FC17F1E83E00D20004 /* UpdateMedicineSampleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMedicineSampleViewCell.h; sourceTree = "<group>"; };
+		5A2F36FD17F1E83E00D20004 /* UpdateMedicineSampleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMedicineSampleViewCell.m; sourceTree = "<group>"; };
 		5A42719D17EF00710061A97D /* App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = App.png; path = ../App.png; sourceTree = "<group>"; };
 		5A42719E17EF00B90061A97D /* App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App@2x.png"; path = "../App@2x.png"; sourceTree = "<group>"; };
 		5A42719F17EF00CB0061A97D /* Appx120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Appx120.png; path = ../Appx120.png; sourceTree = "<group>"; };
@@ -446,6 +452,10 @@
 				5AB2B78F178C6B36000BA2FA /* UpdatePrescriptionViewController.m */,
 				5AA3F5BD17A2D052001717EB /* DosisUpdateTableViewController.h */,
 				5AA3F5BE17A2D052001717EB /* DosisUpdateTableViewController.m */,
+				5A2F36F917F1E7F600D20004 /* UpdateMedicineSampleViewController.h */,
+				5A2F36FA17F1E7F600D20004 /* UpdateMedicineSampleViewController.m */,
+				5A2F36FC17F1E83E00D20004 /* UpdateMedicineSampleViewCell.h */,
+				5A2F36FD17F1E83E00D20004 /* UpdateMedicineSampleViewCell.m */,
 			);
 			name = Update;
 			sourceTree = "<group>";
@@ -973,6 +983,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2F36FB17F1E7F600D20004 /* UpdateMedicineSampleViewController.m in Sources */,
+				5A2F36FE17F1E83E00D20004 /* UpdateMedicineSampleViewCell.m in Sources */,
 				5ACC65B617889BD300ED59D1 /* main.m in Sources */,
 				5ACC65BA17889BD300ED59D1 /* AppDelegate.m in Sources */,
 				5ACC65C617889BD300ED59D1 /* ViewController.m in Sources */,

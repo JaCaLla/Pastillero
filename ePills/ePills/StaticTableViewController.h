@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tbvNewPrescription;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisclosure;
 @property (weak, nonatomic) IBOutlet UIImageView *uiImageView;
+@property (weak, nonatomic) IBOutlet UIButton *btnSampleMedicines;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
 @property (weak, nonatomic) IBOutlet UITextField *txtBoxUnits;
