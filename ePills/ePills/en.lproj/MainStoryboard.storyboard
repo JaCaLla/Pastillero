@@ -1211,7 +1211,6 @@
         <image name="New-en.png" width="640" height="960"/>
         <image name="Prescriptions-en.png" width="640" height="960"/>
         <image name="SampleMedicine.png" width="640" height="480"/>
-        <image name="SampleMedicine.png" width="640" height="480"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

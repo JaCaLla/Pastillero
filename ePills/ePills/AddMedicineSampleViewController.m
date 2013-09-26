@@ -44,6 +44,7 @@
 	
     //Initialize medicine array
     // Detect country
+    // http://en.wikipedia.org/wiki/ISO_3166-1
     NSLocale *locale = [NSLocale currentLocale];
     NSString *countryCode = [locale objectForKey: NSLocaleCountryCode];
     
@@ -53,6 +54,12 @@
     {
         arrSampleMedicines = [NSArray arrayWithObjects:SPANISH_MEDICINES,nil];
         arrSampleMedicinesPng = [NSArray arrayWithObjects:SPANISH_MEDICINES_PNG,nil];
+        
+    }
+    else if([countryCode isEqualToString:@"US"])
+    {
+        arrSampleMedicines = [NSArray arrayWithObjects:US_MEDICINES,nil];
+        arrSampleMedicinesPng = [NSArray arrayWithObjects:US_MEDICINES_PNG,nil];
         
     }
     else{
